@@ -1,0 +1,13 @@
+{
+  "name": "madtec-es",
+  "version": "0.0.1",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ],
+  "dependencies": {
+    "modular-scale": "~2.1.1",
+    "foundation": "~5.5.2"
+  }
+}
