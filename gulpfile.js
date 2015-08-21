@@ -76,7 +76,7 @@ gulp.task('minify-css', function() {
 });
 
 gulp.task('js', function() {
-  return gulp.src(['.public/components/fastclick/lib/fastclick.js', './public/components/foundation/js/foundation.js', './public/js/app.js'])
+  return gulp.src(['.public/components/fastclick/lib/fastclick.js', './public/components/foundation/js/foundation/foundation.js', './public/components/foundation/js/foundation/foundation.offcanvas.js', './public/components/foundation/js/foundation/foundation.interchange.js','./public/js/app.js'])
     //.pipe(jshint())
     //.pipe(jshint.reporter('default'))
     .pipe(uglify())
