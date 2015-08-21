@@ -37,7 +37,7 @@ gulp.task('uncss', function() {
         // remove unused css classes
         .pipe(uncss({
             html: ['./views/index.html'],
-            ignore: ['.off-canvas-wrap.move-right', '.move-right > .inner-wrap', '.move-right .exit-off-canvas', '.move-right .exit-off-canvas:hover']
+            ignore: [/^meta.foundation/, /f-topbar-fixed/, /contain-to-grid/, /sticky/, /fixed/, /.*move-right/]
         }))
         // minify and concat resulted css
         .pipe(gulp.dest('./public/dst'));
@@ -49,7 +49,7 @@ gulp.task('css', function () {
         // remove unused css classes
         .pipe(uncss({
             html: ['./views/index.html'],
-            ignore: [/^meta.foundation/, /f-topbar-fixed/, /contain-to-grid/, /sticky/, /fixed/, '.off-canvas-wrap.move-right', '.move-right > .inner-wrap', '.move-right .exit-off-canvas', '.move-right .exit-off-canvas:hover', '']
+            ignore: [/^meta.foundation/, /f-topbar-fixed/, /contain-to-grid/, /sticky/, /fixed/, /.*move-right/]
         }))
         // minify and concat resulted css
         .pipe(minifyCss({compatibility: 'ie8'}))
