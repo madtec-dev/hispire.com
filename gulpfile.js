@@ -37,7 +37,7 @@ gulp.task('uncss', function() {
         // remove unused css classes
         .pipe(uncss({
             html: ['./views/index.html'],
-            ignore: ['h2:first-letter', '.js .nav-collapse', '.nav-collapse.opened', '.nav-toggle', '.android .mask', '.mask', '.js-nav-active .mask', '.fixed', '.nav-toggle:before', '.nav-toggle.active:before', '.nav-collapse a:active', '.nav-collapse .active a', '.js .nav-collapse.closed', '.disable-pointer-events']
+            ignore: ['.off-canvas-wrap.move-right', '.move-right > .inner-wrap', '.move-right .exit-off-canvas', '.move-right .exit-off-canvas:hover']
         }))
         // minify and concat resulted css
         .pipe(gulp.dest('./public/dst'));
@@ -49,7 +49,7 @@ gulp.task('css', function () {
         // remove unused css classes
         .pipe(uncss({
             html: ['./views/index.html'],
-            ignore: ['h2:first-letter', '.js .nav-collapse', '.nav-collapse.opened', '.nav-toggle', '.android .mask', '.mask', '.js-nav-active .mask', '.fixed', '.nav-toggle:before', '.nav-toggle.active:before', '.nav-collapse a:active', '.nav-collapse .active a', '.js .nav-collapse.closed', '.disable-pointer-events']
+            ignore: [/^meta.foundation/, /f-topbar-fixed/, /contain-to-grid/, /sticky/, /fixed/, '.off-canvas-wrap.move-right', '.move-right > .inner-wrap', '.move-right .exit-off-canvas', '.move-right .exit-off-canvas:hover', '']
         }))
         // minify and concat resulted css
         .pipe(minifyCss({compatibility: 'ie8'}))
@@ -76,9 +76,9 @@ gulp.task('minify-css', function() {
 });
 
 gulp.task('js', function() {
-  return gulp.src(['./public/js/responsive-nav.js', './public/js/scroll.js', './public/js/fixed-responsive-nav.js', './public/js/ux.js'])
-    .pipe(jshint())
-    .pipe(jshint.reporter('default'))
+  return gulp.src(['.public/components/fastclick/lib/fastclick.js', './public/components/foundation/js/foundation.js', './public/js/app.js'])
+    //.pipe(jshint())
+    //.pipe(jshint.reporter('default'))
     .pipe(uglify())
     .pipe(concat('app.min.js'))
     .pipe(gulp.dest('./public/dst'));
