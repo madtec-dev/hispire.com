@@ -1,0 +1,246 @@
+@import "settings";
+@import "../components/foundation/scss/foundation";
+
+.text--center {
+  text-align: center !important;
+}
+
+
+.vertical--middle {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+
+.vertical--middle > *{
+  display: table-cell;
+  vertical-align: middle;
+}
+
+/**** NAV ****/
+
+.name {
+  background-color: #fefefe !important;
+}
+
+.brand__name {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: $red--dark !important;
+  font-weight: 400 !important;
+  span {
+    font-weight: 300;
+  }
+}
+
+nav .button {
+  top: 1.3em !important;
+  padding: 1em !important;
+  height: auto !important;
+  text-transform: uppercase !important;
+  transition: 0.5s ease;
+  &:hover {
+    top: 1em !important;
+    padding: 1.5em !important;
+  }
+}
+
+.top-bar .nav__item a {
+  &:hover {
+    line-height: 6rem !important;
+    border-top: 4px solid $charcoal;
+  }
+}
+
+// =========== General button styles & variables =======================================//
+button{
+  outline: none;
+  
+  span{
+    display:block;
+  }
+}
+
+$color : $charcoal;
+$transition: .1s;// increase this to see the transformations happen in slow motion
+
+/* ====================== lines button ==================================================*/
+
+$button-size : 1.5rem; 
+//common to all three-liners
+.lines-button {
+  background:none;
+  margin: 0;
+  padding: 0 0 .3em .8em;
+  transition: .3s;
+  cursor: pointer;
+  user-select: none;
+  border-radius: $button-size/7;
+/* */
+  &:hover {
+    opacity: 1;
+    background-color: transparent;
+  }
+  &:active {
+    transition: 0;
+    background-color: transparent;
+  }
+}
+//common to all three-liners
+@mixin line {
+  display: inline-block;
+  width: $button-size;
+  height: $button-size/7;
+  background: $color;
+  border-radius: $button-size/14; 
+  //transition: $transition;
+}
+//common to all three-liners
+.lines {
+  @include line;
+  position: relative; 
+  margin-bottom: .2em;
+
+
+  &:before, &:after {
+   @include line;
+    position: absolute;
+    left:0;
+    top: 0;
+    content: '';
+    -webkit-transform-origin: $button-size/14 center;
+            transform-origin: $button-size/14 center;
+  }
+  &:before { 
+    top: $button-size/4; 
+  }
+  &:after { 
+    top: -$button-size/4; 
+  }
+}
+
+//common to all three-liners
+.lines-button:hover {
+  .lines {
+    &:before { 
+      top: $button-size/3.5; 
+    }
+    &:after { 
+      top: -$button-size/3.5; 
+    }
+  }
+}
+
+//three-lines to x
+.lines-button.x.close{
+    background-color: transparent;
+  .lines {
+    padding: 0 0 .3em .8em;
+    background: transparent;
+    margin-bottom: .2em;
+    &:before, &:after{
+      -webkit-transform-origin: 50% 50%;
+              transform-origin: 50% 50%;
+      top:0;
+      width: $button-size;
+    }
+    &:before{
+      -webkit-transform: rotate3d(0,0,1,45deg); 
+              transform: rotate3d(0,0,1,45deg); 
+    }
+    &:after{
+      -webkit-transform: rotate3d(0,0,1,-45deg); 
+              transform: rotate3d(0,0,1,-45deg); 
+    }
+  }
+}
+
+#brand__logo {
+  padding: 1em .3em 0 1em;
+  width: 5rem;
+}
+
+ul.off-canvas-list {
+    margin-top: 2em;
+    text-align: center;
+    li a {
+      color: #FEFEFE;
+      text-transform: capitalize;
+      &:hover {
+        background-color: #EFEFEF;
+        color: $charcoal;
+        border-left: 4px solid $red !important;
+      }
+    }
+}
+
+.hero {
+  background: url("/img/front--medium.jpg") no-repeat center center;
+  background-size: cover;
+  height: 100vh; 
+}
+.hero:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(to bottom right, #002f4b, #dc4225);
+  opacity: .8; 
+}
+.hero .intro {
+  padding: 3rem;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%); 
+}
+
+.hero h1 {
+  color: #fff;
+  font-size: 1.5rem;
+  line-height: 1.5em;
+  letter-spacing: -0.025em;
+  font-weight: 300;
+  text-align: center; 
+}
+
+.hero p {
+  color: #fff;
+  line-height: 1.75em;
+  font-weight: 200;
+  text-align: center;
+  margin-bottom: 2rem; 
+}
+
+.hero .tech-img {
+  background: url("/img/hero.jpg") no-repeat center center;
+  background-size: cover;
+  height: 9rem;
+  width: 9rem;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto; 
+}
+
+@media only screen and (min-width: 40em) {
+  .hero .tech-img {
+    height: 18rem;
+    width: 18rem; 
+  }
+  .hero h1 {
+    padding-top: 4.5rem;
+    text-align: right;
+    font-size: 2.5rem; 
+  }
+  .hero p {
+    text-align: right; 
+  } 
+
+  .top-bar {
+    text-align: center; 
+  }
+  ul.center-buttons {
+    display: inline-block; 
+  }
+}

@@ -24,7 +24,7 @@ gulp.task('develop', function () {
   livereload.listen();
   nodemon({
     script: 'bin/www',
-    ext: 'js handlebars coffee',
+    ext: 'js hbs coffee',
   }).on('restart', function () {
     setTimeout(function () {
       livereload.changed(__dirname);
@@ -62,8 +62,8 @@ gulp.task('minify-html', function() {
     conditionals: true,
     spare:true
   };
- 
-  return gulp.src('./views/**/*.handlebars')
+
+  return gulp.src('./views/**/*.hbs')
     .pipe(minifyHTML(opts))
     .pipe(gulp.dest('./views/dst'));
 });
@@ -76,7 +76,15 @@ gulp.task('minify-css', function() {
 });
 
 gulp.task('js', function() {
-  return gulp.src(['.public/components/fastclick/lib/fastclick.js', './public/components/foundation/js/foundation/foundation.js', './public/components/foundation/js/foundation/foundation.offcanvas.js', './public/components/foundation/js/foundation/foundation.interchange.js','./public/js/app.js'])
+  return gulp.src(['.public/components/fastclick/lib/fastclick.js',
+    './public/components/foundation/js/foundation/foundation.js',
+    './public/components/foundation/js/foundation/foundation.offcanvas.js',
+    './public/components/foundation/js/foundation/foundation.interchange.js',
+    './public/js/app.js',
+    './public/js/vendors/trianglify.min.js',
+    './public/js/vendors/TweenMax.min.js',
+    './public/js/vendors/ScrollToPlugin.min.js',
+    './public/js/vendors/cash.min.js', './public/js/Card-polygon.js', './public/js/demo.js'])
     //.pipe(jshint())
     //.pipe(jshint.reporter('default'))
     .pipe(uglify())
