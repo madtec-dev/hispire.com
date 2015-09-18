@@ -36,8 +36,8 @@ gulp.task('uncss', function() {
     return gulp.src('./public/css/style.css')
         // remove unused css classes
         .pipe(uncss({
-            html: ['./views/index.html'],
-            ignore: [/^meta.foundation/, /f-topbar-fixed/, /contain-to-grid/, /sticky/, /fixed/, /.*move-right/]
+            html: ['./views/**/*.html'],
+            ignore: [/^meta.foundation/, /f-topbar-fixed/, /contain-to-grid/, /sticky/, /fixed/, /.*move-right/, /input/]
         }))
         // minify and concat resulted css
         .pipe(gulp.dest('./public/dst'));
@@ -48,8 +48,8 @@ gulp.task('css', function () {
     return gulp.src('./public/css/style.css')
         // remove unused css classes
         .pipe(uncss({
-            html: ['./views/index.html'],
-            ignore: [/^meta.foundation/, /f-topbar-fixed/, /contain-to-grid/, /sticky/, /fixed/, /.*move-right/]
+            html: ['./views/**/*.html'],
+            ignore: [/^meta.foundation/, /f-topbar-fixed/, /contain-to-grid/, /sticky/, /fixed/, /.*move-right/, /data-abide/, /input/]
         }))
         // minify and concat resulted css
         .pipe(minifyCss({compatibility: 'ie8'}))
@@ -80,11 +80,10 @@ gulp.task('js', function() {
     './public/components/foundation/js/foundation/foundation.js',
     './public/components/foundation/js/foundation/foundation.offcanvas.js',
     './public/components/foundation/js/foundation/foundation.interchange.js',
-    './public/js/app.js',
-    './public/js/vendors/trianglify.min.js',
-    './public/js/vendors/TweenMax.min.js',
-    './public/js/vendors/ScrollToPlugin.min.js',
-    './public/js/vendors/cash.min.js', './public/js/Card-polygon.js', './public/js/demo.js'])
+    './public/components/foundation/js/foundation/foundation.abide.js',
+    './public/components/foundation/js/foundation/foundation.slider.js',
+    './public/js/dropzone.js',
+    './public/js/app.js'])
     //.pipe(jshint())
     //.pipe(jshint.reporter('default'))
     .pipe(uglify())

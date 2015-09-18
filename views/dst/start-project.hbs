@@ -1,0 +1,52 @@
+{{> menu}}<section><h1 class=text-center>Let's start something incredible.</h1><form data-abide=ajax method=POST class=dropzone id=start-project-form action=/start-project enctype=multipart/form-data><div class=row><div class="small-12 large-6 small-centered columns"><label>Name <input type=text name=name required="" pattern=[a-zA-Z]+ placeholder=Name></label> <small class=error>Name is required and must be a string.</small></div><div class="small-12 large-6 small-centered columns"><label>Company <input type=text name=company placeholder=Company></label></div><div class="small-12 large-6 small-centered columns"><label>Email <input type=email name=email placeholder=Email required=""></label> <small class=error>A valid email address is required.</small></div><div class="small-12 large-6 small-centered columns"><label>Timeframe<select name=timeframe><option value="less than a month">less than a month</option><option value="1-2 months">1-2 months</option><option value="2-6 months">2-6 months</option><option value="+6 months">+6 months</option></select></label></div><div class="small-12 large-6 small-centered columns"><div class=range-slider id=budget-slider name=budget data-slider="" data-options="display_selector: #sliderOutput3; step: 200; start: 0; end: 10000"><span class=range-slider-handle role=slider tabindex=0></span> <span class=range-slider-active-segment></span></div></div><input type=hidden id=budget name=budget><div class="small-12 small-centered large-6 columns text-center"><span id=sliderOutput3></span></div><div class="small-12 large-6 small-centered columns" id=uploader><div class="dz-default dz-message"><span>Drop the files here to upload</span></div></div><div class=fallback><input type=file name=files multiple=""></div><div class="small-12 large-6 small-centered columns text-center"><button type=submit id=send-project-form name=button>SEND</button></div></div></form></section><script type=text/javascript>
+$(function() {
+  $(document).foundation('reflow', 'slider');
+  var projectDropzone = new Dropzone("form#start-project-form",
+    {
+      paramName: "files",
+      maxFilesize: 3,
+      uploadMultiple: true,
+      parallelUploads: 100,
+      maxFiles: 10,
+      clickable: '#uploader',
+      addRemoveLinks: true,
+      previewsContainer: '#uploader',
+      autoProcessQueue: false,
+
+      init: function() {
+        projectDropzone = this;
+    }
+  });
+    $('[data-slider]').on('change.fndtn.slider', function(){
+      $('#budget').val($('#budget-slider').attr('data-slider'))
+    });
+    Dropzone.autoDiscover = false;
+
+  $('#start-project-form')
+    .on('valid.fndtn.abide', function () {
+      if(projectDropzone.getQueuedFiles().length != 0) {
+        projectDropzone.processQueue();
+        projectDropzone
+        .on('totaluploadprogress', function(res) {
+          $('#send-project-form').prop("disabled",true);
+          $('#send-project-form').html('Uploading ' + Math.round(res) + '%');})
+        .on('completemultiple', function(res) {
+          $('#send-project-form').html('Proyecto mandado!');
+          document.getElementById("start-project-form").reset();
+          projectDropzone.removeAllFiles();
+          $('#send-project-form').addClass("animated fadeInDown");
+          $('#send-project-form').prop("disabled",false);
+          $( "<h3 class='animated bounceInLeft pt+'>gracias! contestaremos lo antes posible.</h3>" ).insertAfter( "#send-project-form" );
+        });
+      } else {
+        console.log('NO hay fotos');
+        projectDropzone.uploadFiles([ ]);
+        $('#send-project-form').html('Proyecto mandado!');
+        $('#send-project-form').addClass("animated fadeInDown");
+        // TODO remove msg after timeout with fade animation
+        $( "<h3 class='animated bounceInLeft pt+'>gracias! contestaremos lo antes posible.</h3>" ).insertAfter( "#send-project-form" );
+      }
+    });
+});
+
+</script>

@@ -1,7 +1,6 @@
-
-
 var express = require('express');
 var path = require('path');
+var multer = require('multer');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
@@ -20,6 +19,7 @@ app.locals.ENV_DEVELOPMENT = env == 'development';
 // view engine setup
 
 app.engine('hbs', hbs.__express);
+hbs.registerPartials(path.join(__dirname, 'views/partials'));
 
 if (app.get('env') === 'development') {
   app.set('views', path.join(__dirname, 'views'));
@@ -30,6 +30,8 @@ else {
 app.set('view engine', 'hbs');
 
 // app.use(favicon(__dirname + '/public/img/favicon.ico'));
+
+
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -37,7 +39,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(multer({dest: './public/uploads/'}));
 app.use('/', routes);
 app.use('/users', users);
 

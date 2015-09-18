@@ -79,7 +79,7 @@ $include-html-global-classes: $include-html-classes;
 // $include-html-grid-classes: $include-html-classes;
 // $include-xl-html-grid-classes: false;
 
-// $row-width: rem-calc(1000);
+$row-width: 100%;
 // $total-columns: 12;
 // $column-gutter: rem-calc(30);
 
@@ -1406,7 +1406,7 @@ $off-canvas-overlay-background: rgba($white, .5);
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-$topbar-bg-color: #FEFEFE;
+$topbar-bg-color: transparent;
 // $topbar-bg: $topbar-bg-color;
 
 // Height and margin
@@ -1419,14 +1419,14 @@ $topbar-title-font-size: rem-calc(21);
 
 // Set the link colors and styles for top-level nav
 $topbar-link-color: $charcoal;
-$topbar-link-color-hover: $red--dark;
-$topbar-link-color-active: $red--dark;
+$topbar-link-color-hover: $red;
+$topbar-link-color-active: $white;
 // $topbar-link-color-active-hover: $white;
 // $topbar-link-weight: $font-weight-normal;
 $topbar-link-font-size: rem-calc(16);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
-// $topbar-link-bg: $topbar-bg;
-$topbar-link-bg-hover: #FEFEFE;
+$topbar-link-bg: transparent;
+$topbar-link-bg-hover: transparent;
 // $topbar-link-bg-color-hover: $charcoal;
 // $topbar-link-bg-active: $primary-color;
 // $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);

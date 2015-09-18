@@ -16,3 +16,307 @@
   display: table-cell;
   vertical-align: middle;
 }
+
+/**** NAV ****/
+
+.name {
+  background-color: transparent !important;
+}
+
+.brand__name {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: $red--dark !important;
+  font-weight: 400 !important;
+  span {
+    font-weight: 300;
+  }
+}
+
+nav .button {
+  top: 1.3em !important;
+  padding: 1em !important;
+  height: auto !important;
+  text-transform: uppercase !important;
+  transition: 0.5s ease;
+  &:hover {
+    top: 1em !important;
+    padding: 1.5em !important;
+  }
+}
+
+.nav__item a {
+	//padding: 10px;
+	color: $charcoal !important;
+	font-weight: 700 !important;
+  position: relative;
+  text-transform: uppercase !important;
+	text-shadow: none;
+	-webkit-transition: color 0.3s;
+	-moz-transition: color 0.3s;
+	transition: color 0.3s;
+}
+
+.nav__item a::before,
+.nav__item a::after {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 4px;
+	background: $smoke;
+	content: '';
+	opacity: 0;
+	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+	-moz-transition: opacity 0.3s, -moz-transform 0.3s;
+	transition: opacity 0.3s, transform 0.3s;
+	-webkit-transform: translateY(-10px);
+	-moz-transform: translateY(-10px);
+	transform: translateY(-10px);
+}
+
+.nav__item a::before {
+	top: 1.5em;
+	-webkit-transform: translateY(-10px);
+	-moz-transform: translateY(-10px);
+	transform: translateY(-10px);
+}
+
+.nav__item a::after {
+	bottom: 1.5em;
+	-webkit-transform: translateY(10px);
+	-moz-transform: translateY(10px);
+	transform: translateY(10px);
+}
+
+.nav__item a:hover,
+.nav__item a:focus {
+	color: #fff;
+}
+
+.nav__item a:hover::before,
+.nav__item a:focus::before,
+.nav__item a:hover::after,
+.nav__item a:focus::after {
+	opacity: 1;
+	-webkit-transform: translateY(0px);
+	-moz-transform: translateY(0px);
+	transform: translateY(0px);
+}
+
+.top-bar-section ul li {
+  background-color: transparent;
+}
+
+// =========== General button styles & variables =======================================//
+button{
+  outline: none;
+
+  span{
+    display:block;
+  }
+}
+
+$color : $charcoal;
+$transition: .1s;// increase this to see the transformations happen in slow motion
+
+/* ====================== lines button ==================================================*/
+
+$button-size : 1.5rem;
+//common to all three-liners
+.lines-button {
+  background:none;
+  margin: 0;
+  padding: 0 0 .3em .8em;
+  transition: .3s;
+  cursor: pointer;
+  user-select: none;
+  border-radius: $button-size/7;
+/* */
+  &:hover {
+    opacity: 1;
+    background-color: transparent;
+  }
+  &:active {
+    transition: 0;
+    background-color: transparent;
+  }
+}
+//common to all three-liners
+@mixin line {
+  display: inline-block;
+  width: $button-size;
+  height: $button-size/7;
+  background: $color;
+  border-radius: $button-size/14;
+  //transition: $transition;
+}
+//common to all three-liners
+.lines {
+  @include line;
+  position: relative;
+  margin-bottom: .2em;
+
+
+  &:before, &:after {
+   @include line;
+    position: absolute;
+    left:0;
+    top: 0;
+    content: '';
+    -webkit-transform-origin: $button-size/14 center;
+            transform-origin: $button-size/14 center;
+  }
+  &:before {
+    top: $button-size/4;
+  }
+  &:after {
+    top: -$button-size/4;
+  }
+}
+
+//common to all three-liners
+.lines-button:hover {
+  .lines {
+    &:before {
+      top: $button-size/3.5;
+    }
+    &:after {
+      top: -$button-size/3.5;
+    }
+  }
+}
+
+//three-lines to x
+.lines-button.x.close{
+    background-color: transparent;
+  .lines {
+    padding: 0 0 .3em .8em;
+    background: transparent;
+    margin-bottom: .2em;
+    &:before, &:after{
+      -webkit-transform-origin: 50% 50%;
+              transform-origin: 50% 50%;
+      top:0;
+      width: $button-size;
+    }
+    &:before{
+      -webkit-transform: rotate3d(0,0,1,45deg);
+              transform: rotate3d(0,0,1,45deg);
+    }
+    &:after{
+      -webkit-transform: rotate3d(0,0,1,-45deg);
+              transform: rotate3d(0,0,1,-45deg);
+    }
+  }
+}
+
+#brand__logo {
+  padding: 1em .3em 0 1em;
+  width: 5rem;
+}
+
+ul.off-canvas-list {
+    margin-top: 2em;
+    text-align: center;
+    li a {
+      color: #FEFEFE;
+      text-transform: capitalize;
+      &:hover {
+        background-color: #EFEFEF;
+        color: $charcoal;
+        border-left: 4px solid $red !important;
+      }
+    }
+}
+
+.hero {
+  background: url("/img/front--medium.jpg") no-repeat center 70%;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+}
+#data-container {
+  //box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.52);
+}
+.hero:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  //background-image: linear-gradient(to bottom right, #002f4b, #dc4225);
+  background-image: linear-gradient(to bottom right, #1e1e1e, #000000);
+  opacity: .1;
+}
+.hero .intro {
+  padding: 3rem;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.hero h1 {
+  color: #fff;
+  font-size: 1.5rem;
+  line-height: 1.5em;
+  letter-spacing: -0.025em;
+  font-weight: 700;
+  text-align: center;
+}
+
+.hero p {
+  color: #fff;
+  line-height: 1.75em;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.hero .tech-img {
+  background: url("/img/hero.jpg") no-repeat center center;
+  background-size: cover;
+  height: 9rem;
+  width: 9rem;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+}
+section {
+  padding-top: rem-calc(200);
+}
+.section__title {
+  font-weight: 300;
+}
+
+.home__services {
+  height: 30%;
+}
+
+
+.dropzone {
+  border: none;
+}
+
+@media only screen and (min-width: 40em) {
+  .hero .tech-img {
+    height: 18rem;
+    width: 18rem;
+  }
+  .hero h1 {
+    padding-top: 4.5rem;
+    text-align: right;
+    font-size: 3.5rem;
+  }
+  .hero p {
+    text-align: right;
+    font-size: 1.5rem;
+  }
+
+  .top-bar {
+    text-align: center;
+  }
+  ul.center-buttons {
+    display: inline-block;
+  }
+}
