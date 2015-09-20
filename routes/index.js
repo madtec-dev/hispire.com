@@ -50,13 +50,14 @@ function parseFiles(files) {
 router.post('/start-project', function(req, res, next) {
   console.log('BODY', req.body);
   console.log('FILES', req.files);
-  var projectFiles = Object.keys(req.files)
-    .map(function(i) {
-    return { filename: req.files[i].originalname,
-             path: req.files[i].path
-           }
-
-  })
+  if (req.files) {
+    var projectFiles = Object.keys(req.files)
+      .map(function(i) {
+        return { filename: req.files[i].originalname,
+               path: req.files[i].path
+               }
+      })
+  }
   console.log(projectFiles);
   var message = {
       from: req.body.name + ' <' + req.body.email + '>' ,
@@ -86,7 +87,8 @@ router.post('/start-project', function(req, res, next) {
         console.log(err);
         res.send('Error sending email: ' + err);
       } else {
-        res.send('Email sent!');
+        res.status(200);
+        res.send('Project sent!');
       }
     });
 });

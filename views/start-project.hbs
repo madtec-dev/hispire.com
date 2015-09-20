@@ -1,62 +1,81 @@
-{{> menu}}
-<section>
-  <h1 class="text-center">Let's start something incredible.</h1>
-  <form data-abide="ajax" method="POST" class="dropzone" id="start-project-form" action="/start-project" enctype="multipart/form-data">
-    <div class="row">
-      <div class="small-12 large-6 small-centered columns">
-        <label>Name
-          <input type="text" name="name" required pattern="[a-zA-Z]+" placeholder="Name" />
-        </label>
-        <small class="error">Name is required and must be a string.</small>
-      </div>
-      <div class="small-12 large-6 small-centered columns">
-        <label>Company
-          <input type="text" name="company" placeholder="Company" />
-        </label>
-      </div>
-      <div class="small-12 large-6 small-centered columns">
-        <label>Email
-          <input type="email" name="email" placeholder="Email" required />
-        </label>
-        <small class="error">A valid email address is required.</small>
-      </div>
-      <div class="small-12 large-6 small-centered columns">
-        <label>Timeframe
-          <select name="timeframe">
-            <option value="less than a month">less than a month</option>
-            <option value="1-2 months">1-2 months</option>
-            <option value="2-6 months">2-6 months</option>
-            <option value="+6 months">+6 months</option>
-          </select>
-        </label>
-      </div>
-      <div class="small-12 large-6 small-centered columns">
-        <div class="range-slider" id="budget-slider" name="budget" data-slider data-options="display_selector: #sliderOutput3; step: 200; start: 0; end: 10000">
-          <span class="range-slider-handle" role="slider" tabindex="0"></span>
-          <span class="range-slider-active-segment"></span>
+<div class="off-canvas-wrap" data-offcanvas>
+  <div class="inner-wrap">
+    {{> menu}}
+    <section>
+      <h1 class="text-center">Let's start something incredible.</h1>
+      <form data-abide="ajax" method="POST" class="dropzone" id="start-project-form" action="/start-project" enctype="multipart/form-data">
+        <div class="row">
+          <div class="small-12 large-6 small-centered columns">
+            <label>Name
+              <input type="text" name="name" required pattern="[a-zA-Z]+" placeholder="Name" />
+            </label>
+            <small class="error">Name is required and must be a string.</small>
+          </div>
+          <div class="small-12 large-6 small-centered columns">
+            <label>Company
+              <input type="text" name="company" placeholder="Company" />
+            </label>
+          </div>
+          <div class="small-12 large-6 small-centered columns">
+            <label>Email
+              <input type="email" name="email" placeholder="Email" required />
+            </label>
+            <small class="error">A valid email address is required.</small>
+          </div>
+          <div class="small-12 large-6 small-centered columns">
+            <label>Timeframe
+              <select name="timeframe">
+                <option value="less than a month">less than a month</option>
+                <option value="1-2 months">1-2 months</option>
+                <option value="2-6 months">2-6 months</option>
+                <option value="+6 months">+6 months</option>
+              </select>
+            </label>
+          </div>
+          <div class="small-12 large-6 small-centered columns">
+            <div class="range-slider" id="budget-slider" name="budget" data-slider data-options="display_selector: #sliderOutput3; step: 200; start: 0; end: 10000">
+              <span class="range-slider-handle" role="slider" tabindex="0"></span>
+              <span class="range-slider-active-segment"></span>
+            </div>
+          </div>
+          <input type="hidden" id="budget" name="budget" value="">
+          <div class="small-12 small-centered large-6 columns text-center">
+            <span id="sliderOutput3"></span>
+          </div>
+          <div class="small-12 large-6 small-centered columns" id="uploader">
+            <div class="dz-default dz-message">
+              <span>Drop the files here to upload</span>
+            </div>
+          </div>
+          <div class="fallback">
+            <input type="file" name="files" multiple>
+          </div>
+          <div class="small-12 large-6 small-centered columns text-center">
+            <button type="submit" id="send-project-form" name="button">SEND</button>
+            <div id="form-msg"></div>
+          </div>
         </div>
-      </div>
-      <input type="hidden" id="budget" name="budget" value="">
-      <div class="small-12 small-centered large-6 columns text-center">
-        <span id="sliderOutput3"></span>
-      </div>
-      <div class="small-12 large-6 small-centered columns" id="uploader">
-        <div class="dz-default dz-message">
-          <span>Drop the files here to upload</span>
-        </div>
-      </div>
-      <div class="fallback">
-        <input type="file" name="files" multiple>
-      </div>
-      <div class="small-12 large-6 small-centered columns text-center">
-        <button type="submit" id="send-project-form" name="button">SEND</button>
-      </div>
-    </div>
-  </form>
-</section>
+      </form>
+    </section>
+
+<!-- close the off-canvas menu -->
+  </div>
+</div>
 <script type="text/javascript">
 $(function() {
-  $(document).foundation('reflow', 'slider');
+  var open = false;
+  $('#menu-button, .exit-off-canvas').click(function(event){
+    event.preventDefault();
+    if(!open){
+      $('#menu-button').addClass('close');
+      open = true;
+    }
+    else{
+      $('#menu-button').removeClass('close');
+      open = false;
+    }
+  });
+  $(document).foundation('reflow');
   var projectDropzone = new Dropzone("form#start-project-form",
     {
       paramName: "files",
@@ -85,22 +104,40 @@ $(function() {
         projectDropzone
         .on('totaluploadprogress', function(res) {
           $('#send-project-form').prop("disabled",true);
-          $('#send-project-form').html('Uploading ' + Math.round(res) + '%');})
+          $('#form-msg').html('Uploading ' + Math.round(res) + '%');})
         .on('completemultiple', function(res) {
-          $('#send-project-form').html('Proyecto mandado!');
+          var response = String(res[0].xhr.response);
           document.getElementById("start-project-form").reset();
           projectDropzone.removeAllFiles();
-          $('#send-project-form').addClass("animated fadeInDown");
+          $('#form-msg').addClass("animated fadeInDown");
           $('#send-project-form').prop("disabled",false);
-          $( "<h3 class='animated bounceInLeft pt+'>gracias! contestaremos lo antes posible.</h3>" ).insertAfter( "#send-project-form" );
-        });
+          $('#form-msg').html(response);
+        })
       } else {
-        console.log('NO hay fotos');
-        projectDropzone.uploadFiles([ ]);
-        $('#send-project-form').html('Proyecto mandado!');
-        $('#send-project-form').addClass("animated fadeInDown");
-        // TODO remove msg after timeout with fade animation
-        $( "<h3 class='animated bounceInLeft pt+'>gracias! contestaremos lo antes posible.</h3>" ).insertAfter( "#send-project-form" );
+        $('#send-project-form').prop("disabled",true);
+        $('#send-project-form').html('<img src="/img/ajax-loader.gif">');
+        $.ajax({
+          url: '/start-project',
+          type: 'post',
+          dataType: 'json',
+          data: $('#start-project-form').serialize(),
+          statusCode: {
+            500: function(res){
+              $('#form-msg').addClass("animated fadeInDown");
+              $('#form-msg').html(res.responseText);
+              $('#send-project-form').prop("disabled",false);
+              $('#send-project-form').html('SEND');
+
+            },
+            200: function(res) {
+              document.getElementById("start-project-form").reset();
+              $('#form-msg').addClass("animated fadeInDown");
+              $('#form-msg').html(res.responseText);
+              $('#send-project-form').prop("disabled",false);
+              $('#send-project-form').html('SEND');
+            }
+          }
+        });
       }
     });
 });

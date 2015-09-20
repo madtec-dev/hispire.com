@@ -1,5 +1,18 @@
 <div class=off-canvas-wrap data-offcanvas=""><div class=inner-wrap>{{> menu}}<div class=hero id=home data-interchange="[/img/front--small.jpg, (small)], [/img/front--medium.jpg, (medium)], [/img/front--large.jpg, (large)], [/img/fondo.jpg, (xlarge)], [/img/front--xlarge.jpg, (retina)]"><div class="row intro"><div class="small-centered medium-uncentered text-left medium-8 large-5 large-offset-7 columns"><h1 class=large-text-left>When your business meets a Hero.</h1><p class=large-text-left>Consulting - Websites - App - eCommerce - Online marketing</p></div></div></div></div></div><script type=text/javascript>
+$(document).foundation('interchange', 'reflow');
 $(function() {
-  $(document).foundation('interchange', 'reflow');
-});
+  var open = false;
+  $('#menu-button, .exit-off-canvas').click(function(event){
+    console.log('hola');
+    event.preventDefault();
+    if(!open){
+      $('#menu-button').addClass('close');
+      open = true;
+    }
+    else{
+      $('#menu-button').removeClass('close');
+      open = false;
+    }
+  });
+})
 </script>
