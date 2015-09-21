@@ -1,1 +1,16 @@
-<title>MADTEC | What we do</title><section class="animated fadeInDown"><div class="row text-center"><h1 class=section__title>What we can do for your business</h1></div></section>
+<title>MADTEC | What we do</title><div class=off-canvas-wrap data-offcanvas=""><div class=inner-wrap>{{> menu}}<section class="animated fadeInDown"><div class="row text-center"><h1 class=section__title>What we can do for your business</h1></div></section></div></div><script type=text/javascript>
+$(function() {
+  var open = false;
+  $('#menu-button, .exit-off-canvas').click(function(event){
+    event.preventDefault();
+    if(!open){
+      $('#menu-button').addClass('close');
+      open = true;
+    }
+    else{
+      $('#menu-button').removeClass('close');
+      open = false;
+    }
+  });
+});
+</script>

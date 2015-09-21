@@ -5265,10 +5265,10 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 0; }
 
 h1 {
-  font-size: 2.125rem; }
+  font-size: 2.375rem; }
 
 h2 {
-  font-size: 1.6875rem; }
+  font-size: 1.8125rem; }
 
 h3 {
   font-size: 1.375rem; }
@@ -5435,10 +5435,10 @@ blockquote p {
     line-height: 1.4; }
 
   h1 {
-    font-size: 2.75rem; }
+    font-size: 3rem; }
 
   h2 {
-    font-size: 2.3125rem; }
+    font-size: 2.4375rem; }
 
   h3 {
     font-size: 1.6875rem; }
@@ -6542,16 +6542,113 @@ ul.off-canvas-list {
   margin: 0 auto; }
 
 section {
-  padding-top: 12.5rem; }
+  padding-top: 9.375rem; }
 
 .section__title {
-  font-weight: 300; }
+  font-weight: 700;
+  margin-bottom: 3rem; }
 
 .home__services {
   height: 30%; }
 
+/* START PROJECT FORM */
+/* material form */
+.group {
+  position: relative;
+  margin-bottom: 64px; }
+
+input.material {
+  font-size: 1.4375rem;
+  padding: 0;
+  display: block;
+  border: none;
+  border-bottom: 1px solid #E0E0E0;
+  margin-bottom: 0;
+  box-shadow: none; }
+
+input.material:focus {
+  outline: none;
+  background: transparent; }
+
+label, label.material {
+  font-size: 1.4375rem; }
+
+label.material {
+  color: #cccccc;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 0;
+  top: 0px;
+  transition: 0.2s ease all; }
+
+/* active state */
+input.material:focus ~ label, input:valid ~ label, input[data-invalid]:invalid ~ label {
+  font-size: 1.4375rem;
+  top: -35px;
+  color: #8C8C8C; }
+
+/* BOTTOM BARS ================================= */
+.bar {
+  position: relative;
+  display: block;
+  width: 100%; }
+
+.bar:before, .bar:after {
+  content: '';
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #BE1E2D;
+  transition: 0.2s ease all; }
+
+.bar:before {
+  left: 50%; }
+
+.bar:after {
+  right: 50%; }
+
+/* active state */
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+  width: 50%; }
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+  position: absolute;
+  height: 60%;
+  width: 100px;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5; }
+
+/* active state */
+input:focus ~ .highlight {
+  animation: inputHighlighter 0.3s ease; }
+
+/* ANIMATIONS ================ */
+@keyframes inputHighlighter {
+  from {
+    background: #BE1E2D; }
+  to {
+    width: 0;
+    background: transparent; } }
+/* END material form */
+[data-abide] .error small.error {
+  background: transparent;
+  color: #BE1E2D;
+  font-size: 1.125rem; }
+
 .dropzone {
   border: none; }
+
+#uploader {
+  padding: 3rem;
+  border: dotted 3px gray;
+  font-size: 1.4375rem; }
+  #uploader:hover {
+    cursor: pointer; }
 
 @media only screen and (min-width: 40em) {
   .hero .tech-img {

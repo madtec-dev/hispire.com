@@ -1,11 +1,42 @@
+<title>MADTEC | Let's start something incredible</title>
 <div class="off-canvas-wrap" data-offcanvas>
   <div class="inner-wrap">
     {{> menu}}
     <section>
-      <h1 class="text-center">Let's start something incredible.</h1>
+      <h1 class="section__title text-center">Let's start something incredible.</h1>
       <form data-abide="ajax" method="POST" class="dropzone" id="start-project-form" action="/start-project" enctype="multipart/form-data">
         <div class="row">
           <div class="small-12 large-6 small-centered columns">
+            <div class="group">
+              <input class="material" type="text" name="name" required pattern="[a-zA-Z]+">
+              <span class="highlight"></span>
+              <span class="bar"></span>
+              <label class="material">Name</label>
+              <!--<small class="error">Name is required and must be a string.</small>-->
+            </div>
+          </div>
+          <div class="small-12 large-6 small-centered columns">
+            <div class="group">
+              <input class="material" type="email" name="email" required>
+              <span class="highlight"></span>
+              <span class="bar"></span>
+              <label class="material">Email</label>
+              <small class="error">A valid email address is required.</small>
+            </div>
+          </div>
+          <div class="group small-12 large-6 small-centered columns">
+            <label>Timeframe
+              <select name="timeframe">
+                <option value="less than a month">less than a month</option>
+                <option value="1-2 months">1-2 months</option>
+                <option value="2-6 months">2-6 months</option>
+                <option value="+6 months">+6 months</option>
+              </select>
+            </label>
+          </div>
+
+
+          <!--<div class="small-12 large-6 small-centered columns">
             <label>Name
               <input type="text" name="name" required pattern="[a-zA-Z]+" placeholder="Name" />
             </label>
@@ -31,8 +62,8 @@
                 <option value="+6 months">+6 months</option>
               </select>
             </label>
-          </div>
-          <div class="small-12 large-6 small-centered columns">
+          </div>-->
+          <div class="small-12 group large-6 small-centered columns">
             <div class="range-slider" id="budget-slider" name="budget" data-slider data-options="display_selector: #sliderOutput3; step: 200; start: 0; end: 10000">
               <span class="range-slider-handle" role="slider" tabindex="0"></span>
               <span class="range-slider-active-segment"></span>
@@ -42,7 +73,7 @@
           <div class="small-12 small-centered large-6 columns text-center">
             <span id="sliderOutput3"></span>
           </div>
-          <div class="small-12 large-6 small-centered columns" id="uploader">
+          <div class="small-12 group large-6 small-centered columns" id="uploader">
             <div class="dz-default dz-message">
               <span>Drop the files here to upload</span>
             </div>
@@ -104,18 +135,24 @@ $(function() {
         projectDropzone
         .on('totaluploadprogress', function(res) {
           $('#send-project-form').prop("disabled",true);
-          $('#form-msg').html('Uploading ' + Math.round(res) + '%');})
+          $('#send-project-form').html('<img src="/img/ajax-loader.gif"> <br /> Uploading ' + Math.round(res) + '%');})
         .on('completemultiple', function(res) {
-          var response = String(res[0].xhr.response);
+          $('#form-msg').html(res[0].xhr.responseText);
+          $('#send-project-form').html('SEND');
+
+        })
+        .on('success', function(res){
           document.getElementById("start-project-form").reset();
           projectDropzone.removeAllFiles();
+          $('#send-project-form').html('SEND');
           $('#form-msg').addClass("animated fadeInDown");
           $('#send-project-form').prop("disabled",false);
-          $('#form-msg').html(response);
+          $('#form-msg').html(res.xhr.responseText);
+
         })
       } else {
         $('#send-project-form').prop("disabled",true);
-        $('#send-project-form').html('<img src="/img/ajax-loader.gif">');
+        $('#send-project-form').html('<img src="/img/ajax-loader.gif" />');
         $.ajax({
           url: '/start-project',
           type: 'post',

@@ -17,7 +17,7 @@ function render(template, data, req, res) {
 }
 
 router.get('/', function(req, res) {
-  render('index', { title: 'MADTEC | Digital experiences' }, req, res);
+  render('index', { title: 'MADTEC | Consulting - Websites - Applications - Online marketing' }, req, res);
 });
 
 router.get('/services', function(req, res) {

@@ -226,16 +226,16 @@ $header-font-family: $font-family-brand;
 // $header-text-rendering: optimizeLegibility;
 
 // We use these to control header font sizes
-// $h1-font-size: rem-calc(44);
-// $h2-font-size: rem-calc(37);
+$h1-font-size: rem-calc(48);
+$h2-font-size: rem-calc(39);
 // $h3-font-size: rem-calc(27);
 // $h4-font-size: rem-calc(23);
 // $h5-font-size: rem-calc(18);
 // $h6-font-size: 1rem;
 
 // We use these to control header size reduction on small screens
-// $h1-font-reduction: rem-calc(10);
-// $h2-font-reduction: rem-calc(10);
+// $h1-font-reduction: rem-calc(14);
+// $h2-font-reduction: rem-calc(12);
 // $h3-font-reduction: rem-calc(5);
 // $h4-font-reduction: rem-calc(5);
 // $h5-font-reduction: 0;
@@ -658,7 +658,7 @@ $button-bg-hover: scale-color($button-bg-color, $lightness: 20%);
 // $input-border-color: scale-color($white, $lightness: -20%);
 // $input-focus-border-color: scale-color($white, $lightness: -40%);
 // $input-border-style: solid;
-// $input-border-width: 1px;
+// $input-border-width: 0px;
 // $input-border-radius: $global-radius;
 // $input-disabled-bg: $gainsboro;
 // $input-disabled-cursor: $cursor-default-value;
