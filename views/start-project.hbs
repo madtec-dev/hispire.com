@@ -104,18 +104,22 @@ $(function() {
         projectDropzone
         .on('totaluploadprogress', function(res) {
           $('#send-project-form').prop("disabled",true);
-          $('#form-msg').html('Uploading ' + Math.round(res) + '%');})
+          $('#send-project-form').html('<img src="/img/ajax-loader.gif"> <br /> Uploading ' + Math.round(res) + '%');})
         .on('completemultiple', function(res) {
-          var response = String(res[0].xhr.response);
+
+        })
+        .on('success', function(res){
           document.getElementById("start-project-form").reset();
           projectDropzone.removeAllFiles();
+          $('#send-project-form').html('SEND');
           $('#form-msg').addClass("animated fadeInDown");
           $('#send-project-form').prop("disabled",false);
-          $('#form-msg').html(response);
+          $('#form-msg').html(res.xhr.responseText);
+
         })
       } else {
         $('#send-project-form').prop("disabled",true);
-        $('#send-project-form').html('<img src="/img/ajax-loader.gif">');
+        $('#send-project-form').html('<img src="/img/ajax-loader.gif" />');
         $.ajax({
           url: '/start-project',
           type: 'post',
