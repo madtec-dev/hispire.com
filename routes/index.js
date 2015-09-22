@@ -63,24 +63,26 @@ router.post('/start-project', function(req, res, next) {
       from: req.body.name + ' <' + req.body.email + '>' ,
       to: 'projects@madtec.co',
       //replace it with id you want to send multiple must be separated by ,(comma)
-      subject: req.body.project_type,
+      subject: 'Project request',
       //generateTextFromHTML: true,
       text: "From: "+ req.body.name + "\n" +
       "Company: "+ req.body.company + "\n" +
       "Email: "+ req.body.email + "\n" +
-      "Project: "+ req.body.project_type + "\n" +
+      "Phone: "+ req.body.phone + "\n" +
       "Budget: "+ req.body.budget + "\n" +
       "Timeframe: "+ req.body.timeframe + "\n" +
       "Details: \n\n"+ req.body.details,
       html: "<p><b>From: </b>" + req.body.name +
       "</p> <p><b>Company: </b>"+ req.body.company +
       "</p> <p><b>Email: </b>"+ req.body.email +
-      "</p> <p><b>Project: </b>"+ req.body.project_type +
+      "</p> <p><b>Phone: </b>"+ req.body.phone +
       "</p> <p><b>Budget: </b>"+ req.body.budget +
       "</p> <p><b>Timeframe: </b>"+ req.body.timeframe +
       "</p> <h4>Details: </h4><p>"+ req.body.details + "</p>",
       attachments: projectFiles
   }
+
+  //TODO remove images after email is sent
   email.sendMail(message, function(err) {
       if(err) {
         res.status(500);

@@ -302,7 +302,7 @@ section {
   position:relative;
   margin-bottom: 64px;
 }
-input.material {
+input.material, textarea.material {
   font-size: rem-calc(23);
   //padding:10px 10px 10px 5px;
   padding: 0;
@@ -312,16 +312,17 @@ input.material {
   border-bottom:1px solid #E0E0E0;
   margin-bottom: 0;
   box-shadow: none;
+  min-height: 0;
 }
-input.material:focus {
+input.material:focus, textarea.material:focus {
   outline:none;
   background: transparent;
 }
 label, label.material {
   font-size: rem-calc(23);
+  color: #B5B5B5;
 }
 label.material          {
-  color:#cccccc;
   font-weight:normal;
   position:absolute;
   pointer-events:none;
@@ -331,13 +332,10 @@ label.material          {
 }
 
 /* active state */
-input.material:focus ~ label, input:valid ~ label, input[data-invalid]:invalid ~ label {
+input.material:focus ~ label, textarea.material:focus ~ label, label.input-filled {
   font-size: rem-calc(23);
-  top:-35px;
+  top:-45px;
   color:#8C8C8C;
-}
-input[type="email"]:invalid ~ label {
-
 }
 /* BOTTOM BARS ================================= */
 .bar  { position:relative; display:block; width:100%; }
@@ -358,7 +356,7 @@ input[type="email"]:invalid ~ label {
 }
 
 /* active state */
-input:focus ~ .bar:before, input:focus ~ .bar:after {
+input:focus ~ .bar:before, textarea.material:focus ~ .bar:before, textarea.material:focus ~ .bar:after, input:focus ~ .bar:after {
   width:50%;
 }
 /* HIGHLIGHTER ================================== */
@@ -388,6 +386,9 @@ input:focus ~ .highlight {
   background: transparent;
   color: #BE1E2D;
   font-size: rem-calc(18);
+}
+.sliderOutput {
+  font-size: 2rem;
 }
 .dropzone {
   border: none;

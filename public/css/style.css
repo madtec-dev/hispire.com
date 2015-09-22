@@ -5256,7 +5256,7 @@ h1, h2, h3, h4, h5, h6 {
   font-style: normal;
   font-weight: normal;
   line-height: 1.4;
-  margin-bottom: 0.5rem;
+  margin-bottom: 3rem;
   margin-top: 0.2rem;
   text-rendering: optimizeLegibility; }
   h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
@@ -6557,24 +6557,25 @@ section {
   position: relative;
   margin-bottom: 64px; }
 
-input.material {
+input.material, textarea.material {
   font-size: 1.4375rem;
   padding: 0;
   display: block;
   border: none;
   border-bottom: 1px solid #E0E0E0;
   margin-bottom: 0;
-  box-shadow: none; }
+  box-shadow: none;
+  min-height: 0; }
 
-input.material:focus {
+input.material:focus, textarea.material:focus {
   outline: none;
   background: transparent; }
 
 label, label.material {
-  font-size: 1.4375rem; }
+  font-size: 1.4375rem;
+  color: #B5B5B5; }
 
 label.material {
-  color: #cccccc;
   font-weight: normal;
   position: absolute;
   pointer-events: none;
@@ -6583,9 +6584,9 @@ label.material {
   transition: 0.2s ease all; }
 
 /* active state */
-input.material:focus ~ label, input:valid ~ label, input[data-invalid]:invalid ~ label {
+input.material:focus ~ label, textarea.material:focus ~ label, label.input-filled {
   font-size: 1.4375rem;
-  top: -35px;
+  top: -45px;
   color: #8C8C8C; }
 
 /* BOTTOM BARS ================================= */
@@ -6610,7 +6611,7 @@ input.material:focus ~ label, input:valid ~ label, input[data-invalid]:invalid ~
   right: 50%; }
 
 /* active state */
-input:focus ~ .bar:before, input:focus ~ .bar:after {
+input:focus ~ .bar:before, textarea.material:focus ~ .bar:before, textarea.material:focus ~ .bar:after, input:focus ~ .bar:after {
   width: 50%; }
 
 /* HIGHLIGHTER ================================== */
@@ -6639,6 +6640,9 @@ input:focus ~ .highlight {
   background: transparent;
   color: #BE1E2D;
   font-size: 1.125rem; }
+
+.sliderOutput {
+  font-size: 2rem; }
 
 .dropzone {
   border: none; }

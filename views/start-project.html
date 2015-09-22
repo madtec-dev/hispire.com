@@ -3,9 +3,10 @@
   <div class="inner-wrap">
     {{> menu}}
     <section>
-      <h1 class="section__title text-center">Let's start something incredible.</h1>
-      <form data-abide="ajax" method="POST" class="dropzone" id="start-project-form" action="/start-project" enctype="multipart/form-data">
+      <h1 class="section__title animated fadeInDown text-center">Let's start something incredible.</h1>
+      <form data-abide="ajax" method="POST" class="dropzone animated fadeIn" id="start-project-form" action="/start-project" enctype="multipart/form-data">
         <div class="row">
+          <h2 class="text-center">About you</h2>
           <div class="small-12 large-6 small-centered columns">
             <div class="group">
               <input class="material" type="text" name="name" required pattern="[a-zA-Z]+">
@@ -15,7 +16,9 @@
               <!--<small class="error">Name is required and must be a string.</small>-->
             </div>
           </div>
-          <div class="small-12 large-6 small-centered columns">
+        </div>
+          <div class="row">
+          <div class="small-12 large-3 large-offset-3 columns">
             <div class="group">
               <input class="material" type="email" name="email" required>
               <span class="highlight"></span>
@@ -24,16 +27,46 @@
               <small class="error">A valid email address is required.</small>
             </div>
           </div>
-          <div class="group small-12 large-6 small-centered columns">
-            <label>Timeframe
-              <select name="timeframe">
-                <option value="less than a month">less than a month</option>
-                <option value="1-2 months">1-2 months</option>
-                <option value="2-6 months">2-6 months</option>
-                <option value="+6 months">+6 months</option>
-              </select>
-            </label>
+          <div class="small-12 large-3 end columns">
+            <div class="group">
+              <input class="material" type="tel" name="phone">
+              <span class="highlight"></span>
+              <span class="bar"></span>
+              <label class="material">Phone</label>
+            </div>
           </div>
+        </div>
+        <div class="row">
+          <div class="small-12 large-6 small-centered columns">
+            <div class="group">
+              <input class="material" type="text" name="company">
+              <span class="highlight"></span>
+              <span class="bar"></span>
+              <label class="material">Company</label>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <h2 class="text-center">About your project</h2>
+          <div class="small-12 large-6 small-centered columns">
+            <div class="group">
+              <textarea class="material" type="text" name="details" required></textarea>
+              <span class="highlight"></span>
+              <span class="bar"></span>
+              <label class="material">Tell us about your project in your own words</label>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="small-12 large-6 small-centered columns">
+            <div class="group">
+              <input class="material" type="text" name="timeframe" required>
+              <span class="highlight"></span>
+              <span class="bar"></span>
+              <label class="material">Timeframe</label>
+            </div>
+          </div>
+        </div>
 
 
           <!--<div class="small-12 large-6 small-centered columns">
@@ -64,15 +97,18 @@
             </label>
           </div>-->
           <div class="small-12 group large-6 small-centered columns">
-            <div class="range-slider" id="budget-slider" name="budget" data-slider data-options="display_selector: #sliderOutput3; step: 200; start: 0; end: 10000">
+            <label>Budget</label>
+            <div class="range-slider" id="budget-slider" name="budget" data-slider data-options="display_selector: #sliderOutput; step: 200; start: 800; end: 10000">
               <span class="range-slider-handle" role="slider" tabindex="0"></span>
               <span class="range-slider-active-segment"></span>
             </div>
+            <div class="small-12 small-centered large-6 columns text-center">
+              <span class="sliderOutput">$</span>
+              <span id="sliderOutput" class="sliderOutput"></span>
+            </div>
           </div>
+
           <input type="hidden" id="budget" name="budget" value="">
-          <div class="small-12 small-centered large-6 columns text-center">
-            <span id="sliderOutput3"></span>
-          </div>
           <div class="small-12 group large-6 small-centered columns" id="uploader">
             <div class="dz-default dz-message">
               <span>Drop the files here to upload</span>
@@ -93,6 +129,36 @@
   </div>
 </div>
 <script type="text/javascript">
+//deactivate default abide scroll
+$(document).foundation({
+  abide: {
+    focus_on_invalid: false
+  }
+});
+
+//label top offset when input is filled
+$('input, textarea').change(function(){
+  var that = $(this);
+  if ($(this).val() == '') {
+    that.siblings('label').removeClass('input-filled');
+  }
+  else {
+    that.siblings('label').addClass('input-filled');
+  }
+})
+
+//animate to first invalid input
+$('#start-project-form').on('invalid.fndtn.abide', function () {
+ var invalid_fields = $(this).find('[data-invalid]');
+
+ $('html, body').animate({
+   scrollTop: $(invalid_fields[0]).offset().top - 240
+ }, 1000, function() {
+   $(invalid_fields[0]).focus();
+ });
+});
+
+//add class to menu button
 $(function() {
   var open = false;
   $('#menu-button, .exit-off-canvas').click(function(event){
@@ -106,6 +172,8 @@ $(function() {
       open = false;
     }
   });
+
+
   $(document).foundation('reflow');
   var projectDropzone = new Dropzone("form#start-project-form",
     {
@@ -124,7 +192,7 @@ $(function() {
     }
   });
     $('[data-slider]').on('change.fndtn.slider', function(){
-      $('#budget').val($('#budget-slider').attr('data-slider'))
+      $('#budget').val('$' + $('#budget-slider').attr('data-slider'))
     });
     Dropzone.autoDiscover = false;
 
