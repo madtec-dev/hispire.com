@@ -282,17 +282,66 @@ ul.off-canvas-list {
   display: block;
   margin: 0 auto;
 }
+
+
 section {
-  padding-top: rem-calc(150);
+  padding-top: rem-calc(80);
 }
 .section__title {
   font-weight: 700;
   margin-bottom: rem-calc(48);
 }
 
-.home__services {
-  height: 30%;
+/* SERVICES */
+.services__list {
+  margin-top: rem-calc(64);
 }
+.icon {
+  padding-top: 1rem;
+  height: 8rem;
+}
+.card {
+  //box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, .2);
+  position: relative;
+  border-left: solid 1px $gainsboro;
+  border-right: solid 1px $gainsboro;
+  transition: 0.6s ease;
+  margin-bottom: 2rem;
+  height: rem-calc(500);
+  //background-color: #368A55;
+  font-family: $font-family-sans-serif;
+  text-transform: uppercase;
+  .card__title {
+    margin: 0;
+    color: $charcoal;
+    h2 {
+      color: $white;
+      margin: 0;
+    }
+  }
+  .card__description {
+    color: $charcoal;
+    text-transform: capitalize;
+    font-weight: 400;
+    font-family: $font-family-brand;
+    margin-left: 0;
+    padding: 2rem;
+    margin-bottom: 1rem;
+    font-size: rem-calc(18);
+  }
+  &:hover {
+    //box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, .2);
+  }
+  .button {
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    right: 5%;
+
+  }
+}
+
+
 
 
 /* START PROJECT FORM */
@@ -402,18 +451,16 @@ input:focus ~ .highlight {
   }
 }
 
-@media only screen and (min-width: 40em) {
+@media #{$medium-up} {
   .hero .tech-img {
     height: 18rem;
     width: 18rem;
   }
   .hero h1 {
     padding-top: 4.5rem;
-    text-align: right;
     font-size: 3.5rem;
   }
   .hero p {
-    text-align: right;
     font-size: 1.5rem;
   }
 
@@ -422,5 +469,11 @@ input:focus ~ .highlight {
   }
   ul.center-buttons {
     display: inline-block;
+  }
+}
+
+@media #{$large-up} {
+  section {
+    padding-top: rem-calc(150);
   }
 }
