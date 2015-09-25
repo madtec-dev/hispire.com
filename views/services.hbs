@@ -1,7 +1,5 @@
 <title>MADTEC | What we do</title>
-<div class="off-canvas-wrap" data-offcanvas>
-  <div class="inner-wrap">
-    {{> menu}}
+{{> menu}}
 
     <section>
       <h1 class="section__title animated fadeInDown text-center">We make your business grow forward and take on the world.</h1>
@@ -25,7 +23,7 @@
               </a>
             </div>
           </li>
-          <li class="small-12 medium-6 large-4 xlarge-2 columns wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
+          <li class="small-12 medium-6 large-4 xlarge-2 columns wow fadeInUp" data-wow-duration="1s" data-wow-delay=".1s">
             <div class="card">
               <img src="/img/create.svg" class="icon" alt="" />
                 <h2 class="card__title">create</h2>
@@ -44,7 +42,7 @@
               </a>
             </div>
           </li>
-          <li class="small-12 medium-6 large-4 xlarge-2 columns  wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">
+          <li class="small-12 medium-6 large-4 xlarge-2 columns  wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
             <div class="card">
               <img src="/img/develop.svg" class="icon" alt="" />
                 <h2 class="card__title">develop</h2>
@@ -62,7 +60,7 @@
               </a>
             </div>
           </li>
-          <li class="small-12 medium-6 large-4 xlarge-2 large-offset-2 xlarge-offset-0 columns  wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
+          <li class="small-12 medium-6 large-4 xlarge-2 large-offset-2 xlarge-offset-0 columns  wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
             <div class="card">
               <img src="/img/promote.svg" class="icon" alt="" />
                 <h2 class="card__title">promote</h2>
@@ -79,7 +77,7 @@
               </a>
             </div>
           </li>
-          <li class="small-12 medium-6 large-4 xlarge-2 end columns medium-offset-3 large-offset-0 xlarge-offset-0 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".8s">
+          <li class="small-12 medium-6 large-4 xlarge-2 end columns medium-offset-3 large-offset-0 xlarge-offset-0 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">
             <div class="card">
               <img src="/img/control.svg" class="icon" alt="" />
                 <h2 class="card__title">control</h2>
@@ -99,19 +97,22 @@
         </div>
       </ul>
     </section>
-  </div>
-</div>
+
 <script type="text/javascript">
 $(function() {
   var open = false;
-  $('#menu-button, .exit-off-canvas').click(function(event){
+  $('#menu-button, #container-exit').click(function(event){
     event.preventDefault();
     if(!open){
       $('#menu-button').addClass('close');
+      $('#side-menu').addClass('menu-open');
+      $('#container-exit').addClass('exit-menu');
       open = true;
     }
     else{
       $('#menu-button').removeClass('close');
+      $('#side-menu').removeClass('menu-open');
+      $('#container-exit').removeClass('exit-menu');
       open = false;
     }
   });

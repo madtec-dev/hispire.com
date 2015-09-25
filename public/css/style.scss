@@ -189,6 +189,8 @@ $button-size : 1.5rem;
 //three-lines to x
 .lines-button.x.close{
     background-color: transparent;
+    color: $white;
+    z-index: 99999;
   .lines {
     padding: 0 0 .3em .8em;
     background: transparent;
@@ -299,20 +301,21 @@ section {
 .icon {
   padding-top: 1rem;
   height: 8rem;
+
 }
 .card {
   //box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, .2);
   position: relative;
-  border-left: solid 1px $gainsboro;
-  border-right: solid 1px $gainsboro;
-  transition: 0.6s ease;
+  border: solid 1px $gainsboro;
+  //border-right: solid 1px $gainsboro;
   margin-bottom: 2rem;
   height: rem-calc(500);
   //background-color: #368A55;
   font-family: $font-family-sans-serif;
   text-transform: uppercase;
+  transition: 0.6s ease;
   .card__title {
-    margin: 0;
+    margin-bottom: 0;
     color: $charcoal;
     h2 {
       color: $white;
@@ -330,13 +333,13 @@ section {
     font-size: rem-calc(18);
   }
   &:hover {
-    //box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, .2);
+    box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, .2);
   }
   .button {
     position: absolute;
     bottom: 0;
-    left: 5%;
-    right: 5%;
+    left: 10%;
+    right: 10%;
 
   }
 }
@@ -451,6 +454,49 @@ input:focus ~ .highlight {
   }
 }
 
+#data-container {
+  position: relative;
+}
+
+/*** SIDE MENU ***/
+#side-menu {
+  background-color: $charcoal;
+  width: 15rem;
+  position: fixed;
+  right: -15rem;
+  top: 0;
+  bottom: 0;
+  z-index: 9990;
+  transition: 0.6s ease;
+}
+#side-menu.menu-open {
+  right: 0;
+}
+
+.exit-menu {
+  background: rgba(255, 255, 255, 0.5) none repeat scroll 0 0;
+  position: absolute;
+  display: block;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  transition: background 0.3s ease 0s;
+  z-index: 999;
+
+}
+#menu-button {
+  z-index: 9999;
+  position: fixed;
+  top: .8em;
+  right: .8em;
+  transition: 0.5s ease;
+//  box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, .5);
+
+}
+
+
+/*** MEDIA QUERIES ***/
 @media #{$medium-up} {
   .hero .tech-img {
     height: 18rem;

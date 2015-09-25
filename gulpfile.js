@@ -49,7 +49,7 @@ gulp.task('css', function () {
         // remove unused css classes
         .pipe(uncss({
             html: ['./views/**/*.html'],
-            ignore: [/^meta.foundation/, /f-topbar-fixed/, /contain-to-grid/, /sticky/, /fixed/, /.*move-right/,
+            ignore: [/^meta.foundation/, /f-topbar-fixed/, /contain-to-grid/, /exit-menu/, /fixed/, /menu-open/,
                      /data-abide/, /input/, /close/]
         }))
         // minify and concat resulted css

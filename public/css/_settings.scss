@@ -125,7 +125,7 @@ $primary-color: $red;
 // $secondary-color: #e7e7e7;
 $secondary-color: $red--dark;
 // $alert-color: #f04124;
-// $success-color: #43AC6A;
+$success-color: #43AC6A;
 // $warning-color: #f08a24;
 // $info-color: #a0d3e8;
 
@@ -475,7 +475,7 @@ $button-bg-hover: scale-color($button-bg-color, $lightness: 20%);
 // $button-border-color: $button-bg-hover;
 // $secondary-button-bg-hover: scale-color($secondary-color, $lightness: $button-function-factor);
 // $secondary-button-border-color: $secondary-button-bg-hover;
-// $success-button-bg-hover: scale-color($success-color, $lightness: $button-function-factor);
+$success-button-bg-hover: scale-color($success-color, $lightness: 20%);
 // $success-button-border-color: $success-button-bg-hover;
 // $alert-button-bg-hover: scale-color($alert-color, $lightness: $button-function-factor);
 // $alert-button-border-color: $alert-button-bg-hover;

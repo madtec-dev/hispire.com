@@ -61,15 +61,13 @@
   </div>
 </nav>
 </div>
-<div class="fixed">
+<div class="hide-for-large-up fixed">
   <nav class="tab-bar hide-for-large-up">
-    <div class="left-small">
-      <a class="left-off-canvas-toggle">
-        <button type="button" id="menu-button" role="button" aria-label="Toggle Navigation" class="lines-button x">
+    <div>
+        <button type="button" id="menu-button" role="button" aria-label="Toggle Navigation" data-effect="st-effect-2" class="lines-button x">
           <span class="lines"></span>
         </button>
        <span></span>
-     </a>
     </div>
     <div class="middle tab-bar-section">
       <a data-pjax href="/">
@@ -77,9 +75,10 @@
       </a>
     </div>
   </nav>
-</div>
+  </div>
 
-<aside class="left-off-canvas-menu">
+<div class="hide-for-large-up" id="side-menu">
+<nav>
     <!-- whatever you want goes here -->
     <ul class="off-canvas-list">
         <li><a data-pjax href="/services">what we do</a></li>
@@ -88,5 +87,6 @@
         <li><a href="#contact">contact</a></li>
         <li><a class="button" data-pjax href="/start-project">start a project</a></li>
     </ul>
-</aside>
-<a class="exit-off-canvas"></a>
+</nav>
+</div>
+<a id="container-exit" class=""></a>

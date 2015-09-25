@@ -1,9 +1,5 @@
 <title>MADTEC | Consulting - Websites - Applications - Online marketing</title>
-<div class="off-canvas-wrap" data-offcanvas>
-  <div class="inner-wrap">
-    <!-- Off Canvas Menu -->
-  {{> menu}}
-
+{{> menu}}
  <div class="hero" id="home" data-interchange="[/img/front--small.jpg, (small)], [/img/front--medium.jpg, (medium)], [/img/front--large.jpg, (large)], [/img/fondo.jpg, (xlarge)], [/img/front--xlarge.jpg, (retina)]">
   <div class="row intro">
     <div class="small-centered large-uncentered text-left medium-8 large-5 large-offset-7 columns">
@@ -21,17 +17,20 @@
 $(document).foundation('interchange', 'reflow');
 $(function() {
   var open = false;
-  $('#menu-button, .exit-off-canvas').click(function(event){
-    console.log('hola');
+  $('#menu-button, #container-exit').click(function(event){
     event.preventDefault();
     if(!open){
       $('#menu-button').addClass('close');
+      $('#side-menu').addClass('menu-open');
+      $('#container-exit').addClass('exit-menu');
       open = true;
     }
     else{
       $('#menu-button').removeClass('close');
+      $('#side-menu').removeClass('menu-open');
+      $('#container-exit').removeClass('exit-menu');
       open = false;
     }
   });
-})
+});
 </script>

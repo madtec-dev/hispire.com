@@ -2105,10 +2105,10 @@ button, .button {
       color: #FFFFFF; }
   button.success, .button.success {
     background-color: #43AC6A;
-    border-color: #368a55;
+    border-color: #63c286;
     color: #FFFFFF; }
     button.success:hover, button.success:focus, .button.success:hover, .button.success:focus {
-      background-color: #368a55; }
+      background-color: #63c286; }
     button.success:hover, button.success:focus, .button.success:hover, .button.success:focus {
       color: #FFFFFF; }
   button.alert, .button.alert {
@@ -2186,13 +2186,13 @@ button, .button {
         background-color: #9D1F20; }
     button.disabled.success, button[disabled].success, .button.disabled.success, .button[disabled].success {
       background-color: #43AC6A;
-      border-color: #368a55;
+      border-color: #63c286;
       color: #FFFFFF;
       box-shadow: none;
       cursor: default;
       opacity: 0.7; }
       button.disabled.success:hover, button.disabled.success:focus, button[disabled].success:hover, button[disabled].success:focus, .button.disabled.success:hover, .button.disabled.success:focus, .button[disabled].success:hover, .button[disabled].success:focus {
-        background-color: #368a55; }
+        background-color: #63c286; }
       button.disabled.success:hover, button.disabled.success:focus, button[disabled].success:hover, button[disabled].success:focus, .button.disabled.success:hover, .button.disabled.success:focus, .button[disabled].success:hover, .button[disabled].success:focus {
         color: #FFFFFF; }
       button.disabled.success:hover, button.disabled.success:focus, button[disabled].success:hover, button[disabled].success:focus, .button.disabled.success:hover, .button.disabled.success:focus, .button[disabled].success:hover, .button[disabled].success:focus {
@@ -6949,7 +6949,9 @@ button {
   top: -0.42857rem; }
 
 .lines-button.x.close {
-  background-color: transparent; }
+  background-color: transparent;
+  color: #FFFFFF;
+  z-index: 99999; }
   .lines-button.x.close .lines {
     padding: 0 0 .3em .8em;
     background: transparent;
@@ -7044,15 +7046,14 @@ section {
 
 .card {
   position: relative;
-  border-left: solid 1px #DDDDDD;
-  border-right: solid 1px #DDDDDD;
-  transition: 0.6s ease;
+  border: solid 1px #DDDDDD;
   margin-bottom: 2rem;
   height: 31.25rem;
   font-family: "Lato", Helvetica, Roboto, Arial, sans-serif;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  transition: 0.6s ease; }
   .card .card__title {
-    margin: 0;
+    margin-bottom: 0;
     color: #555555; }
     .card .card__title h2 {
       color: #FFFFFF;
@@ -7066,11 +7067,13 @@ section {
     padding: 2rem;
     margin-bottom: 1rem;
     font-size: 1.125rem; }
+  .card:hover {
+    box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.2); }
   .card .button {
     position: absolute;
     bottom: 0;
-    left: 5%;
-    right: 5%; }
+    left: 10%;
+    right: 10%; }
 
 /* START PROJECT FORM */
 /* material form */
@@ -7175,6 +7178,42 @@ input:focus ~ .highlight {
   #uploader:hover {
     cursor: pointer; }
 
+#data-container {
+  position: relative; }
+
+/*** SIDE MENU ***/
+#side-menu {
+  background-color: #555555;
+  width: 15rem;
+  position: fixed;
+  right: -15rem;
+  top: 0;
+  bottom: 0;
+  z-index: 9990;
+  transition: 0.6s ease; }
+
+#side-menu.menu-open {
+  right: 0; }
+
+.exit-menu {
+  background: rgba(255, 255, 255, 0.5) none repeat scroll 0 0;
+  position: absolute;
+  display: block;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  transition: background 0.3s ease 0s;
+  z-index: 999; }
+
+#menu-button {
+  z-index: 9999;
+  position: fixed;
+  top: .8em;
+  right: .8em;
+  transition: 0.5s ease; }
+
+/*** MEDIA QUERIES ***/
 @media only screen and (min-width: 40.0625em) {
   .hero .tech-img {
     height: 18rem;
