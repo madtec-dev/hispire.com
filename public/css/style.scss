@@ -5,7 +5,32 @@
   text-align: center !important;
 }
 
+.bg--full-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 0;
 
+}
+#bg-services {
+  background: url(/img/fondo3.jpg) no-repeat center bottom;
+  background-color: #1e1e1e;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+#bg-services-create {
+  //background: url(/img/fondo4.jpg) no-repeat center bottom;
+  background-color: #fefefe;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
 .vertical--middle {
   display: table;
   height: 100%;
@@ -295,6 +320,7 @@ section {
 .section__title {
   font-weight: 700;
   margin-bottom: rem-calc(64);
+  //background-color: rgba(255, 255, 255 , .5);
 }
 
 /* SERVICES */
@@ -307,13 +333,13 @@ section {
 
 }
 .card {
-  //box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, .2);
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, .2);
   position: relative;
-  border: solid 1px $gainsboro;
+  //border: solid 1px $gainsboro;
   //border-right: solid 1px $gainsboro;
   margin-bottom: 2rem;
   height: rem-calc(500);
-  //background-color: #368A55;
+  background-color: rgba(255, 255, 255, .85);
   font-family: $font-family-sans-serif;
   text-transform: uppercase;
   transition: 0.6s ease;
@@ -336,6 +362,7 @@ section {
     font-size: rem-calc(18);
   }
   &:hover {
+    background-color: #fefefe;
     box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, .2);
   }
   .button {

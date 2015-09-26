@@ -1,4 +1,5 @@
 <title>MADTEC | What we do</title>
+<div id="bg-services" class="bg--full-fixed"></div>
 {{> menu}}
 
     <section>
@@ -35,7 +36,7 @@
                 <li>copywriting</li>
                 <li>photography & video</li>
               </ul>
-              <a href="#">
+              <a data-pjax href="/services/create">
                 <div class="button radius success">
                   <span>WTH is that?</span>
                 </div>
@@ -97,24 +98,4 @@
         </div>
       </ul>
     </section>
-
-<script type="text/javascript">
-$(function() {
-  var open = false;
-  $('#menu-button, #container-exit').click(function(event){
-    event.preventDefault();
-    if(!open){
-      $('#menu-button').addClass('close');
-      $('#side-menu').addClass('menu-open');
-      $('#container-exit').addClass('exit-menu');
-      open = true;
-    }
-    else{
-      $('#menu-button').removeClass('close');
-      $('#side-menu').removeClass('menu-open');
-      $('#container-exit').removeClass('exit-menu');
-      open = false;
-    }
-  });
-});
-</script>
+{{> ui}}

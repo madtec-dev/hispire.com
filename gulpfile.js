@@ -77,7 +77,7 @@ gulp.task('minify-css', function() {
 });
 
 gulp.task('js', function() {
-  return gulp.src(['.public/components/fastclick/lib/fastclick.js',
+  return gulp.src(['./public/components/fastclick/lib/fastclick.js',
     './public/components/foundation/js/foundation/foundation.js',
     './public/components/foundation/js/foundation/foundation.interchange.js',
     './public/components/foundation/js/foundation/foundation.abide.js',

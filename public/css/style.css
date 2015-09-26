@@ -7003,6 +7003,30 @@ th.hide-for-touch {
 .text--center {
   text-align: center !important; }
 
+.bg--full-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 0; }
+
+#bg-services {
+  background: url(/img/fondo3.jpg) no-repeat center bottom;
+  background-color: #1e1e1e;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover; }
+
+#bg-services-create {
+  background-color: #fefefe;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover; }
+
 .vertical--middle {
   display: table;
   height: 100%;
@@ -7240,10 +7264,11 @@ section {
   height: 8rem; }
 
 .card {
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.2);
   position: relative;
-  border: solid 1px #DDDDDD;
   margin-bottom: 2rem;
   height: 31.25rem;
+  background-color: rgba(255, 255, 255, 0.85);
   font-family: "Lato", Helvetica, Roboto, Arial, sans-serif;
   text-transform: uppercase;
   transition: 0.6s ease; }
@@ -7263,6 +7288,7 @@ section {
     margin-bottom: 1rem;
     font-size: 1.125rem; }
   .card:hover {
+    background-color: #fefefe;
     box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.2); }
   .card .button {
     position: absolute;
