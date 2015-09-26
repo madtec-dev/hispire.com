@@ -24,6 +24,10 @@ router.get('/services', function(req, res) {
   render('services', { title: 'MADTEC | What we do' }, req, res);
 });
 
+router.get('/services/create', function(req, res) {
+  render('service-create', { title: 'MADTEC | Create' }, req, res);
+});
+
 router.get('/start-project', function(req, res) {
   render('start-project', { title: "MADTEC | Let's start something incredible" }, req, res);
 });

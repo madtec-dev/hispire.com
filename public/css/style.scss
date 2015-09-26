@@ -17,6 +17,9 @@
   vertical-align: middle;
 }
 
+.middle {
+  vertical-align: middle;
+}
 /**** NAV ****/
 
 .name {
@@ -291,7 +294,7 @@ section {
 }
 .section__title {
   font-weight: 700;
-  margin-bottom: rem-calc(48);
+  margin-bottom: rem-calc(64);
 }
 
 /* SERVICES */
@@ -344,6 +347,31 @@ section {
   }
 }
 
+/** SERVICE **/
+.service__details {
+  margin: 0;
+}
+.media {
+  .media__img {
+    img {
+      padding-top: 1rem;
+      height: auto;
+      margin-bottom: 1.5rem;
+    }
+  }
+  .media__content {
+    margin-bottom: 3rem;
+   h2 {
+     margin: 0 0 .5rem 0;
+     font-weight: 400;
+     text-transform: capitalize;
+   }
+   p {
+     font-size: rem-calc(23);
+     font-weight: 300;
+   }
+  }
+}
 
 
 
@@ -459,6 +487,13 @@ input:focus ~ .highlight {
 }
 
 /*** SIDE MENU ***/
+.top-bar {
+  transition: 0.6s ease;
+}
+.top-bar-collapse {
+  //padding: 1em 0;
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, .2);
+}
 #side-menu {
   background-color: $charcoal;
   width: 15rem;
@@ -498,6 +533,9 @@ input:focus ~ .highlight {
 
 /*** MEDIA QUERIES ***/
 @media #{$medium-up} {
+  .service__details {
+    padding: 2rem;
+  }
   .hero .tech-img {
     height: 18rem;
     width: 18rem;

@@ -394,8 +394,8 @@ $h2-font-size: rem-calc(39);
 // 03. Block Grid
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-// $include-html-block-grid-classes: $include-html-classes;
-// $include-xl-html-block-grid-classes: false;
+//$include-html-block-grid-classes: $include-html-classes;
+$include-xl-html-block-grid-classes: true;
 
 // We use this to control the maximum number of block grid elements per row
 // $block-grid-elements: 12;
@@ -1406,7 +1406,7 @@ $off-canvas-overlay-background: rgba($white, .5);
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-$topbar-bg-color: transparent;
+$topbar-bg-color: $white;
 // $topbar-bg: $topbar-bg-color;
 
 // Height and margin
