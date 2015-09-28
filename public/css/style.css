@@ -7044,7 +7044,6 @@ th.hide-for-touch {
   background-color: transparent !important; }
 
 .brand__name {
-  margin-right: 3rem !important;
   text-transform: uppercase;
   letter-spacing: 2px;
   color: #9D1F20 !important;
@@ -7514,6 +7513,9 @@ input:focus ~ .highlight {
   ul.center-buttons {
     display: inline-block; } }
 @media only screen and (min-width: 64.0625em) {
+  .brand__name {
+    margin-right: 3rem !important; }
+
   .service__details .media {
     padding: 0 10rem; }
 
@@ -7525,3 +7527,6 @@ input:focus ~ .highlight {
 @media only screen and (min-width: 90.0625em) {
   .service__details .media {
     padding: 0 20rem; } }
+@media only screen and (min-width: 120.0625em) {
+  .services__list {
+    padding: 0; } }

@@ -52,7 +52,7 @@
 }
 
 .brand__name {
-  margin-right: 3rem !important;
+  //margin-right: 3rem !important;
   text-transform: uppercase;
   letter-spacing: 2px;
   color: $red--dark !important;
@@ -604,7 +604,6 @@ input:focus ~ .highlight {
 
 /*** MEDIA QUERIES ***/
 @media #{$medium-up} {
-
   .hero .tech-img {
     height: 18rem;
     width: 18rem;
@@ -626,6 +625,9 @@ input:focus ~ .highlight {
 }
 
 @media #{$large-up} {
+  .brand__name {
+    margin-right: 3rem !important;
+  }
   .service__details .media{
     padding: 0 10rem;
   }
@@ -639,5 +641,11 @@ input:focus ~ .highlight {
 @media #{$xlarge-up} {
   .service__details .media{
     padding: 0 20rem;
+  }
+
+}
+@media #{$xxlarge-up} {
+  .services__list {
+    padding: 0;
   }
 }
