@@ -52,12 +52,15 @@
 }
 
 .brand__name {
+  margin-right: 3rem !important;
   text-transform: uppercase;
   letter-spacing: 2px;
   color: $red--dark !important;
-  font-weight: 400 !important;
+  font-weight: 700 !important;
+  font-size: rem-calc(23) !important;
   span {
-    font-weight: 300;
+    font-size: rem-calc(23) !important;
+    font-weight: 400;
   }
 }
 
@@ -249,12 +252,17 @@ ul.off-canvas-list {
     margin-top: 2em;
     text-align: center;
     li a {
-      color: #FEFEFE;
-      text-transform: capitalize;
+      color: $ghost;
+      text-transform: uppercase;
+      &.button:hover {
+        color: $white;
+        background-color: #BE1E2D;
+      }
       &:hover {
-        background-color: #EFEFEF;
-        color: $charcoal;
+        color: $white;
+        background-color: transparent;
         border-left: 4px solid $red !important;
+
       }
     }
 }
@@ -288,7 +296,7 @@ ul.off-canvas-list {
 
 .hero h1 {
   color: #fff;
-  font-size: 1.5rem;
+  font-size: 10vw;
   line-height: 1.5em;
   letter-spacing: -0.025em;
   font-weight: 700;
@@ -326,6 +334,8 @@ section {
 /* SERVICES */
 .services__list {
   margin-top: rem-calc(64);
+  margin-left: 0;
+  margin-right: 0;
 }
 .icon {
   padding-top: 1rem;
@@ -346,11 +356,10 @@ section {
   .card__title {
     margin-bottom: 0;
     color: $charcoal;
-    h2 {
-      color: $white;
-      margin: 0;
-    }
+    //font-size: 2vw !important;
+    //margin: 0;
   }
+
   .card__description {
     color: $charcoal;
     text-transform: capitalize;
@@ -359,7 +368,7 @@ section {
     margin-left: 0;
     padding: 2rem;
     margin-bottom: 1rem;
-    font-size: rem-calc(18);
+    font-size: rem-calc(21);
   }
   &:hover {
     background-color: #fefefe;
@@ -378,28 +387,60 @@ section {
 .service__details {
   margin: 0;
 }
+.service__detail {
+  padding: 5rem 0 !important  ;
+}
 .media {
   .media__img {
     img {
-      padding-top: 1rem;
+      padding-top: 0;
       height: auto;
+      max-height: 15rem;
       margin-bottom: 1.5rem;
+      vertical-align: top;
     }
   }
   .media__content {
     margin-bottom: 3rem;
    h2 {
+     color: $white;
      margin: 0 0 .5rem 0;
-     font-weight: 400;
+     font-weight: 700;
      text-transform: capitalize;
    }
    p {
+     color: $vapor;
      font-size: rem-calc(23);
-     font-weight: 300;
+     //font-weight: 300;
    }
   }
 }
 
+.bg--blue {
+  background: linear-gradient(45deg, rgba(19,116,158,1) 0%, rgba(13,102,140,1) 30%, rgba(19,116,158,1) 30%, rgba(19,116,158,1) 100%);
+
+}
+.bg--green {
+background: linear-gradient(45deg, rgba(14,97,80,1) 0%, rgba(14,97,80,1) 30%, rgba(23,140,117,1) 30%, rgba(23,140,117,1) 100%);
+}
+.bg--purple {
+background: linear-gradient(45deg, rgba(105,59,107,1) 0%, rgba(105,59,107,1) 30%, rgba(142,83,145,1) 30%, rgba(142,83,145,1) 100%);
+}
+.bg--orange {
+background: linear-gradient(45deg, rgba(194,151,31,1) 0%, rgba(194,151,31,1) 30%, rgba(229,181,39,1) 30%, rgba(229,181,39,1) 100%);
+}
+.bg--red {
+background: linear-gradient(45deg, rgba(148,60,55,1) 0%, rgba(148,60,55,1) 30%, rgba(198,79,72,1) 30%, rgba(198,79,72,1) 100%);
+}
+/*.service__detail:nth-child(2n) {
+  background-color: transparent;
+  .media__content h2 {
+    color: $charcoal;
+  }
+  .media__content p {
+    color: $black
+  }
+}*/
 
 
 /* START PROJECT FORM */
@@ -516,23 +557,26 @@ input:focus ~ .highlight {
 /*** SIDE MENU ***/
 .top-bar {
   transition: 0.6s ease;
+  border-bottom: 1px solid $vapor;
 }
-.top-bar-collapse {
+.top-bar-collapse, .tab-bar {
   //padding: 1em 0;
   box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, .2);
 }
 #side-menu {
-  background-color: $charcoal;
+  background-color: rgba(30, 30, 30, .98);
   width: 15rem;
   position: fixed;
   right: -15rem;
   top: 0;
   bottom: 0;
   z-index: 9990;
-  transition: 0.6s ease;
+  transition: 0.3s ease;
+
 }
 #side-menu.menu-open {
   right: 0;
+  box-shadow: 0 5px 10px 0 #757575, 0 4px 5px 0 #a8a8a8;
 }
 
 .exit-menu {
@@ -560,19 +604,17 @@ input:focus ~ .highlight {
 
 /*** MEDIA QUERIES ***/
 @media #{$medium-up} {
-  .service__details {
-    padding: 2rem;
-  }
+
   .hero .tech-img {
     height: 18rem;
     width: 18rem;
   }
   .hero h1 {
     padding-top: 4.5rem;
-    font-size: 3.5rem;
+    font-size: 5vw;
   }
   .hero p {
-    font-size: 1.5rem;
+    font-size: 2vw;
   }
 
   .top-bar {
@@ -584,7 +626,18 @@ input:focus ~ .highlight {
 }
 
 @media #{$large-up} {
+  .service__details .media{
+    padding: 0 10rem;
+  }
   section {
     padding-top: rem-calc(150);
+  }
+  .services__list {
+    padding: 0 5rem;
+  }
+}
+@media #{$xlarge-up} {
+  .service__details .media{
+    padding: 0 20rem;
   }
 }

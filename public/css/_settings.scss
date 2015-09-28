@@ -842,7 +842,7 @@ $success-button-bg-hover: scale-color($success-color, $lightness: 20%);
 // $include-html-off-canvas-classes: $include-html-classes;
 
 $tabbar-bg: #FEFEFE;
-// $tabbar-height: rem-calc(45);
+$tabbar-height: rem-calc(48);
 // $tabbar-icon-width: $tabbar-height;
 // $tabbar-line-height: $tabbar-height;
 $tabbar-color: $charcoal;
@@ -876,7 +876,7 @@ $off-canvas-bg: $oil;
 // $off-canvas-label-border-bottom: none;
 // $off-canvas-label-margin:0;
 $off-canvas-link-padding: rem-calc(50, 35);
-$off-canvas-link-color: rgba($white, .7);
+$off-canvas-link-color: rgba($black, .7);
 $off-canvas-link-border-bottom: 0px solid scale-color($off-canvas-bg, $lightness: -25%);
 // $off-canvas-back-bg: #444;
 // $off-canvas-back-border-top: $off-canvas-label-border-top;
