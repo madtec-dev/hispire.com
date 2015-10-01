@@ -7262,43 +7262,35 @@ section {
 
 /* SERVICES */
 .services__list {
-  margin-top: 4rem;
-  margin-left: 0;
-  margin-right: 0; }
+  margin: 0; }
 
 .icon {
   padding-top: 1rem;
   height: 8rem; }
 
 .card {
-  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.2);
   position: relative;
-  margin-bottom: 2rem;
-  height: 31.25rem;
-  background-color: rgba(255, 255, 255, 0.85);
+  padding: 1rem 1rem 1rem 1rem;
+  min-height: 100vh;
+  background-color: white;
   font-family: "Lato", Helvetica, Roboto, Arial, sans-serif;
   text-transform: uppercase;
   transition: 0.6s ease; }
   .card .card__title {
     margin-bottom: 0;
-    color: #555555; }
+    color: #555555;
+    font-size: 8vw !important; }
   .card .card__description {
     color: #555555;
     text-transform: capitalize;
     font-weight: 400;
     font-family: "Raleway", Helvetica, Roboto, Arial, sans-serif;
     margin-left: 0;
-    padding: 2rem;
-    margin-bottom: 1rem;
     font-size: 1.3125rem; }
   .card:hover {
-    background-color: #fefefe;
-    box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.2); }
+    background-color: rgba(255, 255, 255, 0.85); }
   .card .button {
-    position: absolute;
-    bottom: 0;
-    left: 10%;
-    right: 10%; }
+    width: 15em; }
 
 /** SERVICE **/
 .service__details {
@@ -7511,7 +7503,10 @@ input:focus ~ .highlight {
     text-align: center; }
 
   ul.center-buttons {
-    display: inline-block; } }
+    display: inline-block; }
+
+  .card {
+    padding: 0rem 5rem 5rem 5rem; } }
 @media only screen and (min-width: 64.0625em) {
   .brand__name {
     margin-right: 3rem !important; }
@@ -7522,11 +7517,8 @@ input:focus ~ .highlight {
   section {
     padding-top: 9.375rem; }
 
-  .services__list {
-    padding: 0 5rem; } }
+  .card .card__title {
+    font-size: 5vw !important; } }
 @media only screen and (min-width: 90.0625em) {
   .service__details .media {
     padding: 0 20rem; } }
-@media only screen and (min-width: 120.0625em) {
-  .services__list {
-    padding: 0; } }

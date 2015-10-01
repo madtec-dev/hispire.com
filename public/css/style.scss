@@ -333,9 +333,7 @@ section {
 
 /* SERVICES */
 .services__list {
-  margin-top: rem-calc(64);
-  margin-left: 0;
-  margin-right: 0;
+  margin: 0;
 }
 .icon {
   padding-top: 1rem;
@@ -343,20 +341,21 @@ section {
 
 }
 .card {
-  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, .2);
+  //box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, .2);
   position: relative;
+  padding: 1rem 1rem 1rem 1rem;
   //border: solid 1px $gainsboro;
   //border-right: solid 1px $gainsboro;
-  margin-bottom: 2rem;
-  height: rem-calc(500);
-  background-color: rgba(255, 255, 255, .85);
+  //margin-bottom: 2rem;
+  min-height: 100vh;
+  background-color: rgba(255, 255, 255, 1);
   font-family: $font-family-sans-serif;
   text-transform: uppercase;
   transition: 0.6s ease;
   .card__title {
     margin-bottom: 0;
     color: $charcoal;
-    //font-size: 2vw !important;
+    font-size: 8vw !important;
     //margin: 0;
   }
 
@@ -366,19 +365,20 @@ section {
     font-weight: 400;
     font-family: $font-family-brand;
     margin-left: 0;
-    padding: 2rem;
-    margin-bottom: 1rem;
+    //padding: 2rem;
+    //margin-bottom: 1rem;
     font-size: rem-calc(21);
   }
   &:hover {
-    background-color: #fefefe;
-    box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, .2);
+    background-color: rgba(255, 255, 255, .85);
+    //box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, .2);
   }
   .button {
-    position: absolute;
-    bottom: 0;
-    left: 10%;
-    right: 10%;
+    //position: absolute;
+    //bottom: 10%;
+    width: 15em;
+    //left: 40%;
+    //right: 10%;
 
   }
 }
@@ -622,6 +622,9 @@ input:focus ~ .highlight {
   ul.center-buttons {
     display: inline-block;
   }
+  .card {
+    padding: 0rem 5rem 5rem 5rem;
+  }
 }
 
 @media #{$large-up} {
@@ -634,9 +637,10 @@ input:focus ~ .highlight {
   section {
     padding-top: rem-calc(150);
   }
-  .services__list {
-    padding: 0 5rem;
+  .card .card__title {
+    font-size: 5vw !important;
   }
+
 }
 @media #{$xlarge-up} {
   .service__details .media{
@@ -645,7 +649,5 @@ input:focus ~ .highlight {
 
 }
 @media #{$xxlarge-up} {
-  .services__list {
-    padding: 0;
-  }
+
 }
