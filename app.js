@@ -3,6 +3,7 @@ var path = require('path');
 var multer = require('multer');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
+var compress = require('compression');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var hbs  = require('hbs');
@@ -38,6 +39,7 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 app.use(cookieParser());
+app.use(compress());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(multer({dest: './public/uploads/'}));
 app.use('/', routes);
