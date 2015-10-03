@@ -24,6 +24,16 @@ $(function() {
         $(".top-bar").removeClass("top-bar-collapse");
     }
   });
+  //add menu class if using fullpage library
+  console.log($.fn.fullpage.destroy);
+  if($('#fullpage').length == 1){
+    $(".top-bar").addClass("top-bar-collapse");
+  }
+  // destroy fullpage when not using
+  if ($('#fullpage').length == 0 && $.fn.fullpage.destroy != undefined){
+    $.fn.fullpage.destroy();
+  }
+
 
 });
 </script>

@@ -7012,7 +7012,7 @@ th.hide-for-touch {
   width: 100%;
   z-index: 0; }
 
-#bg-services {
+#bg__services {
   background: url(/img/fondo3.jpg) no-repeat center bottom;
   background-color: #1e1e1e;
   -webkit-background-size: cover;
@@ -7047,11 +7047,10 @@ th.hide-for-touch {
   text-transform: uppercase;
   letter-spacing: 2px;
   color: #9D1F20 !important;
-  font-weight: 700 !important;
+  font-weight: 400 !important;
   font-size: 1.4375rem !important; }
   .brand__name span {
-    font-size: 1.4375rem !important;
-    font-weight: 400; }
+    font-size: 1.4375rem !important; }
 
 nav .button {
   top: 1.3em !important;
@@ -7208,7 +7207,7 @@ ul.off-canvas-list {
       border-left: 4px solid #D02724 !important; }
 
 .hero {
-  background: url("/img/front--medium.jpg") no-repeat center 70%;
+  background: url("/img/front--medium.jpg") no-repeat center top;
   background-size: cover;
   height: 100vh;
   width: 100%; }
@@ -7220,11 +7219,9 @@ ul.off-canvas-list {
   right: 0;
   bottom: 0;
   left: 0;
-  background-image: linear-gradient(to bottom right, #1e1e1e, #000000);
-  opacity: .1; }
+  opacity: 0.4; }
 
 .hero .intro {
-  padding: 3rem;
   position: relative;
   top: 50%;
   transform: translateY(-50%); }
@@ -7235,7 +7232,14 @@ ul.off-canvas-list {
   line-height: 1.5em;
   letter-spacing: -0.025em;
   font-weight: 700;
-  text-align: center; }
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.46);
+  padding-top: 3rem; }
+.hero h3 {
+  color: #FAFAFA;
+  font-weight: 400;
+  margin: 0 0 1rem 0; }
+  .hero h3:first-letter {
+    text-transform: uppercase; }
 
 .hero p {
   color: #fff;
@@ -7257,6 +7261,7 @@ section {
   padding-top: 5rem; }
 
 .section__title {
+  padding-top: 6rem;
   font-weight: 700;
   margin-bottom: 4rem; }
 
@@ -7326,7 +7331,7 @@ section {
   background: linear-gradient(45deg, #693b6b 0%, #693b6b 30%, #8e5391 30%, #8e5391 100%); }
 
 .bg--orange {
-  background: linear-gradient(45deg, #c2971f 0%, #c2971f 30%, #e5b527 30%, #e5b527 100%); }
+  background: linear-gradient(45deg, #de7a00 0%, #de7a00 30%, #f78800 30%, #f78800 100%); }
 
 .bg--red {
   background: linear-gradient(45deg, #943c37 0%, #943c37 30%, #c64f48 30%, #c64f48 100%); }
@@ -7494,7 +7499,7 @@ input:focus ~ .highlight {
 
   .hero h1 {
     padding-top: 4.5rem;
-    font-size: 5vw; }
+    font-size: 4vw; }
 
   .hero p {
     font-size: 2vw; }
@@ -7514,11 +7519,11 @@ input:focus ~ .highlight {
   .service__details .media {
     padding: 0 10rem; }
 
-  section {
-    padding-top: 9.375rem; }
-
   .card .card__title {
     font-size: 5vw !important; } }
 @media only screen and (min-width: 90.0625em) {
   .service__details .media {
-    padding: 0 20rem; } }
+    padding: 0 20rem; }
+
+  .section__title {
+    padding-top: 9rem; } }

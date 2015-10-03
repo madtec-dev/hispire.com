@@ -1,13 +1,16 @@
-<div class="off-canvas-wrap" data-offcanvas>
-  <div class="inner-wrap">
-    <!-- Off Canvas Menu -->
-  {{> menu}}
+<title>MADTEC | Consulting - Websites - Applications - Online marketing</title>
 
- <div class="hero" id="home" data-interchange="[/img/front--small.jpg, (small)], [/img/front--medium.jpg, (medium)], [/img/front--large.jpg, (large)], [/img/fondo.jpg, (xlarge)], [/img/front--xlarge.jpg, (retina)]">
+{{> menu}}
+ <div class="hero wow fadeIn" data-wow-duration=".5s" data-wow-delay=".6s" id="home" data-interchange="
+ [/img/vikings2.jpg, (small)], [/img/vikings2.jpg, (medium)], [/img/vikings2.jpg, (large)],
+ [/img/vikings2.jpg, (xlarge)], [/img/vikings2.jpg, (retina)]">
   <div class="row intro">
-    <div class="small-centered medium-uncentered text-left medium-8 large-5 large-offset-7 columns">
-      <h1 class="large-text-left">When your business meets a Hero.</h1>
-      <p class="large-text-left">Consulting - Websites - App - eCommerce - Online marketing</p>
+    <div class="small-centered large-uncentered medium-8 large-5 large-offset-7 columns">
+      <h1 class="small-text-center large-text-left">The hero you've been searching for</h1>
+      <h3 class="small-text-center large-text-left">to make your brand turn heads</h3>
+      <h3 class="small-text-center large-text-left">your story move hearts (& wallets)</h3>
+      <h3 class="small-text-center large-text-left">and your business grow like there's no tomorrow.</h3>
+      <!--<p class="large-text-left">Consulting - Websites - App - eCommerce - Online marketing</p>-->
     </div>
 
   </div>
@@ -17,20 +20,6 @@
   </div>
 </div>
 <script type="text/javascript">
-$(document).foundation('interchange', 'reflow');
-$(function() {
-  var open = false;
-  $('#menu-button, .exit-off-canvas').click(function(event){
-    console.log('hola');
-    event.preventDefault();
-    if(!open){
-      $('#menu-button').addClass('close');
-      open = true;
-    }
-    else{
-      $('#menu-button').removeClass('close');
-      open = false;
-    }
-  });
-})
+  $.fn.fullpage.destroy();
 </script>
+{{> ui}}

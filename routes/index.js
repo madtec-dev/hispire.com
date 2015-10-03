@@ -24,9 +24,20 @@ router.get('/services', function(req, res) {
   render('services', { title: 'MADTEC | What we do' }, req, res);
 });
 
-router.get('/services/create', function(req, res) {
-  render('service-create', { title: 'MADTEC | Create' }, req, res);
+router.get('/services/branding', function(req, res) {
+  render('service-branding', { title: 'MADTEC | Create' }, req, res);
 });
+
+router.get('/services/develop', function(req, res) {
+  render('service-develop', { title: 'MADTEC | Create' }, req, res);
+});
+router.get('/services/story', function(req, res) {
+  render('service-story', { title: 'MADTEC | Create' }, req, res);
+});
+router.get('/services/promote', function(req, res) {
+  render('service-promote', { title: 'MADTEC | Create' }, req, res);
+});
+
 
 router.get('/start-project', function(req, res) {
   render('start-project', { title: "MADTEC | Let's start something incredible" }, req, res);

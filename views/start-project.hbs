@@ -1,6 +1,6 @@
 <title>MADTEC | Let's start something incredible</title>
     {{> menu}}
-    <section>
+    <main>
       <h1 class="section__title animated fadeInDown text-center">Let's start something incredible.</h1>
       <form data-abide="ajax" method="POST" class="dropzone wow fadeIn" data-wow-duration="1s" data-wow-delay=".2s" id="start-project-form" action="/start-project" enctype="multipart/form-data">
         <div class="row">
@@ -121,11 +121,10 @@
           </div>
         </div>
       </form>
-    </section>
+    </main>
     {{> ui}}
 <script type="text/javascript">
-//destroy full-page sroll
-$.fn.fullpage.destroy();
+
 //deactivate default abide scroll
 $(document).foundation({
   abide: {
