@@ -427,7 +427,7 @@ section {
 .service__details {
   margin: 0;
 }
-.service__detail {                                                                        
+.service__detail {
   padding: 5rem 0 !important;
 }
 .media {
@@ -645,13 +645,26 @@ input:focus ~ .highlight {
   border: none;
   background-color: transparent !important;
 }
-#uploader {
-  padding: 3rem;
-  border: dotted 3px gray;
+.uploader {
+  padding: 1rem;
+  border: dashed 1px gray;
   font-size: rem-calc(23);
   &:hover {
     cursor: pointer;
   }
+}
+.dz-message {
+  color: $charcoal;
+  span {
+    display: block;
+    font-family: $font-family-brand;
+  }
+}
+.dz-filename {
+  color: $charcoal;  
+}
+.dropzone .dz-preview.dz-image-preview {
+  background-color: transparent;
 }
 
 #data-container {
@@ -708,6 +721,9 @@ input:focus ~ .highlight {
 
 /*** MEDIA QUERIES ***/
 @media #{$medium-up} {
+  .medium-pl {
+    padding-left: 1rem;
+  }
   .hero .tech-img {
     height: 18rem;
     width: 18rem;

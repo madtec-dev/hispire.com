@@ -7508,12 +7508,24 @@ input:focus ~ .highlight {
   border: none;
   background-color: transparent !important; }
 
-#uploader {
-  padding: 3rem;
-  border: dotted 3px gray;
+.uploader {
+  padding: 1rem;
+  border: dashed 1px gray;
   font-size: 1.4375rem; }
-  #uploader:hover {
+  .uploader:hover {
     cursor: pointer; }
+
+.dz-message {
+  color: #555555; }
+  .dz-message span {
+    display: block;
+    font-family: "Raleway", Helvetica, Roboto, Arial, sans-serif; }
+
+.dz-filename {
+  color: #555555; }
+
+.dropzone .dz-preview.dz-image-preview {
+  background-color: transparent; }
 
 #data-container {
   position: relative; }
@@ -7560,6 +7572,9 @@ input:focus ~ .highlight {
 
 /*** MEDIA QUERIES ***/
 @media only screen and (min-width: 40.0625em) {
+  .medium-pl {
+    padding-left: 1rem; }
+
   .hero .tech-img {
     height: 18rem;
     width: 18rem; }

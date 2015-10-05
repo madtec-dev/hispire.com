@@ -108,11 +108,13 @@
           </div>
 
           <input type="hidden" id="budget" name="budget" value="">
-          <div class="small-12 group large-6 small-centered columns" id="uploader">
+          <h3 class="text-center">Attach any relevant files or documents. (optional)</h3>
+          <div id="uploader" class="small-12 group large-6 small-centered columns uploader">
             <div class="dz-default dz-message">
-              <span>Drop the files here to upload</span>
+              <span><strong>Click or drag files to upload</strong></span>
             </div>
           </div>
+          <div id="uploader--preview" class="small-12 group large-6 small-centered columns"></div>
           <div class="fallback">
             <input type="file" name="files" multiple>
           </div>
@@ -162,13 +164,13 @@ $(function() {
   var projectDropzone = new Dropzone("form#start-project-form",
     {
       paramName: "files",
-      maxFilesize: 3,
+      maxFilesize: 8,
       uploadMultiple: true,
       parallelUploads: 100,
       maxFiles: 10,
       clickable: '#uploader',
       addRemoveLinks: true,
-      previewsContainer: '#uploader',
+      previewsContainer: '#uploader--preview',
       autoProcessQueue: false,
 
       init: function() {
