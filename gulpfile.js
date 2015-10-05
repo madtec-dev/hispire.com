@@ -50,7 +50,7 @@ gulp.task('css', function () {
         .pipe(uncss({
             html: ['./views/**/*.html'],
             ignore: [/^meta.foundation/, /f-topbar-fixed/, /contain-to-grid/, '.exit-menu', '#data-container',
-            /fixed/, /menu-open/, /data-abide/, /input/, /close/, /top-bar-collapse/, /first-letter/]
+            /fixed/, /menu-open/, /data-abide/, /input/, /close/, /top-bar-collapse/, /first-letter/, /active/]
         }))
         // minify and concat resulted css
         .pipe(minifyCss({compatibility: 'ie8'}))

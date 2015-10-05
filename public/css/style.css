@@ -7295,19 +7295,26 @@ ul.off-canvas-list {
   min-height: 100vh;
   background-color: white;
   font-family: "Lato", Helvetica, Roboto, Arial, sans-serif;
-  text-transform: uppercase;
   transition: 0.6s ease; }
   .card .card__title {
     margin-bottom: 0;
     color: #555555;
-    font-size: 8vw !important; }
+    font-size: 8vw !important;
+    text-transform: uppercase; }
   .card .card__description {
-    color: #555555;
+    color: #FFFFFF;
     text-transform: capitalize;
-    font-weight: 400;
+    font-weight: 700;
     font-family: "Raleway", Helvetica, Roboto, Arial, sans-serif;
     margin-left: 0;
     font-size: 1.3125rem; }
+    .card .card__description li {
+      padding: 1rem; }
+      .card .card__description li:hover {
+        cursor: pointer;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
+      .card .card__description li.active {
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
   .card:hover {
     background-color: rgba(255, 255, 255, 0.85); }
   .card .button {
@@ -7320,22 +7327,31 @@ ul.off-canvas-list {
 .service__detail {
   padding: 5rem 0 !important; }
 
-.media .media__img img {
-  padding-top: 0;
-  height: auto;
-  max-height: 15rem;
-  margin-bottom: 1.5rem;
-  vertical-align: top; }
-.media .media__content {
-  margin-bottom: 3rem; }
-  .media .media__content h2 {
-    color: #FFFFFF;
-    margin: 0 0 .5rem 0;
-    font-weight: 700;
-    text-transform: capitalize; }
-  .media .media__content p {
-    color: #F6F6F6;
-    font-size: 1.4375rem; }
+ul.inline-list {
+  margin-bottom: 0; }
+  ul.inline-list li:first-child {
+    margin-left: 0; }
+
+.media {
+  display: none;
+  padding: 2rem;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
+  .media .media__img img {
+    padding-top: 0;
+    height: auto;
+    max-height: 15rem;
+    margin-bottom: 1.5rem;
+    vertical-align: top; }
+  .media .media__content {
+    margin-bottom: 3rem; }
+    .media .media__content h2 {
+      color: #FFFFFF;
+      margin: 0 0 .5rem 0;
+      font-weight: 700;
+      text-transform: capitalize; }
+    .media .media__content p {
+      color: #F6F6F6;
+      font-size: 1.4375rem; }
 
 .bg--blue {
   background: linear-gradient(135deg, #44a8a1 0%, #44a8a1 40%, #2b9c93 40%, #2b9c93 100%); }
@@ -7608,7 +7624,7 @@ input:focus ~ .highlight {
     padding: 0rem 5rem 5rem 5rem; }
 
   .service__detail {
-    padding: 10rem 0 !important; } }
+    padding: 3rem 1rem !important; } }
 @media only screen and (min-width: 64.0625em) {
   .brand__name {
     margin-right: 3rem !important; }
