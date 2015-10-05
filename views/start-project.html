@@ -1,10 +1,9 @@
 <title>MADTEC | Let's start something incredible</title>
-<div class="off-canvas-wrap" data-offcanvas>
-  <div class="inner-wrap">
+<div id="bg__services" class="bg--full-fixed"></div>
     {{> menu}}
-    <section>
+    <main class="animated fadeIn">
       <h1 class="section__title animated fadeInDown text-center">Let's start something incredible.</h1>
-      <form data-abide="ajax" method="POST" class="dropzone animated fadeIn" id="start-project-form" action="/start-project" enctype="multipart/form-data">
+      <form data-abide="ajax" method="POST" class="dropzone wow fadeIn" data-wow-duration="1s" data-wow-delay=".2s" id="start-project-form" action="/start-project" enctype="multipart/form-data">
         <div class="row">
           <h2 class="text-center">About you</h2>
           <div class="small-12 large-6 small-centered columns">
@@ -123,12 +122,10 @@
           </div>
         </div>
       </form>
-    </section>
-
-<!-- close the off-canvas menu -->
-  </div>
-</div>
+    </main>
+    {{> ui}}
 <script type="text/javascript">
+
 //deactivate default abide scroll
 $(document).foundation({
   abide: {
@@ -160,19 +157,6 @@ $('#start-project-form').on('invalid.fndtn.abide', function () {
 
 //add class to menu button
 $(function() {
-  var open = false;
-  $('#menu-button, .exit-off-canvas').click(function(event){
-    event.preventDefault();
-    if(!open){
-      $('#menu-button').addClass('close');
-      open = true;
-    }
-    else{
-      $('#menu-button').removeClass('close');
-      open = false;
-    }
-  });
-
 
   $(document).foundation('reflow');
   var projectDropzone = new Dropzone("form#start-project-form",

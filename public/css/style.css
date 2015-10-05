@@ -7010,7 +7010,7 @@ th.hide-for-touch {
   right: 0;
   bottom: 0;
   width: 100%;
-  z-index: 0; }
+  z-index: -1; }
 
 #bg__services {
   background: url(/img/fondo3.jpg) no-repeat center bottom;
@@ -7028,16 +7028,19 @@ th.hide-for-touch {
   -o-background-size: cover; }
 
 .vertical--middle {
-  display: table;
-  height: 100%;
-  width: 100%; }
+  display: table !important;
+  height: 100% !important;
+  width: 100% !important; }
 
 .vertical--middle > * {
-  display: table-cell;
-  vertical-align: middle; }
+  display: table-cell !important;
+  vertical-align: middle !important; }
 
 .middle {
   vertical-align: middle; }
+
+main {
+  background-color: rgba(255, 255, 255, 0.85); }
 
 /**** NAV ****/
 .name {
@@ -7263,10 +7266,26 @@ section {
 .section__title {
   padding-top: 6rem;
   font-weight: 700;
+  color: #555555;
   margin-bottom: 4rem; }
 
+.link__section {
+  font-family: "Raleway", Helvetica, Roboto, Arial, sans-serif;
+  padding: 3rem 0;
+  font-size: 5vw;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: #D02724; }
+  .link__section a {
+    transition: 0.2s ease all; }
+    .link__section a p:first-letter {
+      text-transform: uppercase; }
+  .link__section a:hover, .link__section a:focus {
+    color: #e04c4a;
+    text-decoration-color: #e04c4a; }
+
 /* SERVICES */
-.services__list {
+.services__list, .trophies__list {
   margin: 0; }
 
 .icon {
@@ -7301,7 +7320,7 @@ section {
 .service__details {
   margin: 0; }
 
-.service__detail {
+.service__de tail {
   padding: 5rem 0 !important; }
 
 .media .media__img img {
@@ -7322,19 +7341,22 @@ section {
     font-size: 1.4375rem; }
 
 .bg--blue {
-  background: linear-gradient(45deg, #13749e 0%, #0d668c 30%, #13749e 30%, #13749e 100%); }
+  background: linear-gradient(135deg, #44a8a1 0%, #44a8a1 40%, #2b9c93 40%, #2b9c93 100%); }
 
 .bg--green {
-  background: linear-gradient(45deg, #0e6150 0%, #0e6150 30%, #178c75 30%, #178c75 100%); }
+  background: linear-gradient(135deg, #2cadbe 0%, #2cadbe 50%, #259cae 50%, #259cae 100%); }
 
 .bg--purple {
-  background: linear-gradient(45deg, #693b6b 0%, #693b6b 30%, #8e5391 30%, #8e5391 100%); }
+  background: linear-gradient(135deg, #7b69a8 0%, #7b69a8 40%, #66559d 40%, #66559d 100%); }
 
 .bg--orange {
-  background: linear-gradient(45deg, #de7a00 0%, #de7a00 30%, #f78800 30%, #f78800 100%); }
+  background: linear-gradient(45deg, #e68932 0%, #e68932 50%, #e16d2f 50%, #e16d2f 100%); }
 
 .bg--red {
   background: linear-gradient(45deg, #943c37 0%, #943c37 30%, #c64f48 30%, #c64f48 100%); }
+
+.bg--yellow {
+  background: linear-gradient(45deg, #e99e36 0%, #e99e36 50%, #e6b945 50%, #e6b945 100%); }
 
 /*.service__detail:nth-child(2n) {
   background-color: transparent;
@@ -7345,6 +7367,43 @@ section {
     color: $black
   }
 }*/
+/* PORFOLIO */
+#trophy--apicatando {
+  background: url("/img/trophy-apicatando.jpg") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover; }
+
+#trophy--finca {
+  background: url("/img/trophy-finca.jpg") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover; }
+
+.trophy {
+  position: relative;
+  height: 70vh; }
+
+.trophy:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(to bottom right, #1e1e1e, #000000);
+  opacity: 0.6; }
+
+.trophy__detail {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 3rem;
+  width: 100%; }
+  .trophy__detail h2 {
+    color: #FFFFFF; }
+
 /* START PROJECT FORM */
 /* material form */
 .group {
@@ -7356,7 +7415,7 @@ input.material, textarea.material {
   padding: 0;
   display: block;
   border: none;
-  border-bottom: 1px solid #E0E0E0;
+  border-bottom: 1px solid #888888;
   margin-bottom: 0;
   box-shadow: none;
   min-height: 0; }
@@ -7367,7 +7426,7 @@ input.material:focus, textarea.material:focus {
 
 label, label.material {
   font-size: 1.4375rem;
-  color: #B5B5B5; }
+  color: #888888; }
 
 label.material {
   font-weight: normal;
@@ -7438,8 +7497,9 @@ input:focus ~ .highlight {
 .sliderOutput {
   font-size: 2rem; }
 
-.dropzone {
-  border: none; }
+.dropzone, input, textarea {
+  border: none;
+  background-color: transparent !important; }
 
 #uploader {
   padding: 3rem;
@@ -7511,7 +7571,10 @@ input:focus ~ .highlight {
     display: inline-block; }
 
   .card {
-    padding: 0rem 5rem 5rem 5rem; } }
+    padding: 0rem 5rem 5rem 5rem; }
+
+  .service__detail {
+    padding: 10rem 0 !important; } }
 @media only screen and (min-width: 64.0625em) {
   .brand__name {
     margin-right: 3rem !important; }

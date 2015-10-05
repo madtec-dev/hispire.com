@@ -38,6 +38,10 @@ router.get('/services/promote', function(req, res) {
   render('service-promote', { title: 'MADTEC | Create' }, req, res);
 });
 
+router.get('/trophies', function(req, res) {
+  render('porfolio', { title: 'MADTEC | Trophy room' }, req, res);
+});
+
 
 router.get('/start-project', function(req, res) {
   render('start-project', { title: "MADTEC | Let's start something incredible" }, req, res);
