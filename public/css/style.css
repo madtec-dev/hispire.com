@@ -7382,7 +7382,13 @@ section {
 
 .trophy {
   position: relative;
-  height: 70vh; }
+  height: 70vh;
+  transition: 0.6s ease; }
+  .trophy:hover .trophy__detail {
+    padding-top: 5rem; }
+  .trophy:hover:before {
+    background-image: linear-gradient(to bottom right, #002f4b, #dc4225);
+    opacity: 0.8; }
 
 .trophy:before {
   content: '';
@@ -7395,6 +7401,7 @@ section {
   opacity: 0.6; }
 
 .trophy__detail {
+  transition: 0.6s ease;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -7583,7 +7590,16 @@ input:focus ~ .highlight {
     padding: 0 10rem; }
 
   .card .card__title {
-    font-size: 5vw !important; } }
+    font-size: 5vw !important; }
+
+  .button.button--border {
+    background-color: transparent;
+    border-width: 1px;
+    text-transform: uppercase; }
+    .button.button--border:hover {
+      background-color: #e04c4a; }
+    .button.button--border.success:hover {
+      background-color: #63c286; } }
 @media only screen and (min-width: 90.0625em) {
   .service__details .media {
     padding: 0 20rem; }

@@ -13,8 +13,8 @@
   bottom: 0;
   width: 100%;
   z-index: -1;
-
 }
+
 #bg__services {
   background: url(/img/fondo3.jpg) no-repeat center bottom;
   background-color: #1e1e1e;
@@ -501,8 +501,19 @@ background: linear-gradient(45deg, rgba(148,60,55,1) 0%, rgba(148,60,55,1) 30%, 
 .trophy {
   position: relative;
   height: 70vh;
+  transition: 0.6s ease;
+  &:hover {
+    .trophy__detail {
+      padding-top: 5rem;
+    }
+    &:before {
+      background-image: linear-gradient(to bottom right, #002f4b, #dc4225);
+      opacity: .8
+    }
+  }
 }
 .trophy:before {
+
   content: '';
   position: absolute;
   top: 0;
@@ -516,6 +527,7 @@ background: linear-gradient(45deg, rgba(148,60,55,1) 0%, rgba(148,60,55,1) 30%, 
 }
   //height: 70vh;
 .trophy__detail {
+  transition: 0.6s ease;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -732,6 +744,17 @@ input:focus ~ .highlight {
 
   .card .card__title {
     font-size: 5vw !important;
+  }
+  .button.button--border {
+    background-color: transparent;
+    border-width: 1px;
+    text-transform: uppercase;
+    &:hover {
+      background-color: scale-color($button-bg-color, $lightness: 20%);
+    }
+    &.success:hover {
+    background-color: scale-color($success-color, $lightness: 20%);
+    }
   }
 
 }
