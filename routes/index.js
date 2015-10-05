@@ -42,6 +42,14 @@ router.get('/trophies', function(req, res) {
   render('porfolio', { title: 'MADTEC | Trophy room' }, req, res);
 });
 
+router.get('/trophies/finca', function(req, res) {
+  render('trophy-finca', { title: 'MADTEC | Trophies - Finca el molar' }, req, res);
+});
+
+router.get('/trophies/apicatando', function(req, res) {
+  render('trophy-apicatando', { title: 'MADTEC | Trophies - Apicatando' }, req, res);
+});
+
 
 router.get('/start-project', function(req, res) {
   render('start-project', { title: "MADTEC | Let's start something incredible" }, req, res);

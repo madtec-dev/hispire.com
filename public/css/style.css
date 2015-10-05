@@ -7260,9 +7260,6 @@ ul.off-canvas-list {
   display: block;
   margin: 0 auto; }
 
-section {
-  padding-top: 5rem; }
-
 .section__title {
   padding-top: 6rem;
   font-weight: 700;
@@ -7410,6 +7407,15 @@ section {
   width: 100%; }
   .trophy__detail h2 {
     color: #FFFFFF; }
+
+.project .media__content h2 {
+  color: #9D1F20;
+  margin-bottom: 2rem; }
+.project .media__content h3 {
+  text-transform: uppercase;
+  margin-bottom: .5rem; }
+.project .media__content p {
+  color: #555555; }
 
 /* START PROJECT FORM */
 /* material form */
@@ -7569,6 +7575,12 @@ input:focus ~ .highlight {
   top: .8em;
   right: .8em;
   transition: 0.5s ease; }
+
+.button.button--big {
+  margin-top: 2rem;
+  padding: 2rem 3rem;
+  text-transform: uppercase;
+  font-size: 1.4375rem; }
 
 /*** MEDIA QUERIES ***/
 @media only screen and (min-width: 40.0625em) {

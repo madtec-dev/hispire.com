@@ -342,7 +342,7 @@ ul.off-canvas-list {
 
 
 section {
-  padding-top: rem-calc(80);
+  //padding-top: rem-calc(80);
 }
 .section__title {
   padding-top: 6rem;
@@ -539,6 +539,20 @@ background: linear-gradient(45deg, rgba(148,60,55,1) 0%, rgba(148,60,55,1) 30%, 
   }
 }
 
+.project .media__content {
+  h2 {
+    color: $red--dark;
+    margin-bottom: 2rem;
+  }
+  h3 {
+    text-transform: uppercase;
+    margin-bottom: .5rem;
+  }
+  p {
+  color: $charcoal
+  }
+}
+
 .buttons--middle {
   //width: 50vw;
 
@@ -661,7 +675,7 @@ input:focus ~ .highlight {
   }
 }
 .dz-filename {
-  color: $charcoal;  
+  color: $charcoal;
 }
 .dropzone .dz-preview.dz-image-preview {
   background-color: transparent;
@@ -718,6 +732,12 @@ input:focus ~ .highlight {
 
 }
 
+.button.button--big {
+  margin-top: 2rem;
+  padding: 2rem 3rem;
+  text-transform: uppercase;
+  font-size: rem-calc(23);
+}
 
 /*** MEDIA QUERIES ***/
 @media #{$medium-up} {
