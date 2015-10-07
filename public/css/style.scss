@@ -377,7 +377,7 @@ section {
 }
 .icon {
   padding-top: 1rem;
-  height: 8rem;
+  //height: 8rem;
 
 }
 .card {
@@ -431,7 +431,22 @@ section {
     //right: 10%;
 
   }
-
+  .card__detail {
+    display: none;
+    transition: 0.6s ease;
+    padding: 2rem;
+    border-top: 1px solid $iron;
+    //box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, .2);
+  }
+}
+.inline-list > li {
+  float: none;
+  display: inline-block;
+}
+.button--shadow {
+  &:hover, &:focus {
+  box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, .2);
+  }
 }
 
 /** SERVICE **/
@@ -448,7 +463,7 @@ ul.inline-list {
   }
 }
 .media {
-  display: none;
+  //display: none;
   padding: 2rem;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   .media__img {
@@ -471,7 +486,7 @@ ul.inline-list {
    text-transform: capitalize;
  }
  p {
-   color: $vapor;
+   color: $charcoal;
    font-size: rem-calc(23);
    //font-weight: 300;
  }
@@ -509,6 +524,7 @@ background: linear-gradient(45deg, rgba(148,60,55,1) 0%, rgba(148,60,55,1) 30%, 
   background-color: transparent;
   border: 2px solid rgba(230,137,50,1);
   transition: 0.6s ease;
+  color: $charcoal;
   &:hover, &:focus, &.active {
     color: $white;
     background-color: rgba(230,137,50,1);
@@ -745,6 +761,12 @@ input:focus ~ .highlight {
   //padding: 1em 0;
   box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, .2);
 }
+.top-bar-section ul li > a.button {
+  background-color: transparent;
+}
+.top-bar-section ul li > a.button {
+  color: $charcoal;
+}
 #side-menu {
   background-color: rgba(30, 30, 30, .98);
   width: 15rem;
@@ -814,7 +836,7 @@ input:focus ~ .highlight {
     display: inline-block;
   }
   .card {
-    padding: 0rem 5rem 5rem 5rem;
+    padding: 0rem 1rem 1rem 1rem;
   }
   .service__detail {
     padding: 3rem 1rem !important  ;
@@ -831,6 +853,10 @@ input:focus ~ .highlight {
 
   .card .card__title {
     font-size: 5vw !important;
+  }
+  .card .card__detail {
+    border-left: 1px solid $iron;
+    border-top: none;
   }
   .button.button--border {
     background-color: transparent;
