@@ -14,6 +14,9 @@
   width: 100%;
   z-index: -1;
 }
+.inline {
+  display: inline-block;
+}
 
 #bg__services {
   background: url(/img/fondo3.jpg) no-repeat center bottom;
@@ -47,6 +50,7 @@
 }
 
 main {
+  min-height: 100%;
   background-color: rgba(255, 255, 255, .85);
 }
 
@@ -382,16 +386,13 @@ section {
 }
 .card {
   //box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, .2);
-  position: relative;
-  padding: 1rem 1rem 1rem 1rem;
-  //border: solid 1px $gainsboro;
-  //border-right: solid 1px $gainsboro;
-  //margin-bottom: 2rem;
-  min-height: 100vh;
+  padding: 0;
   background-color: rgba(255, 255, 255, 1);
   font-family: $font-family-sans-serif;
   transition: 0.6s ease;
+  min-height: 80vh;
   .card__title {
+    padding-top: 2rem;
     margin-bottom: 0;
     color: $charcoal;
     font-size: 8vw !important;
@@ -400,27 +401,28 @@ section {
   }
 
   .card__description {
+    font-size: rem-calc(23);
+    p {
     color: $charcoal;
-    text-transform: capitalize;
     font-weight: 700;
-    font-family: $font-family-brand;
+    //font-family: $font-family-brand;
     margin-left: 0;
+    font-size: rem-calc(23);
     //padding: 2rem;
     //margin-bottom: 1rem;
-    font-size: rem-calc(21);
+    }
     li {
+      transition: 0.6s ease;
+      font-size: rem-calc(21);
+      color: #C64F48;
+      padding-bottom: 2rem;
       &:hover {
         cursor: pointer;
-        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
       }
-      &.active {
-        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-      }
-      padding: .5rem;
     }
   }
   &:hover {
-    background-color: rgba(255, 255, 255, .85);
+    background-color: rgba(255, 255, 255, .70);
     //box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, .2);
   }
   .button {
@@ -434,7 +436,7 @@ section {
   .card__detail {
     display: none;
     transition: 0.6s ease;
-    padding: 2rem;
+    //padding: 2rem;
     border-top: 1px solid $iron;
     //box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, .2);
   }
