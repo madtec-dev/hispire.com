@@ -150,6 +150,7 @@ nav .button {
 // =========== General button styles & variables =======================================//
 button{
   outline: none;
+  text-transform: uppercase;
 
   span{
     display:block;
@@ -358,12 +359,13 @@ section {
 .link__section {
   font-family: $font-family-brand;
   padding: 3rem 0;
-  font-size: 5vw;
-  font-weight: 700;
-
-  text-decoration: underline;
-  text-decoration-color: $red;
   a {
+
+    font-size: 5vw;
+    font-weight: 700;
+
+    text-decoration: underline;
+    text-decoration-color: $red;
     transition: 0.2s ease all;
     p:first-letter {
       text-transform: uppercase;
@@ -553,7 +555,7 @@ background: linear-gradient(45deg, rgba(148,60,55,1) 0%, rgba(148,60,55,1) 30%, 
 
 /* PORFOLIO */
 #trophy--apicatando {
-  background: url('/img/trophy-apicatando.jpg') no-repeat center center;
+  background: url('/img/porfolio/apicatando-main.jpg') no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -605,20 +607,27 @@ background: linear-gradient(45deg, rgba(148,60,55,1) 0%, rgba(148,60,55,1) 30%, 
   }
 }
 
-.project .media__content {
-  h2 {
-    color: $red--dark;
-    margin-bottom: 2rem;
-    font-weight: 700;
-    text-transform: capitalize;
+.project {
+  background-color: $white;
+  padding-top: 3rem;
+  img {
+    width: 100%;
   }
-  h3 {
-    text-transform: uppercase;
-    margin-bottom: .5rem;
-  }
-  p {
-  color: $charcoal;
-  font-size: rem-calc(23);
+  .media__content {
+    h2 {
+      color: $red--dark;
+      margin-bottom: 2rem;
+      font-weight: 700;
+      text-transform: capitalize;
+    }
+    h3 {
+      text-transform: uppercase;
+      margin-bottom: .5rem;
+    }
+    p {
+    color: $charcoal;
+    font-size: rem-calc(23);
+    }
   }
 }
 
@@ -787,7 +796,7 @@ input:focus ~ .highlight {
 
 .exit-menu {
   background: rgba(255, 255, 255, 0.5) none repeat scroll 0 0;
-  position: absolute;
+  position: fixed;
   display: block;
   bottom: 0;
   left: 0;

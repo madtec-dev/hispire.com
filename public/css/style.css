@@ -7124,7 +7124,8 @@ nav .button {
   background-color: transparent; }
 
 button {
-  outline: none; }
+  outline: none;
+  text-transform: uppercase; }
   button span {
     display: block; }
 
@@ -7272,12 +7273,12 @@ ul.off-canvas-list {
 
 .link__section {
   font-family: "Raleway", Helvetica, Roboto, Arial, sans-serif;
-  padding: 3rem 0;
-  font-size: 5vw;
-  font-weight: 700;
-  text-decoration: underline;
-  text-decoration-color: #D02724; }
+  padding: 3rem 0; }
   .link__section a {
+    font-size: 5vw;
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-color: #D02724;
     transition: 0.2s ease all; }
     .link__section a p:first-letter {
       text-transform: uppercase; }
@@ -7421,7 +7422,7 @@ ul.inline-list {
 }*/
 /* PORFOLIO */
 #trophy--apicatando {
-  background: url("/img/trophy-apicatando.jpg") no-repeat center center;
+  background: url("/img/porfolio/apicatando-main.jpg") no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover; }
@@ -7463,17 +7464,22 @@ ul.inline-list {
   .trophy__detail h2 {
     color: #FFFFFF; }
 
-.project .media__content h2 {
-  color: #9D1F20;
-  margin-bottom: 2rem;
-  font-weight: 700;
-  text-transform: capitalize; }
-.project .media__content h3 {
-  text-transform: uppercase;
-  margin-bottom: .5rem; }
-.project .media__content p {
-  color: #555555;
-  font-size: 1.4375rem; }
+.project {
+  background-color: #FFFFFF;
+  padding-top: 3rem; }
+  .project img {
+    width: 100%; }
+  .project .media__content h2 {
+    color: #9D1F20;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    text-transform: capitalize; }
+  .project .media__content h3 {
+    text-transform: uppercase;
+    margin-bottom: .5rem; }
+  .project .media__content p {
+    color: #555555;
+    font-size: 1.4375rem; }
 
 /* START PROJECT FORM */
 /* material form */
@@ -7624,7 +7630,7 @@ input:focus ~ .highlight {
 
 .exit-menu {
   background: rgba(255, 255, 255, 0.5) none repeat scroll 0 0;
-  position: absolute;
+  position: fixed;
   display: block;
   bottom: 0;
   left: 0;
