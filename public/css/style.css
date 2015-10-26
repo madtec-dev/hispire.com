@@ -7265,17 +7265,19 @@ ul.off-canvas-list {
   display: block;
   margin: 0 auto; }
 
-.section__title {
+.section__header {
   padding-top: 6rem;
-  font-weight: 700;
-  color: #555555;
   margin-bottom: 4rem; }
+
+.section__title {
+  font-weight: 700;
+  color: #555555; }
 
 .link__section {
   font-family: "Raleway", Helvetica, Roboto, Arial, sans-serif;
   padding: 3rem 0; }
   .link__section a {
-    font-size: 5vw;
+    font-size: 7vw;
     font-weight: 700;
     text-decoration: underline;
     text-decoration-color: #D02724;
@@ -7306,27 +7308,34 @@ ul.off-canvas-list {
     font-size: 8vw !important;
     text-transform: uppercase; }
   .card .card__description {
-    font-size: 1.4375rem; }
+    font-size: 1.125rem; }
     .card .card__description p {
       color: #555555;
       font-weight: 700;
       margin-left: 0;
-      font-size: 1.4375rem; }
+      font-size: 1.125rem; }
     .card .card__description li {
-      transition: 0.6s ease;
+      transition: 0.3s ease;
       font-size: 1.3125rem;
       color: #C64F48;
-      padding-bottom: 2rem; }
+      padding-bottom: 2rem;
+      text-decoration: underline; }
       .card .card__description li:hover {
         cursor: pointer; }
+      .card .card__description li.active {
+        font-weight: 700;
+        font-size: 150%;
+        text-shadow: 1px 1px 2px rgba(150, 150, 150, 0.3);
+        text-decoration: none; }
   .card:hover {
     background-color: rgba(255, 255, 255, 0.7); }
   .card .button {
     width: 15em; }
   .card .card__detail {
     display: none;
-    transition: 0.6s ease;
-    border-top: 1px solid #CCCCCC; }
+    transition: 0.6s ease; }
+    .card .card__detail:nth-child(3n+1) {
+      display: block; }
 
 .inline-list > li {
   float: none;
@@ -7364,9 +7373,11 @@ ul.inline-list {
     margin: 0 0 .5rem 0;
     font-weight: 700;
     text-transform: capitalize; }
+  .media__content h3 {
+    margin-bottom: 1rem; }
   .media__content p {
     color: #555555;
-    font-size: 1.4375rem; }
+    font-size: 1rem; }
 
 .bg--blue {
   background: linear-gradient(135deg, #44a8a1 0%, #44a8a1 40%, #2b9c93 40%, #2b9c93 100%); }
@@ -7468,6 +7479,7 @@ ul.inline-list {
   background-color: #FFFFFF;
   padding-top: 3rem; }
   .project img {
+    padding: 2rem 0 4rem 0;
     width: 100%; }
   .project .media__content h2 {
     color: #9D1F20;
@@ -7478,8 +7490,7 @@ ul.inline-list {
     text-transform: uppercase;
     margin-bottom: .5rem; }
   .project .media__content p {
-    color: #555555;
-    font-size: 1.4375rem; }
+    color: #555555; }
 
 /* START PROJECT FORM */
 /* material form */
@@ -7603,10 +7614,12 @@ input:focus ~ .highlight {
 /*** SIDE MENU ***/
 .top-bar {
   transition: 0.6s ease;
-  border-bottom: 1px solid #F6F6F6; }
-
-.top-bar-collapse, .tab-bar {
+  border-bottom: 1px solid #F6F6F6;
   box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2); }
+
+.tab-bar {
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+  z-index: 9999; }
 
 .top-bar-section ul li > a.button {
   background-color: transparent; }
@@ -7686,12 +7699,24 @@ input:focus ~ .highlight {
   .service__details .media {
     padding: 0 10rem; }
 
+  .link__section a {
+    font-size: 5vw; }
+
   .card .card__title {
     font-size: 5vw !important; }
 
   .card .card__detail {
     border-left: 1px solid #CCCCCC;
     border-top: none; }
+
+  .card .card__description {
+    font-size: 1.4375rem; }
+    .card .card__description p {
+      color: #555555;
+      font-size: 1.4375rem; }
+
+  .media__content p {
+    font-size: 1.4375rem; }
 
   .button.button--border {
     background-color: transparent;
@@ -7705,5 +7730,8 @@ input:focus ~ .highlight {
   .service__details .media {
     padding: 0 20rem; }
 
+  .section__header {
+    padding-top: 9rem; }
+
   .section__title {
-    padding-top: 9rem; } }
+    font-size: 4rem; } }
