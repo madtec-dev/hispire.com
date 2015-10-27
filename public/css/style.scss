@@ -354,6 +354,7 @@ section {
   margin-bottom: rem-calc(64);
 }
 .section__title {
+  font-size: 15vw;
   font-weight: 700;
   color: $charcoal;
   //background-color: rgba(255, 255, 255 , .5);
@@ -494,6 +495,8 @@ ul.inline-list {
 }
 .media__content {
   margin-bottom: 3rem;
+  padding-left: 1rem;
+  border-left: 12px solid $iron;
  h2 {
    color: $white;
    margin: 0 0 .5rem 0;
@@ -865,6 +868,9 @@ input:focus ~ .highlight {
   .card {
     padding: 0rem 1rem 1rem 1rem;
   }
+  .media__content {
+    padding-left: 4rem;
+  }
   .service__detail {
     padding: 3rem 1rem !important  ;
   }
@@ -884,7 +890,6 @@ input:focus ~ .highlight {
     font-size: 5vw !important;
   }
   .card .card__detail {
-    border-left: 1px solid $iron;
     border-top: none;
   }
   .card .card__description {
@@ -920,7 +925,7 @@ input:focus ~ .highlight {
     padding-top: 9rem;
   }
   .section__title {
-    font-size: rem-calc(64);
+    font-size: 12vw;
   }
 }
 @media #{$xxlarge-up} {

@@ -7270,6 +7270,7 @@ ul.off-canvas-list {
   margin-bottom: 4rem; }
 
 .section__title {
+  font-size: 15vw;
   font-weight: 700;
   color: #555555; }
 
@@ -7367,7 +7368,9 @@ ul.inline-list {
     vertical-align: top; }
 
 .media__content {
-  margin-bottom: 3rem; }
+  margin-bottom: 3rem;
+  padding-left: 1rem;
+  border-left: 12px solid #CCCCCC; }
   .media__content h2 {
     color: #FFFFFF;
     margin: 0 0 .5rem 0;
@@ -7690,6 +7693,9 @@ input:focus ~ .highlight {
   .card {
     padding: 0rem 1rem 1rem 1rem; }
 
+  .media__content {
+    padding-left: 4rem; }
+
   .service__detail {
     padding: 3rem 1rem !important; } }
 @media only screen and (min-width: 64.0625em) {
@@ -7706,7 +7712,6 @@ input:focus ~ .highlight {
     font-size: 5vw !important; }
 
   .card .card__detail {
-    border-left: 1px solid #CCCCCC;
     border-top: none; }
 
   .card .card__description {
@@ -7734,4 +7739,4 @@ input:focus ~ .highlight {
     padding-top: 9rem; }
 
   .section__title {
-    font-size: 4rem; } }
+    font-size: 12vw; } }
