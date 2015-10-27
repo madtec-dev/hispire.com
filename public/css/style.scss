@@ -927,6 +927,12 @@ input:focus ~ .highlight {
   .section__title {
     font-size: 12vw;
   }
+  #start-project .section__title {
+    font-size: 7vw;
+  }
+  #porfolio .section__title {
+    font-size: 7vw;
+  }
 }
 @media #{$xxlarge-up} {
 

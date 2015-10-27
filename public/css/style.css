@@ -7739,4 +7739,10 @@ input:focus ~ .highlight {
     padding-top: 9rem; }
 
   .section__title {
-    font-size: 12vw; } }
+    font-size: 12vw; }
+
+  #start-project .section__title {
+    font-size: 7vw; }
+
+  #porfolio .section__title {
+    font-size: 7vw; } }
