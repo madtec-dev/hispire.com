@@ -495,8 +495,8 @@ ul.inline-list {
 }
 .media__content {
   margin-bottom: 3rem;
-  padding-left: 1rem;
-  border-left: 12px solid $iron;
+  //padding-left: 1rem;
+  //border-left: 12px solid $iron;
  h2 {
    color: $white;
    margin: 0 0 .5rem 0;
@@ -631,23 +631,47 @@ background: linear-gradient(45deg, rgba(148,60,55,1) 0%, rgba(148,60,55,1) 30%, 
     padding: 2rem 0 4rem 0;
     width: 100%;
   }
-  .media__content {
-    h2 {
-      color: $red--dark;
-      margin-bottom: 2rem;
-      font-weight: 700;
-      text-transform: capitalize;
-    }
-    h3 {
-      text-transform: uppercase;
-      margin-bottom: .5rem;
-    }
-    p {
+  h2 {
+    color: $red--dark;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    text-transform: capitalize;
+  }
+  h3 {
+    text-transform: uppercase;
+    margin-bottom: .5rem;
+  }
+  p {
+  color: $charcoal;
+  }
+  .project__intro {
+    margin-bottom: 3rem;
+  }
+  .project__section {
+    display: none;
+  }
+  .project__section:first-child {
+    display: block;
+  }
+  .button--border {
     color: $charcoal;
+    &:hover, &:focus, &:active, &.active {
+      color: $white;
+      background-color: scale-color($button-bg-color, $lightness: 20%);
     }
   }
 }
-
+.button.button--border {
+  background-color: transparent;
+  border-width: 1px;
+  text-transform: uppercase;
+  &:hover, .active {
+    background-color: scale-color($button-bg-color, $lightness: 20%);
+  }
+  &.success:hover {
+  background-color: scale-color($success-color, $lightness: 20%);
+  }
+}
 .buttons--middle {
   //width: 50vw;
 
@@ -843,6 +867,15 @@ input:focus ~ .highlight {
 }
 
 /*** MEDIA QUERIES ***/
+@media #{$small-only} {
+  .project {
+    button {
+      font-size: rem-calc(16);
+      padding: .5rem 1rem;
+    }
+  }
+}
+
 @media #{$medium-up} {
   .medium-pl {
     padding-left: 1rem;
@@ -899,20 +932,9 @@ input:focus ~ .highlight {
     font-size: rem-calc(23);
     }
   }
-  .media__content {
+  .media__content, .project {
     p {
       font-size: rem-calc(23);
-    }
-  }
-  .button.button--border {
-    background-color: transparent;
-    border-width: 1px;
-    text-transform: uppercase;
-    &:hover {
-      background-color: scale-color($button-bg-color, $lightness: 20%);
-    }
-    &.success:hover {
-    background-color: scale-color($success-color, $lightness: 20%);
     }
   }
 

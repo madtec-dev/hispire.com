@@ -7368,9 +7368,7 @@ ul.inline-list {
     vertical-align: top; }
 
 .media__content {
-  margin-bottom: 3rem;
-  padding-left: 1rem;
-  border-left: 12px solid #CCCCCC; }
+  margin-bottom: 3rem; }
   .media__content h2 {
     color: #FFFFFF;
     margin: 0 0 .5rem 0;
@@ -7484,16 +7482,36 @@ ul.inline-list {
   .project img {
     padding: 2rem 0 4rem 0;
     width: 100%; }
-  .project .media__content h2 {
+  .project h2 {
     color: #9D1F20;
     margin-bottom: 2rem;
     font-weight: 700;
     text-transform: capitalize; }
-  .project .media__content h3 {
+  .project h3 {
     text-transform: uppercase;
     margin-bottom: .5rem; }
-  .project .media__content p {
+  .project p {
     color: #555555; }
+  .project .project__intro {
+    margin-bottom: 3rem; }
+  .project .project__section {
+    display: none; }
+  .project .project__section:first-child {
+    display: block; }
+  .project .button--border {
+    color: #555555; }
+    .project .button--border:hover, .project .button--border:focus, .project .button--border:active, .project .button--border.active {
+      color: #FFFFFF;
+      background-color: #e04c4a; }
+
+.button.button--border {
+  background-color: transparent;
+  border-width: 1px;
+  text-transform: uppercase; }
+  .button.button--border:hover, .button.button--border .active {
+    background-color: #e04c4a; }
+  .button.button--border.success:hover {
+    background-color: #63c286; }
 
 /* START PROJECT FORM */
 /* material form */
@@ -7669,6 +7687,10 @@ input:focus ~ .highlight {
   font-size: 1.4375rem; }
 
 /*** MEDIA QUERIES ***/
+@media only screen and (max-width: 40em) {
+  .project button {
+    font-size: 1rem;
+    padding: .5rem 1rem; } }
 @media only screen and (min-width: 40.0625em) {
   .medium-pl {
     padding-left: 1rem; }
@@ -7720,17 +7742,8 @@ input:focus ~ .highlight {
       color: #555555;
       font-size: 1.4375rem; }
 
-  .media__content p {
-    font-size: 1.4375rem; }
-
-  .button.button--border {
-    background-color: transparent;
-    border-width: 1px;
-    text-transform: uppercase; }
-    .button.button--border:hover {
-      background-color: #e04c4a; }
-    .button.button--border.success:hover {
-      background-color: #63c286; } }
+  .media__content p, .project p {
+    font-size: 1.4375rem; } }
 @media only screen and (min-width: 90.0625em) {
   .service__details .media {
     padding: 0 20rem; }
