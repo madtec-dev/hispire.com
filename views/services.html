@@ -22,11 +22,21 @@
             With fast load times, a responsive design and a more human experience,
             your customers will be satisfied and your sales will soar.
           </p>
-          <ul class="inline-list no-bullet small-centered">
-            <li class="active" data-tab="#websites">websites</li>
-            <li data-tab="#ecommerce">e-commerce</li>
-            <li data-tab="#apps">apps </li>
-          </ul>
+          <div class="small-4 columns" data-tab="#websites">
+            <button type="button" class="button button--border small-12 active" name="button">
+              websites
+            </button>
+          </div>
+          <div class="small-4 columns" data-tab="#ecommerce">
+            <button type="button" class="button button--border small-12" name="button">
+              e-commerce
+            </button>
+          </div>
+          <div class="small-4 columns" data-tab="#apps">
+            <button type="button" class="button button--border small-12" name="button">
+              apps
+            </button>
+          </div>
         </div>
       </div>
       <div class="small-12 columns">
@@ -84,11 +94,21 @@
             reports that bring data to life with our recommended future steps to ensure you’re
             always growing.
           </p>
-          <ul class="inline-list no-bullet small-centered">
-            <li class="active" data-tab="#online-marketing">online marketing</li>
-            <li data-tab="#social-strategy">social media strategy</li>
-            <li data-tab="#newsletters">newletters</li>
-          </ul>
+          <div class="small-4 columns" data-tab="#online-marketing">
+            <button type="button" class="button button--border small-12 active" name="button">
+              online marketing
+            </button>
+          </div>
+          <div class="small-4 columns" data-tab="#social-strategy">
+            <button type="button" class="button button--border small-12" name="button">
+              social media strategy
+            </button>
+          </div>
+          <div class="small-4 columns" data-tab="#newsletters">
+            <button type="button" class="button button--border small-12" name="button">
+              newsletters
+            </button>
+          </div>
         </div>
       </div>
       <div class="small-12 columns">
@@ -144,11 +164,21 @@
             where you want ‘em. Stand out from the competition and increase traffic to
             your website with the right words.
           </p>
-          <ul class="inline-list no-bullet small-centered">
-            <li class="active" data-tab="#copywriting">copywriting</li>
-            <li data-tab="#blogging">blogging</li>
-            <li data-tab="#photography-video">photograpy & video</li>
-          </ul>
+          <div class="small-4 columns" data-tab="#copywriting">
+            <button type="button" class="button button--border small-12 active" name="button">
+              copywriting
+            </button>
+          </div>
+          <div class="small-4 columns" data-tab="#blogging">
+            <button type="button" class="button button--border small-12" name="button">
+              blogging
+            </button>
+          </div>
+          <div class="small-4 columns" data-tab="#photography-video">
+            <button type="button" class="button button--border small-12" name="button">
+              photo & video
+            </button>
+          </div>
         </div>
       </div>
       <div class="small-12 columns">
@@ -203,11 +233,21 @@
             into your business and it’s identity. A completely personalized process that
             keeps you relevant and makes your brand unforgettable.
           </p>
-          <ul class="inline-list no-bullet text-center">
-            <li class="active" data-tab="#branding">branding</li>
-            <li data-tab="#logo-design">logo design</li>
-            <li data-tab="#graphic-design">graphic design</li>
-          </ul>
+          <div class="small-4 columns" data-tab="#branding">
+            <button type="button" class="button button--border small-12 active" name="button">
+              branding
+            </button>
+          </div>
+          <div class="small-4 columns" data-tab="#logo-design">
+            <button type="button" class="button button--border small-12" name="button">
+              logo design
+            </button>
+          </div>
+          <div class="small-4 columns" data-tab="#graphic-design">
+            <button type="button" class="button button--border small-12" name="button">
+              graphic design
+            </button>
+          </div>
         </div>
       </div>
       <div class="small-12 columns">
@@ -258,10 +298,9 @@
 </main>
 <script type="text/javascript">
   $('[data-tab]').click(function(e) {
-    $(this).siblings().removeClass('active');
-    $(this).addClass('active');
+    $(this).siblings().children().removeClass('active');
+    $(this).children().addClass('active');
     var id = $(this).attr('data-tab');
-    console.log($(id).siblings());
     $(id).siblings().hide();
     $(id).show().addClass("animated fadeIn");
     console.log(id);

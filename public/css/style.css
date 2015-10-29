@@ -7344,8 +7344,6 @@ section {
         text-decoration: none; }
   .card:hover {
     background-color: rgba(255, 255, 255, 0.7); }
-  .card .button {
-    width: 15em; }
   .card .card__detail {
     display: none;
     transition: 0.6s ease; }
@@ -7517,6 +7515,12 @@ ul.inline-list {
     .project .button--border:hover, .project .button--border:focus, .project .button--border:active, .project .button--border.active {
       color: #FFFFFF;
       background-color: #e04c4a; }
+
+.project .button--border, .card__description .button--border {
+  color: #555555; }
+  .project .button--border:hover, .project .button--border:focus, .project .button--border:active, .project .button--border.active, .card__description .button--border:hover, .card__description .button--border:focus, .card__description .button--border:active, .card__description .button--border.active {
+    color: #FFFFFF;
+    background-color: #e04c4a; }
 
 .button.button--border {
   background-color: transparent;
@@ -7722,9 +7726,9 @@ input:focus ~ .highlight {
 
 /*** MEDIA QUERIES ***/
 @media only screen and (max-width: 40em) {
-  .project button {
+  .project .button--border, .card__description .button--border {
     font-size: 0.75rem;
-    padding: .6rem .6rem; } }
+    padding: .6rem .6rem !important; } }
 @media only screen and (min-width: 40.0625em) {
   .section__title {
     font-size: 10vw; }

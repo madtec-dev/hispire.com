@@ -452,7 +452,7 @@ section {
   .button {
     //position: absolute;
     //bottom: 10%;
-    width: 15em;
+    //width: 15em;
     //left: 40%;
     //right: 10%;
 
@@ -665,6 +665,15 @@ background: linear-gradient(45deg, rgba(148,60,55,1) 0%, rgba(148,60,55,1) 30%, 
   .project__section:first-child {
     display: block;
   }
+  .button--border {
+    color: $charcoal;
+    &:hover, &:focus, &:active, &.active {
+      color: $white;
+      background-color: scale-color($button-bg-color, $lightness: 20%);
+    }
+  }
+}
+.project, .card__description {
   .button--border {
     color: $charcoal;
     &:hover, &:focus, &:active, &.active {
@@ -908,10 +917,10 @@ input:focus ~ .highlight {
 
 /*** MEDIA QUERIES ***/
 @media #{$small-only} {
-  .project {
-    button {
+  .project, .card__description {
+    .button--border {
       font-size: rem-calc(12);
-      padding: .6rem .6rem;
+      padding: .6rem .6rem !important;
     }
   }
 }
