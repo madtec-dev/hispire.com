@@ -7265,6 +7265,9 @@ ul.off-canvas-list {
   display: block;
   margin: 0 auto; }
 
+section {
+  background-color: #FFFFFF; }
+
 .section__header {
   padding-top: 6rem;
   margin-bottom: 4rem; }
@@ -7273,6 +7276,17 @@ ul.off-canvas-list {
   font-size: 15vw;
   font-weight: 700;
   color: #555555; }
+
+.section__subtitle {
+  margin: 0;
+  padding-top: 2rem;
+  font-weight: 700;
+  color: #9d1f20; }
+
+.subheading {
+  font-family: "Lato", Helvetica, Roboto, Arial, sans-serif;
+  color: #555555;
+  margin: 0 0 1rem 0; }
 
 .link__section {
   font-family: "Raleway", Helvetica, Roboto, Arial, sans-serif;
@@ -7686,12 +7700,35 @@ input:focus ~ .highlight {
   text-transform: uppercase;
   font-size: 1.4375rem; }
 
+/*** ABOUT ***/
+.member__image img {
+  border-radius: 50%;
+  width: 100%;
+  border: 10px solid #FAFAFA;
+  box-shadow: 0 1px 3px 0 #999999, 0 1px 1px 0 #FAFAFA; }
+
+.member__description h3 {
+  line-height: 1;
+  margin: .5rem 0 0 0;
+  font-weight: 700;
+  color: #555555; }
+.member__description h4 {
+  font-size: 1.125rem;
+  font-family: "Lato", Helvetica, Roboto, Arial, sans-serif; }
+.member__description p {
+  font-size: 1.125rem;
+  color: #666666;
+  margin: .3rem 0 .5rem 0; }
+
 /*** MEDIA QUERIES ***/
 @media only screen and (max-width: 40em) {
   .project button {
-    font-size: 1rem;
-    padding: .5rem 1rem; } }
+    font-size: 0.75rem;
+    padding: .6rem .6rem; } }
 @media only screen and (min-width: 40.0625em) {
+  .section__title {
+    font-size: 10vw; }
+
   .medium-pl {
     padding-left: 1rem; }
 
@@ -7742,6 +7779,9 @@ input:focus ~ .highlight {
       color: #555555;
       font-size: 1.4375rem; }
 
+  section p {
+    font-size: 1.4375rem; }
+
   .media__content p, .project p {
     font-size: 1.4375rem; } }
 @media only screen and (min-width: 90.0625em) {
@@ -7754,8 +7794,5 @@ input:focus ~ .highlight {
   .section__title {
     font-size: 12vw; }
 
-  #start-project .section__title {
-    font-size: 7vw; }
-
-  #porfolio .section__title {
+  #start-project .section__title, #about .section__title, #porfolio .section__title {
     font-size: 7vw; } }
