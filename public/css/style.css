@@ -7724,6 +7724,48 @@ input:focus ~ .highlight {
   color: #666666;
   margin: .3rem 0 .5rem 0; }
 
+/*** CONTACT ***/
+#contact {
+  background-color: transparent; }
+
+.contact-card {
+  box-shadow: 0 1px 3px 0 #999999, 0 1px 1px 0 #FAFAFA;
+  position: relative;
+  padding-top: 100%;
+  border-radius: 50%;
+  height: auto;
+  background-color: #E04C4A;
+  margin-bottom: 2rem;
+  border: 4px solid #F6F6F6;
+  transition: 0.3s ease; }
+  .contact-card:hover, .contact-card:focus {
+    box-shadow: 0 5px 10px 0 #757575, 0 4px 5px 0 #a8a8a8; }
+  .contact-card .contact-card__content {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    left: 0;
+    transform: translateY(-50%); }
+    .contact-card .contact-card__content h2 {
+      padding: 0;
+      color: #FFFFFF; }
+    .contact-card .contact-card__content h3 {
+      color: #F6F6F6;
+      margin: .3rem 0 0 0; }
+    .contact-card .contact-card__content span {
+      color: #FFD8D8;
+      font-size: 1.4375rem; }
+
+#contact-phone {
+  background-color: #43ac6a; }
+  #contact-phone span {
+    color: #D6FFE5; }
+
+#contact-mail {
+  background-color: #3294B6; }
+  #contact-mail span {
+    color: #C9F1FF; }
+
 /*** MEDIA QUERIES ***/
 @media only screen and (max-width: 40em) {
   .project .button--border, .card__description .button--border {
@@ -7760,7 +7802,10 @@ input:focus ~ .highlight {
     padding-left: 4rem; }
 
   .service__detail {
-    padding: 3rem 1rem !important; } }
+    padding: 3rem 1rem !important; }
+
+  .contact-card {
+    padding-top: 50%; } }
 @media only screen and (min-width: 64.0625em) {
   .brand__name {
     margin-right: 3rem !important; }
@@ -7787,7 +7832,10 @@ input:focus ~ .highlight {
     font-size: 1.4375rem; }
 
   .media__content p, .project p {
-    font-size: 1.4375rem; } }
+    font-size: 1.4375rem; }
+
+  .contact-card {
+    padding-top: 33.33%; } }
 @media only screen and (min-width: 90.0625em) {
   .service__details .media {
     padding: 0 20rem; }

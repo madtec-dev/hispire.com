@@ -915,6 +915,60 @@ input:focus ~ .highlight {
   }
 }
 
+
+/*** CONTACT ***/
+#contact {
+  background-color: transparent;
+  a {
+  }
+}
+
+.contact-card {
+  box-shadow: 0 1px 3px 0 $aluminum, 0 1px 1px 0 $ghost;
+  position: relative;
+  padding-top: 100%;
+  border-radius: 50%;
+  height: auto;
+  background-color: #E04C4A;
+  margin-bottom: 2rem;
+  border: 4px solid $vapor;
+  transition: 0.3s ease;
+  &:hover, &:focus {
+    box-shadow: 0 5px 10px 0 #757575, 0 4px 5px 0 #a8a8a8;
+  }
+  .contact-card__content {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    left: 0;
+    transform: translateY(-50%);
+    h2  {
+      padding: 0;
+      color: $white;
+    }
+    h3 {
+      color: $vapor;
+      margin: .3rem 0 0 0;
+    }
+    span {
+      color: #FFD8D8;
+      font-size: rem-calc(23);
+    }
+  }
+}
+#contact-phone {
+  background-color: #43ac6a;
+  span {
+    color: #D6FFE5;
+  }
+}
+#contact-mail {
+  background-color: #3294B6;
+  span {
+    color: #C9F1FF;
+  }
+}
+
 /*** MEDIA QUERIES ***/
 @media #{$small-only} {
   .project, .card__description {
@@ -959,6 +1013,9 @@ input:focus ~ .highlight {
   .service__detail {
     padding: 3rem 1rem !important  ;
   }
+  .contact-card {
+    padding-top: 50%;
+  }
 }
 
 @media #{$large-up} {
@@ -991,6 +1048,9 @@ input:focus ~ .highlight {
     p {
       font-size: rem-calc(23);
     }
+  }
+  .contact-card {
+    padding-top: 33.33%;
   }
 
 }

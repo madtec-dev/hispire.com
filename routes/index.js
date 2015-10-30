@@ -24,6 +24,10 @@ router.get('/about', function(req, res) {
   render('about', { title: 'MADTEC | About us' }, req, res);
 });
 
+router.get('/contact', function(req, res) {
+  render('contact', { title: 'MADTEC | Get in touch!' }, req, res);
+});
+
 router.get('/services', function(req, res) {
   render('services', { title: 'MADTEC | What we do' }, req, res);
 });
