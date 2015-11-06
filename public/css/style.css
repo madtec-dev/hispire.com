@@ -7273,9 +7273,12 @@ section {
   margin-bottom: 4rem; }
 
 .section__title {
-  font-size: 15vw;
+  font-size: 10vw;
   font-weight: 700;
   color: #555555; }
+
+#services .section__title {
+  font-size: 15vw; }
 
 .section__subtitle {
   margin: 0;
@@ -7326,7 +7329,6 @@ section {
     font-size: 1.125rem; }
     .card .card__description p {
       color: #555555;
-      font-weight: 700;
       margin-left: 0;
       font-size: 1.125rem; }
     .card .card__description li {
@@ -7501,6 +7503,7 @@ ul.inline-list {
     text-transform: capitalize; }
   .project h3 {
     text-transform: uppercase;
+    font-size: 6vw;
     margin-bottom: .5rem; }
   .project p {
     color: #555555; }
@@ -7627,6 +7630,9 @@ input:focus ~ .highlight {
 .dropzone, input, textarea {
   border: none;
   background-color: transparent !important; }
+
+form .section__subtitle {
+  margin-bottom: 3rem; }
 
 .uploader {
   padding: 1rem;
@@ -7823,19 +7829,22 @@ input:focus ~ .highlight {
     border-top: none; }
 
   .card .card__description {
-    font-size: 1.4375rem; }
+    font-size: 1.3125rem; }
     .card .card__description p {
       color: #555555;
-      font-size: 1.4375rem; }
+      font-size: 1.6875rem; }
 
   section p {
     font-size: 1.4375rem; }
 
   .media__content p, .project p {
-    font-size: 1.4375rem; }
+    font-size: 1.3125rem; }
 
   .contact-card {
-    padding-top: 33.33%; } }
+    padding-top: 33.33%; }
+
+  .project h3 {
+    font-size: 4vw; } }
 @media only screen and (min-width: 90.0625em) {
   .service__details .media {
     padding: 0 20rem; }
@@ -7847,4 +7856,7 @@ input:focus ~ .highlight {
     font-size: 12vw; }
 
   #start-project .section__title, #about .section__title, #porfolio .section__title {
-    font-size: 7vw; } }
+    font-size: 5vw; }
+
+  .project h3 {
+    font-size: 3vw; } }

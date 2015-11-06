@@ -355,10 +355,13 @@ section {
   margin-bottom: rem-calc(64);
 }
 .section__title {
-  font-size: 15vw;
+  font-size: 10vw;
   font-weight: 700;
   color: $charcoal;
   //background-color: rgba(255, 255, 255 , .5);
+}
+#services .section__title {
+  font-size: 15vw;
 }
 .section__subtitle {
   margin: 0;
@@ -421,7 +424,7 @@ section {
     font-size: rem-calc(18);
     p {
     color: $charcoal;
-    font-weight: 700;
+    //font-weight: 700;
     //font-family: $font-family-brand;
     margin-left: 0;
     font-size: rem-calc(18);
@@ -651,6 +654,7 @@ background: linear-gradient(45deg, rgba(148,60,55,1) 0%, rgba(148,60,55,1) 30%, 
   }
   h3 {
     text-transform: uppercase;
+    font-size: 6vw;
     margin-bottom: .5rem;
   }
   p {
@@ -798,6 +802,9 @@ input:focus ~ .highlight {
 .dropzone, input, textarea {
   border: none;
   background-color: transparent !important;
+}
+form .section__subtitle {
+  margin-bottom: 3rem;
 }
 .uploader {
   padding: 1rem;
@@ -1035,10 +1042,10 @@ input:focus ~ .highlight {
     border-top: none;
   }
   .card .card__description {
-    font-size: rem-calc(23);
+    font-size: rem-calc(21);
     p {
     color: $charcoal;
-    font-size: rem-calc(23);
+    font-size: rem-calc(27);
     }
   }
   section p {
@@ -1046,11 +1053,16 @@ input:focus ~ .highlight {
   }
   .media__content, .project {
     p {
-      font-size: rem-calc(23);
+      font-size: rem-calc(21);
     }
   }
   .contact-card {
     padding-top: 33.33%;
+  }
+  .project {
+      h3 {
+      font-size: 4vw;
+    }
   }
 
 }
@@ -1066,7 +1078,12 @@ input:focus ~ .highlight {
   }
   #start-project, #about, #porfolio {
     .section__title {
-      font-size: 7vw;
+      font-size: 5vw;
+    }
+  }
+  .project {
+      h3 {
+      font-size: 3vw;
     }
   }
 }

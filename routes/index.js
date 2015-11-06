@@ -17,50 +17,50 @@ function render(template, data, req, res) {
 }
 
 router.get('/', function(req, res) {
-  render('index', { title: 'MADTEC | Consulting - Websites - Applications - Online marketing' }, req, res);
+  render('index', { title: 'HISPIRE | Consulting - Websites - Apps - Online marketing' }, req, res);
 });
 
 router.get('/about', function(req, res) {
-  render('about', { title: 'MADTEC | About us' }, req, res);
+  render('about', { title: 'HISPIRE | About us' }, req, res);
 });
 
 router.get('/contact', function(req, res) {
-  render('contact', { title: 'MADTEC | Get in touch!' }, req, res);
+  render('contact', { title: 'HISPIRE | Get in touch!' }, req, res);
 });
 
 router.get('/services', function(req, res) {
-  render('services', { title: 'MADTEC | What we do' }, req, res);
+  render('services', { title: 'HISPIRE | What we do' }, req, res);
 });
 
 router.get('/services/branding', function(req, res) {
-  render('service-branding', { title: 'MADTEC | Create' }, req, res);
+  render('service-branding', { title: 'HISPIRE | Create' }, req, res);
 });
 
 router.get('/services/develop', function(req, res) {
-  render('service-develop', { title: 'MADTEC | Create' }, req, res);
+  render('service-develop', { title: 'HISPIRE | Create' }, req, res);
 });
 router.get('/services/story', function(req, res) {
-  render('service-story', { title: 'MADTEC | Create' }, req, res);
+  render('service-story', { title: 'HISPIRE | Create' }, req, res);
 });
 router.get('/services/promote', function(req, res) {
-  render('service-promote', { title: 'MADTEC | Create' }, req, res);
+  render('service-promote', { title: 'HISPIRE | Create' }, req, res);
 });
 
-router.get('/trophies', function(req, res) {
-  render('porfolio', { title: 'MADTEC | Trophy room' }, req, res);
+router.get('/porfolio', function(req, res) {
+  render('porfolio', { title: 'HISPIRE | Porfolio' }, req, res);
 });
 
-router.get('/trophies/finca', function(req, res) {
-  render('trophy-finca', { title: 'MADTEC | Trophies - Finca el molar' }, req, res);
+router.get('/porfolio/finca', function(req, res) {
+  render('porfolio-finca', { title: 'HISPIRE | Porfolio - Finca el molar' }, req, res);
 });
 
-router.get('/trophies/apicatando', function(req, res) {
-  render('trophy-apicatando', { title: 'MADTEC | Trophies - Apicatando' }, req, res);
+router.get('/porfolio/apicatando', function(req, res) {
+  render('porfolio-apicatando', { title: 'HISPIRE | Porfolio - Apicatando' }, req, res);
 });
 
 
 router.get('/start-project', function(req, res) {
-  render('start-project', { title: "MADTEC | Let's start something incredible" }, req, res);
+  render('start-project', { title: "HISPIRE | Let's start something incredible" }, req, res);
 });
 
 function parseFiles(files) {
