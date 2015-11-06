@@ -46,16 +46,16 @@ router.get('/services/promote', function(req, res) {
   render('service-promote', { title: 'HISPIRE | Create' }, req, res);
 });
 
-router.get('/porfolio', function(req, res) {
-  render('porfolio', { title: 'HISPIRE | Porfolio' }, req, res);
+router.get('/portfolio', function(req, res) {
+  render('portfolio', { title: 'HISPIRE | Portfolio' }, req, res);
 });
 
-router.get('/porfolio/finca', function(req, res) {
-  render('porfolio-finca', { title: 'HISPIRE | Porfolio - Finca el molar' }, req, res);
+router.get('/portfolio/finca', function(req, res) {
+  render('portfolio-finca', { title: 'HISPIRE | Portfolio - Finca el molar' }, req, res);
 });
 
-router.get('/porfolio/apicatando', function(req, res) {
-  render('porfolio-apicatando', { title: 'HISPIRE | Porfolio - Apicatando' }, req, res);
+router.get('/portfolio/apicatando', function(req, res) {
+  render('portfolio-apicatando', { title: 'HISPIRE | Portfolio - Apicatando' }, req, res);
 });
 
 
