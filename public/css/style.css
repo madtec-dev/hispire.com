@@ -7236,18 +7236,24 @@ ul.off-canvas-list {
 
 .hero h1 {
   color: #fff;
-  font-size: 10vw;
+  font-size: 12vw;
   line-height: 1.5em;
   letter-spacing: -0.025em;
-  font-weight: 700;
+  font-weight: 300;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.46);
   padding-top: 3rem; }
 .hero h3 {
   color: #FAFAFA;
+  font-size: 1.6875rem;
   font-weight: 400;
   margin: 0 0 1rem 0; }
   .hero h3:first-letter {
     text-transform: uppercase; }
+.hero .subtagline {
+  color: #EFEFEF;
+  margin: 0;
+  padding: 0;
+  font-size: 1.3125rem; }
 
 .hero p {
   color: #fff;
@@ -7790,7 +7796,7 @@ form .section__subtitle {
 
   .hero h1 {
     padding-top: 4.5rem;
-    font-size: 4vw; }
+    font-size: 6vw; }
 
   .hero p {
     font-size: 2vw; }
@@ -7813,6 +7819,9 @@ form .section__subtitle {
   .contact-card {
     padding-top: 50%; } }
 @media only screen and (min-width: 64.0625em) {
+  .hero h3 {
+    font-size: 2.4375rem; }
+
   .brand__name {
     margin-right: 3rem !important; }
 
