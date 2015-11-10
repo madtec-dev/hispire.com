@@ -297,13 +297,16 @@
   </section>
 </main>
 <script type="text/javascript">
-  $('[data-tab]').click(function(e) {
-    $(this).siblings().children().removeClass('active');
-    $(this).children().addClass('active');
-    var id = $(this).attr('data-tab');
-    $(id).siblings().hide();
-    $(id).show().addClass("animated fadeIn");
-    console.log(id);
-  })
+  $(function() {
+    $("[data-hover='our abilities']").addClass('active');
+    $('[data-tab]').click(function(e) {
+      $(this).siblings().children().removeClass('active');
+      $(this).children().addClass('active');
+      var id = $(this).attr('data-tab');
+      $(id).siblings().hide();
+      $(id).show().addClass("animated fadeIn");
+      console.log(id);
+    })
+  });
 </script>
 {{> ui}}

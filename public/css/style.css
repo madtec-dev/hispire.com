@@ -5485,7 +5485,7 @@ meta.foundation-mq-topbar {
           color: #FFFFFF; }
     .top-bar-section ul li:hover:not(.has-form) > a {
       background-color: #555555;
-      color: #D02724;
+      color: #555555;
       background: transparent; }
     .top-bar-section ul li.active > a {
       background: #D02724;
@@ -5618,7 +5618,7 @@ meta.foundation-mq-topbar {
     .top-bar-section li.hover > a:not(.button) {
       background-color: #555555;
       background: transparent;
-      color: #D02724; }
+      color: #555555; }
     .top-bar-section li:not(.has-form) a:not(.button) {
       background: transparent;
       line-height: 6.25rem;
@@ -5692,7 +5692,7 @@ meta.foundation-mq-topbar {
         color: #FFFFFF; }
       .top-bar-section .dropdown li:not(.has-form):not(.active):hover > a:not(.button) {
         background-color: #555555;
-        color: #D02724;
+        color: #555555;
         background: #222222; }
       .top-bar-section .dropdown li label {
         background: #333333;
@@ -5726,7 +5726,7 @@ meta.foundation-mq-topbar {
   .no-js .top-bar-section ul li:hover > a {
     background-color: #555555;
     background: transparent;
-    color: #D02724; }
+    color: #555555; }
   .no-js .top-bar-section ul li:active > a {
     background: #D02724;
     color: #FFFFFF; }
@@ -7070,56 +7070,75 @@ nav .button {
     padding: 1.5em !important; }
 
 .nav__item a {
-  color: #555555 !important;
   font-weight: 700 !important;
-  position: relative;
   text-transform: uppercase !important;
-  text-shadow: none;
-  -webkit-transition: color 0.3s;
-  -moz-transition: color 0.3s;
-  transition: color 0.3s; }
-
-.nav__item a::before,
-.nav__item a::after {
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background: #EEEEEE;
-  content: '';
-  opacity: 0;
-  -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
-  -moz-transition: opacity 0.3s, -moz-transform 0.3s;
-  transition: opacity 0.3s, transform 0.3s;
-  -webkit-transform: translateY(-10px);
-  -moz-transform: translateY(-10px);
-  transform: translateY(-10px); }
+  color: #555555;
+  text-shadow: 0 0 1px rgba(111, 134, 134, 0.3); }
 
 .nav__item a::before {
-  top: 1.5em;
-  -webkit-transform: translateY(-10px);
-  -moz-transform: translateY(-10px);
-  transform: translateY(-10px); }
+  color: #D02724;
+  content: attr(data-hover);
+  position: absolute;
+  opacity: 0;
+  text-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
+  -webkit-transform: scale(1.1) translateX(10px) translateY(-10px) rotate(4deg);
+  -moz-transform: scale(1.1) translateX(10px) translateY(-10px) rotate(4deg);
+  transform: scale(1.1) translateX(10px) translateY(-10px) rotate(4deg);
+  -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+  -moz-transition: -moz-transform 0.3s, opacity 0.3s;
+  transition: transform 0.3s, opacity 0.3s;
+  pointer-events: none; }
+
+.nav__item a:hover::before,
+.nav__item a:focus::before {
+  -webkit-transform: scale(1) translateX(0px) translateY(0px) rotate(0deg);
+  -moz-transform: scale(1) translateX(0px) translateY(0px) rotate(0deg);
+  transform: scale(1) translateX(0px) translateY(0px) rotate(0deg);
+  opacity: 1; }
+
+.nav__item a.active {
+  color: #D02724; }
+
+/*
+.nav__item a::after {
+	position: absolute;
+	left: 16%;
+	width: 70%;
+	height: 4px;
+	background: $smoke;
+	content: '';
+	opacity: 0;
+	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+	-moz-transition: opacity 0.3s, -moz-transform 0.3s;
+	transition: opacity 0.3s, transform 0.3s;
+	-webkit-transform: translateY(-10px);
+	-moz-transform: translateY(-10px);
+	transform: translateY(-10px);
+}
+
+
 
 .nav__item a::after {
-  bottom: 1.5em;
-  -webkit-transform: translateY(10px);
-  -moz-transform: translateY(10px);
-  transform: translateY(10px); }
+	bottom: 1.5em;
+	-webkit-transform: translateY(10px);
+	-moz-transform: translateY(10px);
+	transform: translateY(10px);
+}
 
 .nav__item a:hover,
 .nav__item a:focus {
-  color: #fff; }
+	color: #fff;
+}
 
 .nav__item a:hover::before,
 .nav__item a:focus::before,
 .nav__item a:hover::after,
 .nav__item a:focus::after {
-  opacity: 1;
-  -webkit-transform: translateY(0px);
-  -moz-transform: translateY(0px);
-  transform: translateY(0px); }
-
+	opacity: 1;
+	-webkit-transform: translateY(0px);
+	-moz-transform: translateY(0px);
+	transform: translateY(0px);
+}*/
 .top-bar-section ul li {
   background-color: transparent; }
 

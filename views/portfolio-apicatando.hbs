@@ -118,14 +118,15 @@
   </div>
 </main>
 <script type="text/javascript">
-  $('[data-tab]').click(function(e) {
-    $('[data-tab] button').removeClass('active');
-    $(this).children().addClass('active');
-    var id = $(this).attr('data-tab');
-    console.log($(id).siblings());
-    $(id).siblings().hide();
-    $(id).show().addClass("animated fadeIn");
-    console.log(id);
+  $(function() {
+    $('[data-hover="portfolio"]').addClass('active');
+    $('[data-tab]').click(function(e) {
+      $('[data-tab] button').removeClass('active');
+      $(this).children().addClass('active');
+      var id = $(this).attr('data-tab');
+      $(id).siblings().hide();
+      $(id).show().addClass("animated fadeIn");
+    })
   })
 </script>
 {{> ui}}

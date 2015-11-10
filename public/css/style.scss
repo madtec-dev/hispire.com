@@ -85,23 +85,44 @@ nav .button {
   }
 }
 
-.nav__item a {
+.nav__item a{
 	//padding: 10px;
-	color: $charcoal !important;
+	//color: $red--dark !important;
 	font-weight: 700 !important;
-  position: relative;
   text-transform: uppercase !important;
-	text-shadow: none;
-	-webkit-transition: color 0.3s;
-	-moz-transition: color 0.3s;
-	transition: color 0.3s;
+  color: $charcoal;
+  text-shadow: 0 0 1px rgba(111,134,134,0.3);
 }
 
-.nav__item a::before,
+.nav__item a::before {
+  color: $red;
+	content: attr(data-hover);
+	position: absolute;
+	opacity: 0;
+	text-shadow: 0 0 1px rgba(255,255,255,0.3);
+	-webkit-transform: scale(1.1) translateX(10px) translateY(-10px) rotate(4deg);
+	-moz-transform: scale(1.1) translateX(10px) translateY(-10px) rotate(4deg);
+	transform: scale(1.1) translateX(10px) translateY(-10px) rotate(4deg);
+	-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+	-moz-transition: -moz-transform 0.3s, opacity 0.3s;
+	transition: transform 0.3s, opacity 0.3s;
+	pointer-events: none;
+}
+.nav__item a:hover::before,
+.nav__item a:focus::before {
+  -webkit-transform: scale(1) translateX(0px) translateY(0px) rotate(0deg);
+	-moz-transform: scale(1) translateX(0px) translateY(0px) rotate(0deg);
+	transform: scale(1) translateX(0px) translateY(0px) rotate(0deg);
+	opacity: 1;
+}
+.nav__item a.active {
+  color: $red;
+}
+/*
 .nav__item a::after {
 	position: absolute;
-	left: 0;
-	width: 100%;
+	left: 16%;
+	width: 70%;
 	height: 4px;
 	background: $smoke;
 	content: '';
@@ -114,12 +135,7 @@ nav .button {
 	transform: translateY(-10px);
 }
 
-.nav__item a::before {
-	top: 1.5em;
-	-webkit-transform: translateY(-10px);
-	-moz-transform: translateY(-10px);
-	transform: translateY(-10px);
-}
+
 
 .nav__item a::after {
 	bottom: 1.5em;
@@ -141,7 +157,7 @@ nav .button {
 	-webkit-transform: translateY(0px);
 	-moz-transform: translateY(0px);
 	transform: translateY(0px);
-}
+}*/
 
 .top-bar-section ul li {
   background-color: transparent;
