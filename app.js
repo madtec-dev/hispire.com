@@ -4,14 +4,20 @@ var multer = require('multer');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var compress = require('compression');
+var i18n = require('i18n');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var hbs  = require('hbs');
+var app = express();
 
 var routes = require('./routes/index');
 var users = require('./routes/user');
 
-var app = express();
+i18n.configure({
+  locales: ['es', 'en'],
+  cookie: 'locale',
+  directory: __dirname + "/locales"
+});
 
 var env = process.env.NODE_ENV || 'development';
 app.locals.ENV = env;
@@ -42,6 +48,7 @@ app.use(cookieParser());
 app.use(compress());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(multer({dest: './public/uploads/'}));
+app.use(i18n.init);
 app.use('/', routes);
 app.use('/users', users);
 

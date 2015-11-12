@@ -16,23 +16,45 @@ function render(template, data, req, res) {
 
 }
 
+router.use(function (req, res, next) {
+    // mustache helper
+    res.locals.lg = '/';
+
+    next();
+});
+
+router.param('locale', function(req, res, next, locale) {
+  res.cookie('locale', locale);
+  res.setLocale(locale);
+  res.locals.lg =  '/' + req.getLocale()  + '/';
+  next();
+})
+
 router.get('/', function(req, res) {
-  render('index', { title: 'HISPIRE | Consulting - Websites - Apps - Online marketing' }, req, res);
+  render('index', { title: 'HISPIRE | ' + req.__('title') }, req, res);
 });
 
-router.get('/about', function(req, res) {
-  render('about', { title: 'HISPIRE | About us' }, req, res);
+router.get('/:locale?', function(req, res, next) {
+  if (req.params.locale == 'es' || req.params.locale == 'en') {
+    render('index', { title: 'HISPIRE | ' + req.__('title') }, req, res);
+  }
+  else next();
+})
+
+
+router.get('/:locale?/about', function(req, res) {
+  render('about', { title: 'HISPIRE | ' + req.__('about title') }, req, res);
 });
 
-router.get('/contact', function(req, res) {
-  render('contact', { title: 'HISPIRE | Get in touch!' }, req, res);
+router.get('/:locale?/contact', function(req, res) {
+  render('contact', { title: 'HISPIRE | ' + req.__('contact title') }, req, res);
 });
 
-router.get('/services', function(req, res) {
-  render('services', { title: 'HISPIRE | What we do' }, req, res);
+router.get('/:locale?/services', function(req, res) {
+  render('services', { title: 'HISPIRE | ' + req.__('services title') }, req, res);
 });
 
-router.get('/services/branding', function(req, res) {
+/*router.get('/services/branding', function(req, res) {
   render('service-branding', { title: 'HISPIRE | Create' }, req, res);
 });
 
@@ -44,23 +66,23 @@ router.get('/services/story', function(req, res) {
 });
 router.get('/services/promote', function(req, res) {
   render('service-promote', { title: 'HISPIRE | Create' }, req, res);
+});*/
+
+router.get('/:locale?/portfolio', function(req, res) {
+  render('portfolio', { title: 'HISPIRE | ' + req.__('portfolio title') }, req, res);
 });
 
-router.get('/portfolio', function(req, res) {
-  render('portfolio', { title: 'HISPIRE | Portfolio' }, req, res);
+router.get('/:locale?/portfolio/finca', function(req, res) {
+  render('portfolio-finca', { title: 'HISPIRE | ' + req.__('finca title') }, req, res);
 });
 
-router.get('/portfolio/finca', function(req, res) {
-  render('portfolio-finca', { title: 'HISPIRE | Portfolio - Finca el molar' }, req, res);
-});
-
-router.get('/portfolio/apicatando', function(req, res) {
-  render('portfolio-apicatando', { title: 'HISPIRE | Portfolio - Apicatando' }, req, res);
+router.get('/:locale?/portfolio/apicatando', function(req, res) {
+  render('portfolio-apicatando', { title: 'HISPIRE | ' + req.__('apicatando title') }, req, res);
 });
 
 
-router.get('/start-project', function(req, res) {
-  render('start-project', { title: "HISPIRE | Let's start something incredible" }, req, res);
+router.get('/:locale?/start-project', function(req, res) {
+  render('start-project', { title: 'HISPIRE | ' + req.__('start project title') }, req, res);
 });
 
 function parseFiles(files) {
