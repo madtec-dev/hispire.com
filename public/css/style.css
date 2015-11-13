@@ -7139,6 +7139,11 @@ nav .button {
 	-moz-transform: translateY(0px);
 	transform: translateY(0px);
 }*/
+.lang a {
+  font-weight: 400 !important; }
+.lang a:hover, .lang a:focus {
+  color: #d02724 !important; }
+
 .top-bar-section ul li {
   background-color: transparent; }
 

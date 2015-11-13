@@ -47,21 +47,21 @@
 
       </li>
     </a>-->
-    <a data-pjax href="{{lg}}">
+    <a data-pjax id="home-button" href="{{lg}}">
       <li class="name">
         <h1 class="brand__name">hi<span>spire</span></h1>
       </li>
     </a>
-        <li class="nav__item"><a data-pjax href="{{lg}}services" data-hover="{{{__ 'services'}}}">{{{__ 'services'}}}</a></li>
-        <li class="nav__item"><a data-pjax href="{{lg}}portfolio"  data-hover="{{{__ 'portfolio'}}}">{{{__ 'portfolio'}}}</a></li>
-        <li class="nav__item"><a data-pjax href="{{lg}}about" data-hover="{{{__ 'about'}}}">{{{__ 'about'}}}</a></li>
-        <li class="nav__item"><a data-pjax href="{{lg}}contact" data-hover="{{{__ 'contact'}}}">{{{__ 'contact'}}}</a></li>
+        <li class="nav__item"><a data-pjax href="{{lg}}services" id="services-button" data-hover="{{{__ 'services'}}}">{{{__ 'services'}}}</a></li>
+        <li class="nav__item"><a data-pjax href="{{lg}}portfolio" id="portfolio-button" data-hover="{{{__ 'portfolio'}}}">{{{__ 'portfolio'}}}</a></li>
+        <li class="nav__item"><a data-pjax href="{{lg}}about" id="about-button" data-hover="{{{__ 'about'}}}">{{{__ 'about'}}}</a></li>
+        <li class="nav__item"><a data-pjax href="{{lg}}contact" id="contact-button" data-hover="{{{__ 'contact'}}}">{{{__ 'contact'}}}</a></li>
         <li class="has-form"><a class="button--border button" data-pjax href="{{lg}}start-project">{{{__ 'start project'}}}</a></li>
         <li class="nav__item lang">
-          <a href="/en"><span>English</span></a>
+          <a id="english-button" href="/en"><span>English</span></a>
         </li>
         <li class="nav__item lang">
-          <a href="/es"><span class="pl">Español</span></a>
+          <a id="spanish-button" href="/es"><span class="pl">Español</span></a>
         </li>
   </ul>
   </div>
@@ -76,7 +76,7 @@
        <span></span>
     </div>
     <div class="middle tab-bar-section">
-      <a data-pjax href="{{lg}}">
+      <a id="home-button" data-pjax href="{{lg}}">
         <h1 class="brand__name animated fadeIn">hi<span>spire</span></h1>
       </a>
     </div>
@@ -92,7 +92,18 @@
         <li><a data-pjax href="{{lg}}about">{{{__ 'about'}}}</a></li>
         <li><a data-pjax href="{{lg}}contact">{{{__ 'contact'}}}</a></li>
         <li><a class="button" data-pjax href="{{lg}}start-project">{{{__ 'start project'}}}</a></li>
+        <li><a id="english-button" href="/en"><span>English</span></a></li>
+        <li><a id="spanish-button" href="/es"><span>Spanish</span></a></li>
     </ul>
 </nav>
 </div>
 <a id="container-exit" class=""></a>
+<script type="text/javascript">
+  if ($('#home-button').attr('href').slice(1,3) == 'en') {
+    console.log('en');
+    $('#english-button').addClass('active');
+  }
+  else {
+    $('#spanish-button').addClass('active');
+  }
+</script>
