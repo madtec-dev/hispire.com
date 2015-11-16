@@ -102,7 +102,7 @@
             </div>-->
             <div class="small-12 group large-6 small-centered columns">
               <label>{{{__ 'form budget'}}}</label>
-              <div class="range-slider" id="budget-slider" name="budget" data-slider data-options="display_selector: #sliderOutput; step: 200; start: 800; end: 10000">
+              <div class="range-slider" id="budget-slider" name="budget" data-slider data-options="step: 200; start: 800; end: 10000">
                 <span class="range-slider-handle" role="slider" tabindex="0"></span>
                 <span class="range-slider-active-segment"></span>
               </div>
@@ -183,8 +183,13 @@ $(function() {
         projectDropzone = this;
     }
   });
+  function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
     $('[data-slider]').on('change.fndtn.slider', function(){
-      $('#budget').val('$' + $('#budget-slider').attr('data-slider'))
+      $('#budget').val('$' + numberWithCommas($('#budget-slider').attr('data-slider')));
+      var numberCommas = numberWithCommas($('#budget-slider').attr('data-slider'));
+      $('#sliderOutput').text(numberCommas);
     });
     Dropzone.autoDiscover = false;
 
