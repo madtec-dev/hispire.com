@@ -40,8 +40,9 @@ router.get('/:locale?', function(req, res, next) {
 })
 
 router.get('/lang/:locale', function(req, res, next) {
+  console.log(req.headers.referer.split('/').slice(-2)[0]);
     // TODO use REGEX to get the part of the referer after /en/ o /es/
-    if (req.headers.referer.split('/').slice(-2)[0] == 'en' || req.headers.referer.split('/').slice(-2)[0] == 'es') {
+    if (req.headers.referer.split('/').slice(-2)[0] != 'portfolio') {
       res.redirect(res.locals.lg + req.headers.referer.split('/').slice(-1)[0]);
     }
     else {
@@ -107,7 +108,7 @@ router.post('/start-project', function(req, res, next) {
   }
   var message = {
       from: req.body.name + ' <' + req.body.email + '>' ,
-      to: 'projects@madtec.co',
+      to: 'projects@hispire.com',
       //replace it with id you want to send multiple must be separated by ,(comma)
       subject: 'Project request',
       //generateTextFromHTML: true,
