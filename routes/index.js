@@ -17,9 +17,7 @@ function render(template, data, req, res) {
 }
 
 router.use(function (req, res, next) {
-    // mustache helper
     res.locals.lg = '/';
-
     next();
 });
 
@@ -39,6 +37,19 @@ router.get('/:locale?', function(req, res, next) {
     render('index', { title: 'HISPIRE | ' + req.__('title') }, req, res);
   }
   else next();
+})
+
+router.get('/lang/:locale', function(req, res, next) {
+    // TODO use REGEX to get the part of the referer after /en/ o /es/
+    if (req.headers.referer.split('/').slice(-2)[0] == 'en' || req.headers.referer.split('/').slice(-2)[0] == 'es') {
+      res.redirect(res.locals.lg + req.headers.referer.split('/').slice(-1)[0]);
+    }
+    else {
+      res.redirect(res.locals.lg +
+                   req.headers.referer.split('/').slice(-2)[0] +
+                   '/' +
+                   req.headers.referer.split('/').slice(-1)[0]);
+    }
 })
 
 
@@ -85,28 +96,7 @@ router.get('/:locale?/start-project', function(req, res) {
   render('start-project', { title: 'HISPIRE | ' + req.__('start project title') }, req, res);
 });
 
-function parseFiles(files) {
-  var filesArray = [].concat(files);
-  var parsedFiles = [];
-  console.log(filesArray);
-  if(filesArray[0] != undefined) {
-    for(var i=0;i<filesArray.length;i++) {
-      console.log(filesArray[i][0]);
-      var file = {
-        filename: filesArray[i].originalname ,
-        path: filesArray[i].path
-      }
-      parsedFiles.push(file);
-    }
-  } else {
-    parsedFiles = [];
-  }
-  return parsedFiles;
-}
-
 router.post('/start-project', function(req, res, next) {
-  console.log('BODY', req.body);
-  console.log('FILES', req.files);
   if (req.files) {
     var projectFiles = Object.keys(req.files)
       .map(function(i) {
@@ -115,7 +105,6 @@ router.post('/start-project', function(req, res, next) {
                }
       })
   }
-  console.log(projectFiles);
   var message = {
       from: req.body.name + ' <' + req.body.email + '>' ,
       to: 'projects@madtec.co',
