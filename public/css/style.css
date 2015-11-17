@@ -7252,7 +7252,7 @@ ul.off-canvas-list {
   bottom: 0;
   left: 0;
   background-image: linear-gradient(to bottom right, #1e1e1e, #000000);
-  opacity: 0.4; }
+  opacity: 0.1; }
 
 .hero .intro {
   position: relative;
@@ -7271,7 +7271,8 @@ ul.off-canvas-list {
   color: #FAFAFA;
   font-size: 1.6875rem;
   font-weight: 400;
-  margin: 0 0 1rem 0; }
+  margin: 0 0 1rem 0;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.46); }
   .hero h3:first-letter {
     text-transform: uppercase; }
 .hero .subtagline {

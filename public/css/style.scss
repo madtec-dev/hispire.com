@@ -320,7 +320,7 @@ ul.off-canvas-list {
   //background-image: linear-gradient(to bottom right, #002f4b, #dc4225);
   //background-image: linear-gradient(to bottom right, #fefefe, #ffffff);
   background-image: linear-gradient(to bottom right, #1e1e1e, #000000);
-  opacity: .4 ;
+  opacity: .1 ;
 }
 .hero .intro {
   //padding: 3rem;
@@ -346,6 +346,7 @@ ul.off-canvas-list {
     font-size: rem-calc(27);
     font-weight: 400;
     margin: 0 0 1rem 0;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.46);
 
     &:first-letter {
       text-transform: uppercase;
