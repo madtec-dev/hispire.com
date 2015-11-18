@@ -7050,6 +7050,11 @@ main {
 .name {
   background-color: transparent !important; }
 
+.logo {
+  max-width: 5rem;
+  margin-top: -3px;
+  margin-left: 5px; }
+
 .brand__name {
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -7845,6 +7850,10 @@ form .section__subtitle {
   .contact-card {
     padding-top: 50%; } }
 @media only screen and (min-width: 64.0625em) {
+  .logo {
+    max-width: 8rem;
+    margin-top: 1.4rem; }
+
   .hero h3 {
     font-size: 2.4375rem; }
 

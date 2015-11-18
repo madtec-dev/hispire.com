@@ -18,6 +18,7 @@ function render(template, data, req, res) {
 
 router.use(function (req, res, next) {
     res.locals.lg = '/';
+    res.locals.locale =  req.getLocale();
     next();
 });
 
@@ -58,27 +59,13 @@ router.get('/:locale?/about', function(req, res) {
   render('about', { title: 'HISPIRE | ' + req.__('about title') }, req, res);
 });
 
-router.get('/:locale?/contact', function(req, res) {
+/*router.get('/:locale?/contact', function(req, res) {
   render('contact', { title: 'HISPIRE | ' + req.__('contact title') }, req, res);
-});
+});*/
 
 router.get('/:locale?/services', function(req, res) {
   render('services', { title: 'HISPIRE | ' + req.__('services title') }, req, res);
 });
-
-/*router.get('/services/branding', function(req, res) {
-  render('service-branding', { title: 'HISPIRE | Create' }, req, res);
-});
-
-router.get('/services/develop', function(req, res) {
-  render('service-develop', { title: 'HISPIRE | Create' }, req, res);
-});
-router.get('/services/story', function(req, res) {
-  render('service-story', { title: 'HISPIRE | Create' }, req, res);
-});
-router.get('/services/promote', function(req, res) {
-  render('service-promote', { title: 'HISPIRE | Create' }, req, res);
-});*/
 
 router.get('/:locale?/portfolio', function(req, res) {
   render('portfolio', { title: 'HISPIRE | ' + req.__('portfolio title') }, req, res);

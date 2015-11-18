@@ -60,6 +60,12 @@ main {
   background-color: transparent !important;
 }
 
+.logo {
+  max-width: 5rem;
+  margin-top: -3px;
+  margin-left: 5px;
+}
+
 .brand__name {
   //margin-right: 3rem !important;
   text-transform: uppercase;
@@ -1059,6 +1065,13 @@ form .section__subtitle {
 }
 
 @media #{$large-up} {
+  .logo {
+    //left: 6rem;
+    max-width: 8rem;
+    margin-top: 1.4rem;
+    //position: absolute;
+  }
+
   .hero h3 {
     font-size: rem-calc(39);
   }

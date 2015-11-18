@@ -1,73 +1,34 @@
 <div class="fixed animated fadeIn">
-<nav class="top-bar show-for-xlarge-up">
+<nav class="top-bar show-for-large-up">
   <div class="top-bar-section">
   <ul class="center-buttons">
-    <!--<a data-pjax href="/">
-      <li class="name">
-         <svg version="1.1" id="brand__logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-         viewBox="0 0 123.352 172.132" enable-background="new 0 0 123.352 172.132"
-         xml:space="preserve">
-        <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="90.6787" y1="76.3931" x2="123.3516" y2="76.3931">
-        <stop  offset="0" style="stop-color:#42000D"/>
-        <stop  offset="0.2347" style="stop-color:#42000D"/>
-        <stop  offset="0.2353" style="stop-color:#42000D"/>
-        <stop  offset="0.2942" style="stop-color:#5D0818"/>
-        <stop  offset="0.3522" style="stop-color:#73121E"/>
-        <stop  offset="0.4084" style="stop-color:#851722"/>
-        <stop  offset="0.462" style="stop-color:#901924"/>
-        <stop  offset="0.5102" style="stop-color:#941A25"/>
-        <stop  offset="0.7129" style="stop-color:#B21D2B"/>
-        <stop  offset="0.8265" style="stop-color:#BE1E2D"/>
-        <stop  offset="1" style="stop-color:#BE1E2D"/>
-      </linearGradient>
-      <linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="0" y1="86.0659" x2="90.2979" y2="86.0659">
-        <stop  offset="0" style="stop-color:#BE1E2D"/>
-        <stop  offset="0.6735" style="stop-color:#BE1E2D"/>
-        <stop  offset="0.7523" style="stop-color:#B21D2B"/>
-        <stop  offset="0.8929" style="stop-color:#941A25"/>
-        <stop  offset="1" style="stop-color:#42000D"/>
-      </linearGradient>
-      <linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="74.4912" y1="83.3813" x2="123.3516" y2="83.3813">
-        <stop  offset="0" style="stop-color:#42000D"/>
-        <stop  offset="0.0765" style="stop-color:#42000D"/>
-        <stop  offset="0.1282" style="stop-color:#4D0012"/>
-        <stop  offset="0.23" style="stop-color:#6B0F1C"/>
-        <stop  offset="0.3367" style="stop-color:#941A25"/>
-        <stop  offset="0.3405" style="stop-color:#971A25"/>
-        <stop  offset="0.377" style="stop-color:#AC1D2A"/>
-        <stop  offset="0.412" style="stop-color:#BA1E2C"/>
-        <stop  offset="0.4439" style="stop-color:#BE1E2D"/>
-        <stop  offset="1" style="stop-color:#BE1E2D"/>
-        </linearGradient>
-        <polygon fill="url(#SVGID_1_)" points="119.546,120.413 123.352,32.373 90.679,69.02 "/>
-        <polygon fill="url(#SVGID_2_)" points="0,172.132 52.19,0 90.298,69.143 "/>
-        <polygon fill="url(#SVGID_3_)" points="123.352,32.373 86.569,134.39 74.491,87.175 "/>
-        <polygon fill="#BE1E2D" points="52.19,0 86.569,134.39 102.496,90.208 "/>
-      </svg>
-
-      </li>
-    </a>-->
     <a data-pjax id="home-button" href="{{lg}}">
-      <li class="name">
-        <h1 class="brand__name">hi<span>spire</span></h1>
+      <li>
+        <img  class="logo" src="/img/logo.svg" alt="" />
+        <!--<h1 class="brand__name">hi<span>spire</span></h1>-->
       </li>
     </a>
         <li class="nav__item"><a data-pjax href="{{lg}}services" id="services-button" data-hover="{{{__ 'services'}}}">{{{__ 'services'}}}</a></li>
         <li class="nav__item"><a data-pjax href="{{lg}}portfolio" id="portfolio-button" data-hover="{{{__ 'portfolio'}}}">{{{__ 'portfolio'}}}</a></li>
         <li class="nav__item"><a data-pjax href="{{lg}}about" id="about-button" data-hover="{{{__ 'about'}}}">{{{__ 'about'}}}</a></li>
-        <li class="nav__item"><a data-pjax href="{{lg}}contact" id="contact-button" data-hover="{{{__ 'contact'}}}">{{{__ 'contact'}}}</a></li>
-        <li class="has-form"><a class="button--border button" data-pjax href="{{lg}}start-project">{{{__ 'start project'}}}</a></li>
-        <li class="nav__item lang">
-          <a id="english-button" href="/lang/en"><span>English</span></a>
-        </li>
+        <li class="nav__item"><a data-pjax href="{{lg}}start-project" id="project-button">{{{__ 'start project'}}}</a></li>
+        <!--<li class="has-form"><a class="button--border button" data-pjax href="{{lg}}start-project">{{{__ 'start project'}}}</a></li>-->
+
+        {{#ifvalue locale equals="es"}}
+          <li class="nav__item lang">
+            <a id="english-button" href="/lang/en"><span>English</span></a>
+          </li>
+        {{/ifvalue}}
+        {{#ifvalue locale equals="en"}}
         <li class="nav__item lang">
           <a id="spanish-button" href="/lang/es"><span class="pl">Español</span></a>
         </li>
+        {{/ifvalue}}
   </ul>
   </div>
 </nav>
 </div>
-<div class="hide-for-xlarge-up fixed">
+<div class="hide-for-large-up fixed">
   <nav class="tab-bar hide-for-xlarge-up">
     <div>
         <button type="button" id="menu-button" role="button" aria-label="Toggle Navigation" data-effect="st-effect-2" class="lines-button x">
@@ -77,7 +38,8 @@
     </div>
     <div class="middle tab-bar-section">
       <a id="home-button" data-pjax href="{{lg}}">
-        <h1 class="brand__name animated fadeIn">hi<span>spire</span></h1>
+        <!--<h1 class="brand__name animated fadeIn">hi<span>spire</span></h1>-->
+        <img class="logo" src="/img/logo.svg" alt="" />
       </a>
     </div>
   </nav>
@@ -90,20 +52,14 @@
         <li><a data-pjax href="{{lg}}services">{{{__ 'services'}}}</a></li>
         <li><a data-pjax href="{{lg}}portfolio">{{{__ 'portfolio'}}}</a></li>
         <li><a data-pjax href="{{lg}}about">{{{__ 'about'}}}</a></li>
-        <li><a data-pjax href="{{lg}}contact">{{{__ 'contact'}}}</a></li>
         <li><a class="button" data-pjax href="{{lg}}start-project">{{{__ 'start project'}}}</a></li>
-        <li><a id="english-button" href="/en"><span>English</span></a></li>
-        <li><a id="spanish-button" href="/es"><span>Spanish</span></a></li>
+        {{#ifvalue locale equals="es"}}
+          <li><a id="english-button" href="/lang/en"><span>English</span></a></li>
+        {{/ifvalue}}
+        {{#ifvalue locale equals="en"}}
+          <li><a id="spanish-button" href="/lang/es"><span>Español</span></a></li>
+        {{/ifvalue}}
     </ul>
 </nav>
 </div>
 <a id="container-exit" class=""></a>
-<script type="text/javascript">
-  if ($('#home-button').attr('href').slice(1,3) == 'en') {
-    console.log('en');
-    $('#english-button').addClass('active');
-  }
-  else {
-    $('#spanish-button').addClass('active');
-  }
-</script>

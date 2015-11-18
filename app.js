@@ -27,6 +27,14 @@ app.locals.ENV_DEVELOPMENT = env == 'development';
 
 app.engine('hbs', hbs.__express);
 hbs.registerPartials(path.join(__dirname, 'views/partials'));
+hbs.registerHelper("ifvalue", function(conditional, options) {
+  console.log(options);
+    if (conditional == options.hash.equals) {
+        return options.fn(this);
+    } else {
+        return options.inverse(this);
+    }
+});
 
 if (app.get('env') === 'development') {
   app.set('views', path.join(__dirname, 'views'));
