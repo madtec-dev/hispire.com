@@ -106,6 +106,7 @@ nav .button {
 .nav__item a.active::after {
 	display: inline-block;
 	opacity: 0;
+
 	-webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
 	-moz-transition: -moz-transform 0.3s, opacity 0.2s;
 	transition: transform 0.3s, opacity 0.2s;
@@ -434,7 +435,7 @@ section {
   min-height: 80vh;
   .card__title {
     padding-top: 2rem;
-    margin-bottom: 0;
+    //margin-bottom: 4rem;
     color: $charcoal;
     font-size: 8vw !important;
     text-transform: uppercase;
@@ -470,7 +471,7 @@ section {
     }
   }
   &:hover {
-    background-color: rgba(255, 255, 255, .70);
+    //background-color: rgba(255, 255, 255, .70);
     //box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, .2);
   }
   .button {
@@ -485,7 +486,7 @@ section {
     &:nth-child(3n+1) {
       display: block;
     }
-    display: none;
+    //display: none;
     transition: 0.6s ease;
     //padding: 2rem;
     //box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, .2);
@@ -1038,6 +1039,11 @@ form .section__subtitle {
   .media__content {
     padding-left: 4rem;
   }
+  .media__content, .project {
+    p {
+      font-size: rem-calc(21);
+    }
+  }
   .service__detail {
     padding: 3rem 1rem !important  ;
   }
@@ -1081,11 +1087,6 @@ form .section__subtitle {
   }
   section p {
     font-size: rem-calc(23);
-  }
-  .media__content, .project {
-    p {
-      font-size: rem-calc(21);
-    }
   }
   .contact-card {
     padding-top: 33.33%;
