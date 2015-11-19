@@ -70,7 +70,7 @@ main {
   //margin-right: 3rem !important;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: $red--dark !important;
+  color: $primary-color !important;
   font-weight: 400 !important;
   font-size: rem-calc(23) !important;
   span {
@@ -93,83 +93,65 @@ nav .button {
 
 .nav__item a{
 	//padding: 10px;
-	//color: $red--dark !important;
+	//color: $orange--dark !important;
 	font-weight: 700 !important;
   text-transform: uppercase !important;
   color: $charcoal;
-  text-shadow: 0 0 1px rgba(111,134,134,0.3);
+  //text-shadow: 0 0 1px rgba(111,134,134,0.3);
 }
 
-.nav__item a::before {
-  color: $red;
-	content: attr(data-hover);
-	position: absolute;
+.nav__item a::before,
+.nav__item a::after,
+.nav__item a.active::before,
+.nav__item a.active::after {
+	display: inline-block;
 	opacity: 0;
-	text-shadow: 0 0 1px rgba(255,255,255,0.3);
-	-webkit-transform: scale(1.1) translateX(10px) translateY(-10px) rotate(4deg);
-	-moz-transform: scale(1.1) translateX(10px) translateY(-10px) rotate(4deg);
-	transform: scale(1.1) translateX(10px) translateY(-10px) rotate(4deg);
-	-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
-	-moz-transition: -moz-transform 0.3s, opacity 0.3s;
-	transition: transform 0.3s, opacity 0.3s;
-	pointer-events: none;
-}
-.nav__item a:hover::before,
-.nav__item a:focus::before {
-  -webkit-transform: scale(1) translateX(0px) translateY(0px) rotate(0deg);
-	-moz-transform: scale(1) translateX(0px) translateY(0px) rotate(0deg);
-	transform: scale(1) translateX(0px) translateY(0px) rotate(0deg);
-	opacity: 1;
-}
-.nav__item a.active {
-  color: $red;
-}
-/*
-.nav__item a::after {
-	position: absolute;
-	left: 16%;
-	width: 70%;
-	height: 4px;
-	background: $smoke;
-	content: '';
-	opacity: 0;
-	-webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
-	-moz-transition: opacity 0.3s, -moz-transform 0.3s;
-	transition: opacity 0.3s, transform 0.3s;
-	-webkit-transform: translateY(-10px);
-	-moz-transform: translateY(-10px);
-	transform: translateY(-10px);
+	-webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+	-moz-transition: -moz-transform 0.3s, opacity 0.2s;
+	transition: transform 0.3s, opacity 0.2s;
 }
 
-
-
-.nav__item a::after {
-	bottom: 1.5em;
-	-webkit-transform: translateY(10px);
-	-moz-transform: translateY(10px);
-	transform: translateY(10px);
+.nav__item a::before,
+.nav__item a.active::before {
+	padding-right: 5px;
+	content: '[';
+	-webkit-transform: translateX(20px);
+	-moz-transform: translateX(20px);
+	transform: translateX(20px);
 }
 
-.nav__item a:hover,
-.nav__item a:focus {
-	color: #fff;
+.nav__item a::after,
+.nav__item a.active::after {
+	padding-left: 5px;
+	content: ']';
+	-webkit-transform: translateX(-20px);
+	-moz-transform: translateX(-20px);
+	transform: translateX(-20px);
 }
 
 .nav__item a:hover::before,
-.nav__item a:focus::before,
 .nav__item a:hover::after,
+.nav__item a:focus::before,
 .nav__item a:focus::after {
 	opacity: 1;
-	-webkit-transform: translateY(0px);
-	-moz-transform: translateY(0px);
-	transform: translateY(0px);
-}*/
+	-webkit-transform: translateX(0px);
+	-moz-transform: translateX(0px);
+	transform: translateX(0px);
+}
+.nav__item a.active {
+  &::before, &::after {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+  color: $orange;
+}
+
 .lang  {
   a {
     font-weight: 400 !important;
   }
   a:hover, a:focus {
-    color: #d02724 !important ;
+    color: $orange !important ;
   }
 }
 
@@ -301,7 +283,7 @@ ul.off-canvas-list {
       &:hover {
         color: $white;
         background-color: transparent;
-        border-left: 4px solid $red !important;
+        border-left: 4px solid $orange !important;
 
       }
     }
@@ -406,7 +388,7 @@ section {
   margin: 0;
   padding-top: 2rem;
   font-weight: 700;
-  color: #9d1f20;
+  color: $primary-color;
 }
 .subheading {
   font-family: $font-family-sans-serif;
@@ -422,15 +404,15 @@ section {
     font-weight: 700;
 
     text-decoration: underline;
-    text-decoration-color: $red;
+    text-decoration-color: $orange;
     transition: 0.2s ease all;
     p:first-letter {
       text-transform: uppercase;
     }
   }
   a:hover, a:focus {
-    color: scale-color($red, $lightness: 20%);
-    text-decoration-color: scale-color($red, $lightness: 20%);
+    color: scale-color($orange, $lightness: 20%);
+    text-decoration-color: scale-color($orange, $lightness: 20%);
     //font-size: 110%;
   }
 }
@@ -580,7 +562,7 @@ background: linear-gradient(135deg, rgba(123,105,168,1) 0%, rgba(123,105,168,1) 
 .bg--orange {
 background: linear-gradient(45deg, rgba(230,137,50,1) 0%, rgba(230,137,50,1) 50%, rgba(225,109,47,1) 50%, rgba(225,109,47,1) 100%);
 }
-.bg--red {
+.bg--orange {
 background: linear-gradient(45deg, rgba(148,60,55,1) 0%, rgba(148,60,55,1) 30%, rgba(198,79,72,1) 30%, rgba(198,79,72,1) 100%);
 }
 .bg--yellow {
@@ -686,7 +668,7 @@ background: linear-gradient(45deg, rgba(148,60,55,1) 0%, rgba(148,60,55,1) 30%, 
     width: 100%;
   }
   h2 {
-    color: $red--dark;
+    color: $primary-color;
     margin-bottom: 2rem;
     font-weight: 700;
     text-transform: capitalize;
@@ -712,7 +694,7 @@ background: linear-gradient(45deg, rgba(148,60,55,1) 0%, rgba(148,60,55,1) 30%, 
     color: $charcoal;
     &:hover, &:focus, &:active, &.active {
       color: $white;
-      background-color: scale-color($button-bg-color, $lightness: 20%);
+      background-color: $button-bg-color;
     }
   }
 }
@@ -721,7 +703,7 @@ background: linear-gradient(45deg, rgba(148,60,55,1) 0%, rgba(148,60,55,1) 30%, 
     color: $charcoal;
     &:hover, &:focus, &:active, &.active {
       color: $white;
-      background-color: scale-color($button-bg-color, $lightness: 20%);
+      background-color: $button-bg-color;
     }
   }
 }

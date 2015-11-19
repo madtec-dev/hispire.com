@@ -119,12 +119,13 @@ $black       : #000000;
 
 $red: #D02724;
 $red--dark: #9D1F20;
+$orange: #e65100;
 
 // We use these as default colors throughout
 // $primary-color: #008CBA;
-$primary-color: $red;
+$primary-color: $orange;
 // $secondary-color: #e7e7e7;
-$secondary-color: $red--dark;
+$secondary-color: $orange;
 // $alert-color: #f04124;
 $success-color: #43AC6A;
 // $warning-color: #f08a24;
@@ -1420,7 +1421,7 @@ $topbar-title-font-size: rem-calc(21);
 
 // Set the link colors and styles for top-level nav
 $topbar-link-color: $charcoal;
-$topbar-link-color-hover: $charcoal;
+$topbar-link-color-hover: $orange;
 $topbar-link-color-active: $white;
 // $topbar-link-color-active-hover: $white;
 // $topbar-link-weight: $font-weight-normal;
