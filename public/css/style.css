@@ -7292,6 +7292,10 @@ section {
 
 #services .section__title {
   font-size: 15vw; }
+#services .media__content {
+  margin-bottom: 1rem; }
+#services .section__subtitle {
+  padding-top: 0; }
 
 .section__subtitle {
   margin: 0;
@@ -7375,9 +7379,11 @@ section {
 .service__detail {
   padding: 5rem 0 !important; }
 
-.service__perk h3 {
-  font-weight: 700;
-  margin-bottom: 0; }
+.service__perk {
+  margin-bottom: 2rem; }
+  .service__perk h3 {
+    font-weight: 700;
+    margin-bottom: 0; }
 
 ul.inline-list {
   margin-bottom: 0; }
@@ -7597,7 +7603,7 @@ input.material:focus ~ label, textarea.material:focus ~ label, label.input-fille
   width: 0;
   bottom: 1px;
   position: absolute;
-  background: #BE1E2D;
+  background: #e65100;
   transition: 0.2s ease all; }
 
 .bar:before {

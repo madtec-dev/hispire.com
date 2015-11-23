@@ -382,8 +382,16 @@ section {
   color: $charcoal;
   //background-color: rgba(255, 255, 255 , .5);
 }
-#services .section__title {
-  font-size: 15vw;
+#services {
+  .section__title {
+    font-size: 15vw;
+  }
+  .media__content {
+    margin-bottom: 1rem;
+  }
+  .section__subtitle {
+    padding-top: 0;
+  }
 }
 .section__subtitle {
   margin: 0;
@@ -514,6 +522,7 @@ section {
     font-weight: 700;
     margin-bottom: 0;
   }
+  margin-bottom: 2rem;
 }
 ul.inline-list {
   margin-bottom: 0;
@@ -782,7 +791,7 @@ input.material:focus ~ label, textarea.material:focus ~ label, label.input-fille
   width:0;
   bottom:1px;
   position:absolute;
-  background:#BE1E2D;
+  background: $orange;
   transition:0.2s ease all;
 }
 .bar:before {
