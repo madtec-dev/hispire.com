@@ -7293,8 +7293,9 @@ section {
 #services .section__title {
   font-size: 15vw; }
 #services .media__content {
-  margin-bottom: 1rem; }
+  margin-bottom: 4rem; }
 #services .section__subtitle {
+  font-size: 2vw;
   padding-top: 0; }
 
 .section__subtitle {
