@@ -309,7 +309,7 @@ ul.off-canvas-list {
   //background-image: linear-gradient(to bottom right, #002f4b, #dc4225);
   //background-image: linear-gradient(to bottom right, #fefefe, #ffffff);
   background-image: linear-gradient(to bottom right, #1e1e1e, #000000);
-  opacity: .1 ;
+  opacity: 0 ;
 }
 .hero .intro {
   //padding: 3rem;
@@ -387,10 +387,10 @@ section {
     font-size: 15vw;
   }
   .media__content {
-    margin-bottom: 4rem;
+    //margin-bottom: 4rem;
   }
   .section__subtitle {
-    font-size: 2vw;
+    font-size: 7vw;
     padding-top: 0;
   }
 }
@@ -492,13 +492,12 @@ section {
 
   }
   .card__detail {
-    &:nth-child(3n+1) {
-      display: block;
+    h3 {
+      margin-bottom: 3rem;
     }
-    //display: none;
-    transition: 0.6s ease;
-    //padding: 2rem;
-    //box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, .2);
+    p {
+      margin-bottom: 3rem;
+    }
   }
 }
 .inline-list > li {
@@ -523,7 +522,10 @@ section {
     font-weight: 700;
     margin-bottom: 0;
   }
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
+}
+.service__img {
+  margin-bottom: 3rem;
 }
 ul.inline-list {
   margin-bottom: 0;
@@ -547,7 +549,7 @@ ul.inline-list {
 
 }
 .media__content {
-  margin-bottom: 3rem;
+  //margin-bottom: 3rem;
   //padding-left: 1rem;
   //border-left: 12px solid $iron;
  h2 {
@@ -557,7 +559,7 @@ ul.inline-list {
    text-transform: capitalize;
  }
  h3 {
-   margin-bottom: 1rem;
+   //margin-bottom: 1rem;
  }
  p {
    color: $charcoal;
@@ -1053,7 +1055,7 @@ form .section__subtitle {
     padding: 0rem 1rem 1rem 1rem;
   }
   .media__content {
-    padding-left: 4rem;
+    //padding-left: 4rem;
   }
   .media__content, .project {
     p {
@@ -1110,6 +1112,11 @@ form .section__subtitle {
   .project {
       h3 {
       font-size: 4vw;
+    }
+  }
+  #services {
+    .section__subtitle {
+      font-size: 3vw;
     }
   }
 
