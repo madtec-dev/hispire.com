@@ -7290,11 +7290,19 @@ section {
   font-weight: 700;
   color: #555555; }
 
+#services section {
+  margin-bottom: 4rem;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
+  #services section:last-child {
+    margin-bottom: 0; }
 #services .section__title {
   font-size: 15vw; }
 #services .section__subtitle {
   font-size: 7vw;
-  padding-top: 0; }
+  padding-top: 0;
+  margin-bottom: 5rem; }
+#services .card__title {
+  margin-bottom: 0; }
 
 .section__subtitle {
   margin: 0;
