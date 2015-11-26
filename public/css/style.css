@@ -7561,12 +7561,15 @@ input.material, textarea.material {
   box-shadow: none;
   min-height: 0; }
 
+textarea.material {
+  min-height: 6rem; }
+
 input.material:focus, textarea.material:focus {
   outline: none;
   background: transparent; }
 
 label, label.material {
-  font-size: 1.4375rem;
+  font-size: 1.125rem;
   color: #888888; }
 
 label.material {
@@ -7579,8 +7582,7 @@ label.material {
 
 /* active state */
 input.material:focus ~ label, textarea.material:focus ~ label, label.input-filled {
-  font-size: 1.4375rem;
-  top: -45px;
+  top: -32px;
   color: #8C8C8C; }
 
 /* BOTTOM BARS ================================= */
@@ -7792,6 +7794,12 @@ form .section__subtitle {
   .section__title {
     font-size: 10vw; }
 
+  section p {
+    font-size: 1.3125rem; }
+
+  label, label.material {
+    font-size: 1.3125rem; }
+
   .medium-pl {
     padding-left: 1rem; }
 
@@ -7865,7 +7873,10 @@ form .section__subtitle {
     font-size: 4vw; }
 
   #services .section__subtitle {
-    font-size: 3vw; } }
+    font-size: 3vw; }
+
+  label, label.material {
+    font-size: 1.4375rem; } }
 @media only screen and (min-width: 90.0625em) {
   .service__details .media {
     padding: 0 20rem; }

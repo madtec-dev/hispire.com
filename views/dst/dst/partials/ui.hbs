@@ -1,0 +1,30 @@
+<script type=text/javascript>
+$(function() {
+  $(document).foundation('reflow');
+  var open = false;
+  $('#menu-button, #container-exit').click(function(event){
+    event.preventDefault();
+    if(!open){
+      $('#menu-button').addClass('close');
+      $('#side-menu').addClass('menu-open');
+      $('#container-exit').addClass('exit-menu');
+      open = true;
+    }
+    else{
+      $('#menu-button').removeClass('close');
+      $('#side-menu').removeClass('menu-open');
+      $('#container-exit').removeClass('exit-menu');
+      open = false;
+    }
+  });
+  $(window).scroll(function() {
+    if ($(".top-bar").offset().top > 50) {
+        $(".top-bar").addClass("top-bar-collapse");
+    } else {
+        $(".top-bar").removeClass("top-bar-collapse");
+    }
+  });
+
+
+});
+</script>

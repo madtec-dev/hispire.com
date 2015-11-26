@@ -747,12 +747,18 @@ input.material, textarea.material {
   box-shadow: none;
   min-height: 0;
 }
+textarea.material {
+  min-height: 6rem;
+  &:focus {
+
+  }
+}
 input.material:focus, textarea.material:focus {
   outline:none;
   background: transparent;
 }
 label, label.material {
-  font-size: rem-calc(23);
+  font-size: rem-calc(18);
   color: $jumbo;
 }
 label.material          {
@@ -766,8 +772,8 @@ label.material          {
 
 /* active state */
 input.material:focus ~ label, textarea.material:focus ~ label, label.input-filled {
-  font-size: rem-calc(23);
-  top:-45px;
+  //font-size: rem-calc(23);
+  top:-32px;
   color:#8C8C8C;
 }
 /* BOTTOM BARS ================================= */
@@ -1014,6 +1020,12 @@ form .section__subtitle {
   .section__title {
     font-size: 10vw;
   }
+  section p {
+    font-size: rem-calc(21);
+  }
+  label, label.material {
+    font-size: rem-calc(21);
+  }
   .medium-pl {
     padding-left: 1rem;
   }
@@ -1106,7 +1118,9 @@ form .section__subtitle {
       font-size: 3vw;
     }
   }
-
+  label, label.material {
+    font-size: rem-calc(23);
+  }
 }
 @media #{$xlarge-up} {
   .service__details .media{
