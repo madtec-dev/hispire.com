@@ -448,11 +448,6 @@ section {
 }
 .card {
   //box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, .2);
-  padding: 0;
-  background-color: rgba(255, 255, 255, 1);
-  font-family: $font-family-sans-serif;
-  transition: 0.6s ease;
-  min-height: 80vh;
   .card__title {
     padding-top: 2rem;
     //margin-bottom: 4rem;
@@ -473,33 +468,6 @@ section {
     //padding: 2rem;
     //margin-bottom: 1rem;
     }
-    li {
-      transition: 0.3s ease;
-      font-size: rem-calc(21);
-      color: #C64F48;
-      padding-bottom: 2rem;
-      text-decoration: underline;
-      &:hover {
-        cursor: pointer;
-      }
-      &.active {
-        font-weight: 700;
-        font-size: 150%;
-        text-shadow: 1px 1px 2px rgba(150, 150, 150, 0.3);
-        text-decoration: none;
-      }
-    }
-  }
-  &:hover {
-    //background-color: rgba(255, 255, 255, .70);
-    //box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, .2);
-  }
-  .button {
-    //position: absolute;
-    //bottom: 10%;
-    //width: 15em;
-    //left: 40%;
-    //right: 10%;
 
   }
   .card__detail {
@@ -510,6 +478,11 @@ section {
       margin-bottom: 3rem;
     }
   }
+}
+.service__footer {
+  font-size: 4vw;
+  font-family: $font-family-brand;
+  color: $charcoal;
 }
 .inline-list > li {
   float: none;
@@ -1100,6 +1073,9 @@ form .section__subtitle {
   }
   .link__section a {
     font-size: 5vw;
+  }
+  .service__footer {
+    font-size: 2vw;
   }
   .card .card__title {
     font-size: 5vw !important;

@@ -73,6 +73,14 @@
         </div>
       </div>
     </div>
+    <div class="small-12 medium-12 large-8 text-center small-centered columns">
+      <p class="service__footer">
+        {{{__ 'tools footer'}}}
+      </p>
+      <a class="button large" data-pjax href="{{lg}}start-project">
+        Let's work together
+      </a>
+    </div>
   </section>
   <section class="card wow fadeInUp" data-wow-duration="1s" data-wow-delay="0s">
     <div class="row">
@@ -148,11 +156,28 @@
         </h3>
       </div>
     </div>
+    {{#ifvalue locale equals="es"}}
+      <p class="small-12 large-8 small-centered columns">
+        Tener un contenido de calidad tanto en la web como en las redes sociales es imprescindible para conseguir que tu marca sea más relevante.
+        Nosotros nos ocupamos de ello.
+      </p>
+    {{/ifvalue}}
     <div class="row">
       <div class="service__img small-12 medium-7 large-6 columns">
         <img src="/img/tools.jpg" alt="" />
       </div>
       <div class="small-12 large-6 columns">
+        <div class="small-12 service__perk columns">
+          <div class="small-4 medium-5 small-centered large-offset-1 xlarge-uncentered large-2 columns">
+            <img src="/img/control.svg" alt="" />
+          </div>
+          <div class="small-12 xlarge-9 columns media__content">
+            <h3 class="subheading">{{{__ 'story perk 3 title'}}}</h3>
+            <p>
+              {{{__ 'story perk 3 text'}}}
+            </p>
+          </div>
+        </div>
         <div class="service__perk small-12 columns">
           <div class="small-4 medium-5 small-centered large-offset-1 xlarge-uncentered large-2 columns">
             <img src="/img/copywriting.svg" alt="" />
@@ -175,17 +200,6 @@
             </p>
           </div>
         </div>
-        <!--<div class="small-12 service__perk columns">
-          <div class="small-4 medium-5 small-centered large-offset-1 xlarge-uncentered large-2 columns">
-            <img src="/img/control.svg" alt="" />
-          </div>
-          <div class="small-12 xlarge-9 columns media__content">
-            <h3 class="subheading">{{{__ 'story perk 3 title'}}}</h3>
-            <p>
-              {{{__ 'story perk 3 text'}}}
-            </p>
-          </div>
-        </div>-->
       </div>
     </div>
   </section>
@@ -227,7 +241,7 @@
             </p>
           </div>
         </div>
-        <div class="small-12 service__perk columns">
+        <!--<div class="small-12 service__perk columns">
           <div class="small-4 medium-5 small-centered large-offset-1 xlarge-uncentered large-2 columns">
             <img src="/img/design.svg" alt="" />
           </div>
@@ -237,7 +251,7 @@
               {{{__ 'branding perk 3 text'}}}
             </p>
           </div>
-        </div>
+        </div>-->
       </div>
     </div>
   </section>
