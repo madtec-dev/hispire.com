@@ -41,7 +41,6 @@ router.get('/:locale?', function(req, res, next) {
 })
 
 router.get('/lang/:locale', function(req, res, next) {
-  console.log(req.headers.referer.split('/').slice(-2)[0]);
     // TODO use REGEX to get the part of the referer after /en/ o /es/
     if (req.headers.referer.split('/').slice(-2)[0] != 'portfolio') {
       res.redirect(res.locals.lg + req.headers.referer.split('/').slice(-1)[0]);
@@ -120,7 +119,6 @@ router.post('/start-project', function(req, res, next) {
   email.sendMail(message, function(err) {
       if(err) {
         res.status(500);
-        console.log(err);
         res.send('Error sending email: ' + err);
       } else {
         res.status(200);
