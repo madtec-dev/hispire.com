@@ -769,6 +769,9 @@ label.material          {
   top:0px;
   transition:0.2s ease all;
 }
+.group p {
+  font-size: rem-calc(16);
+}
 
 /* active state */
 input.material:focus ~ label, textarea.material:focus ~ label, label.input-filled {
@@ -1121,6 +1124,10 @@ form .section__subtitle {
   label, label.material {
     font-size: rem-calc(23);
   }
+  .group p {
+    font-size: rem-calc(18);
+  }
+
 }
 @media #{$xlarge-up} {
   .service__details .media{

@@ -7580,6 +7580,9 @@ label.material {
   top: 0px;
   transition: 0.2s ease all; }
 
+.group p {
+  font-size: 1rem; }
+
 /* active state */
 input.material:focus ~ label, textarea.material:focus ~ label, label.input-filled {
   top: -32px;
@@ -7876,7 +7879,10 @@ form .section__subtitle {
     font-size: 3vw; }
 
   label, label.material {
-    font-size: 1.4375rem; } }
+    font-size: 1.4375rem; }
+
+  .group p {
+    font-size: 1.125rem; } }
 @media only screen and (min-width: 90.0625em) {
   .service__details .media {
     padding: 0 20rem; }
