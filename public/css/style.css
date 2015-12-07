@@ -7220,7 +7220,7 @@ ul.off-canvas-list {
       border-left: 4px solid #e65100 !important; }
 
 .hero {
-  background: url("/img/front--medium.jpg") no-repeat center center;
+  background: url("/img/tetas.jpg") no-repeat center center;
   background-size: cover;
   height: 100vh;
   width: 100%; }
@@ -7238,6 +7238,7 @@ ul.off-canvas-list {
 .hero .intro {
   position: relative;
   top: 50%;
+  -webkit-transform: translateY(-50%);
   transform: translateY(-50%); }
 
 .hero h1 {
@@ -7495,6 +7496,7 @@ ul.inline-list {
   position: absolute;
   top: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   padding: 3rem;
   width: 100%; }
@@ -7767,6 +7769,7 @@ form .section__subtitle {
     top: 50%;
     width: 100%;
     left: 0;
+    -webkit-transform: translateY(-50%);
     transform: translateY(-50%); }
     .contact-card .contact-card__content h2 {
       padding: 0;
