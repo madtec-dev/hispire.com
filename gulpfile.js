@@ -82,8 +82,8 @@ gulp.task('js', function() {
     './public/components/foundation/js/foundation/foundation.interchange.js',
     './public/components/foundation/js/foundation/foundation.abide.js',
     './public/components/foundation/js/foundation/foundation.slider.js',
-    './public/js/dropzone.js',
-    './public/js/app.js'])
+    './public/js/lib/dropzone.js',
+    './public/js/init.js'])
     //.pipe(jshint())
     //.pipe(jshint.reporter('default'))
     .pipe(uglify())

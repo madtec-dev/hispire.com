@@ -1,0 +1,258 @@
+<title>HISPIRE | {{{__ 'start project title'}}}</title>
+<div id="bg__services" class="bg--full-fixed"></div>
+    {{> menu}}
+    <main id="start-project" class="animated fadeIn">
+      <div class="section__header">
+        <h1 class="section__title animated fadeInDown text-center">
+          {{{__ 'start project title'}}}
+        </h1>
+      </div>
+      <section>
+        <form data-abide="ajax" method="POST" class="dropzone wow fadeIn" data-wow-duration="1s" data-wow-delay=".2s" id="start-project-form" action="/start-project" enctype="multipart/form-data">
+          <div class="row">
+            <h3 class="text-center small-12 large-8 large-centered columns">
+              {{{__ 'start project info'}}}
+            </h3>
+            <h2 class="text-center section__subtitle">{{{__ 'form about you'}}}</h2>
+            <div class="small-12 large-6 small-centered columns">
+              <div class="group">
+                <input class="material" type="text" name="name" required pattern="[a-zA-Z]+">
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label class="material">{{{__ 'form name'}}}</label>
+                <!--<small class="error">Name is required and must be a string.</small>-->
+              </div>
+            </div>
+          </div>
+            <div class="row">
+            <div class="small-12 large-3 large-offset-3 columns">
+              <div class="group">
+                <input class="material" type="email" name="email" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label class="material">Email</label>
+                <small class="error">{{{__ 'form email error'}}}</small>
+              </div>
+            </div>
+            <div class="small-12 large-3 end columns">
+              <div class="group">
+                <input class="material" type="tel" name="phone">
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label class="material">{{{__ 'form phone'}}}</label>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="small-12 large-6 small-centered columns">
+              <div class="group">
+                <input class="material" type="text" name="company">
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label class="material">{{{__ 'form company'}}}</label>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <h2 class="text-center section__subtitle">{{{__ 'form about project'}}}</h2>
+            <div class="small-12 large-6 small-centered columns">
+              <div class="group">
+                <textarea class="material" type="text" name="details" required></textarea>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label class="material">{{{__ 'form description'}}}</label>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="small-12 large-6 small-centered columns">
+              <div class="group">
+                <input class="material" type="text" name="timeframe" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label class="material">{{{__ 'form timeframe'}}}</label>
+              </div>
+            </div>
+          </div>
+
+
+            <!--<div class="small-12 large-6 small-centered columns">
+              <label>Name
+                <input type="text" name="name" required pattern="[a-zA-Z]+" placeholder="Name" />
+              </label>
+              <small class="error">Name is required and must be a string.</small>
+            </div>
+            <div class="small-12 large-6 small-centered columns">
+              <label>Company
+                <input type="text" name="company" placeholder="Company" />
+              </label>
+            </div>
+            <div class="small-12 large-6 small-centered columns">
+              <label>Email
+                <input type="email" name="email" placeholder="Email" required />
+              </label>
+              <small class="error">A valid email address is required.</small>
+            </div>
+            <div class="small-12 large-6 small-centered columns">
+              <label>Timeframe
+                <select name="timeframe">
+                  <option value="less than a month">less than a month</option>
+                  <option value="1-2 months">1-2 months</option>
+                  <option value="2-6 months">2-6 months</option>
+                  <option value="+6 months">+6 months</option>
+                </select>
+              </label>
+            </div>-->
+            <div class="small-12 group large-6 small-centered columns">
+              <label>{{{__ 'form budget'}}}</label>
+              <p>{{{__ 'form budget info'}}}</p>
+              <div class="range-slider" id="budget-slider" name="budget" data-slider data-options="step: 200; start: 800; end: 10000">
+                <span class="range-slider-handle" role="slider" tabindex="0"></span>
+                <span class="range-slider-active-segment"></span>
+              </div>
+              <div class="small-12 small-centered large-6 columns text-center">
+                <span class="sliderOutput">$</span>
+                <span id="sliderOutput" class="sliderOutput"></span>
+              </div>
+            </div>
+
+            <input type="hidden" id="budget" name="budget" value="">
+            <h3 class="text-center">{{{__ 'form attach files'}}}</h3>
+            <div id="uploader" class="small-12 group large-6 small-centered columns uploader">
+              <div class="dz-default dz-message">
+                <span><strong>{{{__ 'form upload'}}}</strong></span>
+              </div>
+            </div>
+            <div id="uploader--preview" class="small-12 group large-6 small-centered columns"></div>
+            <div class="fallback">
+              <input type="file" name="files" multiple>
+            </div>
+            <div class="small-12 large-6 small-centered columns text-center">
+              <button type="submit" class="button large" id="send-project-form" name="button">{{{__ 'form send'}}}</button>
+              <div id="form-msg"></div>
+            </div>
+          </div>
+        </form>
+      </section>
+    </main>
+    {{> ui}}
+<script type="text/javascript">
+/*head.load("/js/lib/dropzone.js",
+          "/components/foundation/js/foundation/foundation.abide.js",
+          "/components/foundation/js/foundation/foundation.slider.js",
+          function() {
+  // do something*/
+
+$("#project-button").addClass('active');
+//deactivate default abide scroll
+$(document).foundation({
+  abide: {
+    focus_on_invalid: false
+  }
+});
+
+//label top offset when input is filled
+$('input, textarea').change(function(){
+  var that = $(this);
+  if ($(this).val() == '') {
+    that.siblings('label').removeClass('input-filled');
+  }
+  else {
+    that.siblings('label').addClass('input-filled');
+  }
+})
+
+//animate to first invalid input
+$('#start-project-form').on('invalid.fndtn.abide', function () {
+ var invalid_fields = $(this).find('[data-invalid]');
+
+ $('html, body').animate({
+   scrollTop: $(invalid_fields[0]).offset().top - 240
+ }, 1000, function() {
+   $(invalid_fields[0]).focus();
+ });
+});
+
+//add class to menu button
+$(function() {
+
+  $(document).foundation('reflow');
+  var projectDropzone = new Dropzone("form#start-project-form",
+    {
+      paramName: "files",
+      maxFilesize: 8,
+      uploadMultiple: true,
+      parallelUploads: 100,
+      maxFiles: 10,
+      clickable: '#uploader',
+      addRemoveLinks: true,
+      previewsContainer: '#uploader--preview',
+      autoProcessQueue: false,
+
+      init: function() {
+        projectDropzone = this;
+    }
+  });
+  function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+    $('#sliderOutput').text('5,400');
+    $('[data-slider]').on('change.fndtn.slider', function(){
+      $('#budget').val('$' + numberWithCommas($('#budget-slider').attr('data-slider')));
+      var numberCommas = numberWithCommas($('#budget-slider').attr('data-slider'));
+      $('#sliderOutput').text(numberCommas);
+    });
+    Dropzone.autoDiscover = false;
+
+  $('#start-project-form')
+    .on('valid.fndtn.abide', function () {
+      if(projectDropzone.getQueuedFiles().length != 0) {
+        projectDropzone.processQueue();
+        projectDropzone
+        .on('totaluploadprogress', function(res) {
+          $('#send-project-form').prop("disabled",true);
+          $('#send-project-form').html('<img src="/img/ajax-loader.gif"> <br /> Uploading ' + Math.round(res) + '%');})
+        .on('completemultiple', function(res) {
+          $('#form-msg').html(res[0].xhr.responseText);
+          $('#send-project-form').html('SEND');
+
+        })
+        .on('success', function(res){
+          document.getElementById("start-project-form").reset();
+          projectDropzone.removeAllFiles();
+          $('#send-project-form').html('SEND');
+          $('#form-msg').addClass("animated fadeInDown");
+          $('#send-project-form').prop("disabled",false);
+          $('#form-msg').html(res.xhr.responseText);
+
+        })
+      } else {
+        $('#send-project-form').prop("disabled",true);
+        $('#send-project-form').html('<img src="/img/ajax-loader.gif" />');
+        $.ajax({
+          url: '/start-project',
+          type: 'post',
+          dataType: 'json',
+          data: $('#start-project-form').serialize(),
+          statusCode: {
+            500: function(res){
+              $('#form-msg').addClass("animated fadeInDown");
+              $('#form-msg').html(res.responseText);
+              $('#send-project-form').prop("disabled",false);
+              $('#send-project-form').html('SEND');
+
+            },
+            200: function(res) {
+              document.getElementById("start-project-form").reset();
+              $('#form-msg').addClass("animated fadeInDown");
+              $('#form-msg').html(res.responseText);
+              $('#send-project-form').prop("disabled",false);
+              $('#send-project-form').html('SEND');
+            }
+          }
+        });
+      }
+    });
+});
+
+</script>
