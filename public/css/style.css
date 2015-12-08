@@ -7791,6 +7791,15 @@ form .section__subtitle {
   #contact-mail span {
     color: #C9F1FF; }
 
+.page-footer {
+  padding: 1rem;
+  background-color: #333333;
+  color: #FAFAFA; }
+  .page-footer .social a {
+    padding-left: 2rem; }
+    .page-footer .social a:first-child {
+      padding-left: 0; }
+
 /*** MEDIA QUERIES ***/
 @media only screen and (max-width: 40em) {
   .project .button--border, .card__description .button--border {

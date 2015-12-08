@@ -1012,6 +1012,22 @@ form .section__subtitle {
   }
 }
 
+.page-footer {
+  padding: 1rem;
+  background-color: $oil;
+  color: $ghost;
+  .contact-info {
+  }
+  .social {
+    a {
+      padding-left: 2rem;
+      &:first-child {
+        padding-left: 0;
+      }
+    }
+  }
+}
+
 /*** MEDIA QUERIES ***/
 @media #{$small-only} {
   .project, .card__description {
