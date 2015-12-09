@@ -7355,9 +7355,10 @@ section {
   margin-bottom: 3rem; }
 
 .service__footer {
-  font-size: 4vw;
+  font-size: 5vw;
   font-family: "Raleway", Helvetica, Roboto, Arial, sans-serif;
-  color: #555555; }
+  color: #555555;
+  font-weight: 700; }
 
 .inline-list > li {
   float: none;
