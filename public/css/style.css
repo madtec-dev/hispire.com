@@ -7793,9 +7793,14 @@ form .section__subtitle {
     color: #C9F1FF; }
 
 .page-footer {
-  padding: 1rem;
+  font-size: 1rem;
+  padding: 2rem;
   background-color: #333333;
   color: #FAFAFA; }
+  .page-footer .contact-info .columns {
+    margin-bottom: .5rem; }
+    .page-footer .contact-info .columns:first-child {
+      margin-top: .5rem; }
   .page-footer .social a {
     padding-left: 2rem; }
     .page-footer .social a:first-child {
@@ -7895,7 +7900,12 @@ form .section__subtitle {
     font-size: 1.4375rem; }
 
   .group p {
-    font-size: 1.125rem; } }
+    font-size: 1.125rem; }
+
+  .page-footer {
+    font-size: 1.125rem; }
+    .page-footer .contact-info .columns:first-child {
+      margin-top: 0; } }
 @media only screen and (min-width: 90.0625em) {
   .service__details .media {
     padding: 0 20rem; }
@@ -7910,4 +7920,16 @@ form .section__subtitle {
     font-size: 5vw; }
 
   .project h3 {
-    font-size: 3vw; } }
+    font-size: 3vw; }
+
+  .page-footer {
+    font-size: 1.3125rem; }
+    .page-footer .contact-info {
+      font-size: 1.125rem; }
+      .page-footer .contact-info .columns {
+        margin-bottom: 0; }
+        .page-footer .contact-info .columns:first-child {
+          margin-top: 0; } }
+@media only screen and (min-width: 120.0625em) {
+  .page-footer .contact-info {
+    font-size: 1.3125rem; } }

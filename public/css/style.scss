@@ -1014,10 +1014,17 @@ form .section__subtitle {
 }
 
 .page-footer {
-  padding: 1rem;
+  font-size: rem-calc(16);
+  padding: 2rem;
   background-color: $oil;
   color: $ghost;
   .contact-info {
+    .columns {
+      &:first-child {
+        margin-top: .5rem;
+      }
+      margin-bottom: .5rem;
+    }
   }
   .social {
     a {
@@ -1147,7 +1154,16 @@ form .section__subtitle {
   .group p {
     font-size: rem-calc(18);
   }
-
+  .page-footer {
+      font-size: rem-calc(18);
+    .contact-info {
+      .columns {
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+    }
+  }
 }
 @media #{$xlarge-up} {
   .service__details .media{
@@ -1169,7 +1185,23 @@ form .section__subtitle {
       font-size: 3vw;
     }
   }
+  .page-footer {
+    font-size: rem-calc(21);
+    .contact-info {
+      font-size: rem-calc(18);
+      .columns {
+        &:first-child {
+          margin-top: 0;
+        }
+        margin-bottom: 0;
+      }
+    }
+  }
 }
 @media #{$xxlarge-up} {
-
+  .page-footer {
+    .contact-info {
+      font-size: rem-calc(21);
+    }
+  }
 }
