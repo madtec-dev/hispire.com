@@ -1035,7 +1035,19 @@ form .section__subtitle {
     }
   }
 }
-
+#start-project {
+  button {
+    font-size: rem-calc(21);
+    font-weight: 700;
+    padding: 2rem 0;
+  }
+  .alert-box {
+    color: $ghost;
+    text-transform: uppercase;
+    padding: 1rem;
+    font-size: rem-calc(18);
+  }
+}
 /*** MEDIA QUERIES ***/
 @media #{$small-only} {
   .project, .card__description {

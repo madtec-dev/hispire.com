@@ -7806,6 +7806,16 @@ form .section__subtitle {
     .page-footer .social a:first-child {
       padding-left: 0; }
 
+#start-project button {
+  font-size: 1.3125rem;
+  font-weight: 700;
+  padding: 2rem 0; }
+#start-project .alert-box {
+  color: #FAFAFA;
+  text-transform: uppercase;
+  padding: 1rem;
+  font-size: 1.125rem; }
+
 /*** MEDIA QUERIES ***/
 @media only screen and (max-width: 40em) {
   .project .button--border, .card__description .button--border {

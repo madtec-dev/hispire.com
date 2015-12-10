@@ -128,13 +128,17 @@
               <input type="file" name="files" multiple>
             </div>
             <div class="small-12 large-6 small-centered columns text-center">
-              <button type="submit" class="button large" id="send-project-form" name="button">{{{__ 'form send'}}}</button>
+              <button type="submit" class="button small-12" id="send-project-form" name="button">
+                {{{__ 'about action'}}}&nbsp;&nbsp;
+                <i class="fa fa-arrow-circle-right fa-lg"></i>
+              </button>
               <div id="form-msg"></div>
             </div>
           </div>
         </form>
       </section>
     </main>
+    {{> footer}}
     {{> ui}}
 <script type="text/javascript">
 /*head.load("/js/lib/dropzone.js",
@@ -213,7 +217,8 @@ $(function() {
           $('#send-project-form').prop("disabled",true);
           $('#send-project-form').html('<img src="/img/ajax-loader.gif"> <br /> Uploading ' + Math.round(res) + '%');})
         .on('completemultiple', function(res) {
-          $('#form-msg').html(res[0].xhr.responseText);
+          $('#form-msg').html('<div data-alert class="alert-box success radius">' + res[0].xhr.responseText + '<a href="#" class="close">&times;</a></div>');
+          $(document).foundation('alert', 'reflow');
           $('#send-project-form').html('SEND');
 
         })
@@ -223,7 +228,8 @@ $(function() {
           $('#send-project-form').html('SEND');
           $('#form-msg').addClass("animated fadeInDown");
           $('#send-project-form').prop("disabled",false);
-          $('#form-msg').html(res.xhr.responseText);
+          $('#form-msg').html('<div data-alert class="alert-box success radius">' + res.xhr.responseText + '<a href="#" class="close">&times;</a></div>');
+          $(document).foundation('alert', 'reflow');
 
         })
       } else {
@@ -237,7 +243,8 @@ $(function() {
           statusCode: {
             500: function(res){
               $('#form-msg').addClass("animated fadeInDown");
-              $('#form-msg').html(res.responseText);
+              $('#form-msg').html('<div data-alert class="alert-box alert radius">' + res.responseText + '<a href="#" class="close">&times;</a></div>');
+              $(document).foundation('alert', 'reflow');
               $('#send-project-form').prop("disabled",false);
               $('#send-project-form').html('SEND');
 
@@ -245,7 +252,8 @@ $(function() {
             200: function(res) {
               document.getElementById("start-project-form").reset();
               $('#form-msg').addClass("animated fadeInDown");
-              $('#form-msg').html(res.responseText);
+              $('#form-msg').html('<div data-alert class="alert-box success radius">' + res.responseText + '<a href="#" class="close">&times;</a></div>');
+              $(document).foundation('alert', 'reflow');
               $('#send-project-form').prop("disabled",false);
               $('#send-project-form').html('SEND');
             }

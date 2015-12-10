@@ -50,7 +50,8 @@ gulp.task('css', function () {
         .pipe(uncss({
             html: ['./views/**/*.html'],
             ignore: [/^meta.foundation/, /f-topbar-fixed/, /contain-to-grid/, '.exit-menu', '#data-container',
-            /fixed/, /menu-open/, /data-abide/, /input/, /close/, /top-bar-collapse/, /first-letter/, /active/]
+            /fixed/, /menu-open/, /data-abide/, /input/, /close/, /top-bar-collapse/, /first-letter/, /active/,
+            /alert-box/]
         }))
         // minify and concat resulted css
         .pipe(minifyCss({compatibility: 'ie8'}))
@@ -82,6 +83,7 @@ gulp.task('js', function() {
     './public/components/foundation/js/foundation/foundation.interchange.js',
     './public/components/foundation/js/foundation/foundation.abide.js',
     './public/components/foundation/js/foundation/foundation.slider.js',
+    './public/components/foundation/js/foundation/foundation.alert.js',
     './public/js/lib/dropzone.js',
     './public/js/init.js'])
     //.pipe(jshint())
