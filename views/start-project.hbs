@@ -106,7 +106,7 @@
             <div class="small-12 group large-6 small-centered columns">
               <label>{{{__ 'form budget'}}}</label>
               <p>{{{__ 'form budget info'}}}</p>
-              <div class="range-slider" id="budget-slider" name="budget" data-slider data-options="step: 200; start: 800; end: 10000">
+              <div class="range-slider" id="budget-slider" name="budget" data-slider data-options="step: 200; start: 800; end: 15000;initial: 4000">
                 <span class="range-slider-handle" role="slider" tabindex="0"></span>
                 <span class="range-slider-active-segment"></span>
               </div>
@@ -200,7 +200,7 @@ $(function() {
   function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
-    $('#sliderOutput').text('5,400');
+    $('#sliderOutput').text('4,000');
     $('[data-slider]').on('change.fndtn.slider', function(){
       $('#budget').val('$' + numberWithCommas($('#budget-slider').attr('data-slider')));
       var numberCommas = numberWithCommas($('#budget-slider').attr('data-slider'));
