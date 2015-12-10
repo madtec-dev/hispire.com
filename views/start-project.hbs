@@ -179,7 +179,6 @@ $('#start-project-form').on('invalid.fndtn.abide', function () {
 
 //add class to menu button
 $(function() {
-
   $(document).foundation('reflow');
   var projectDropzone = new Dropzone("form#start-project-form",
     {
@@ -200,13 +199,14 @@ $(function() {
   function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
-    $('#sliderOutput').text('4,000');
-    $('[data-slider]').on('change.fndtn.slider', function(){
-      $('#budget').val('$' + numberWithCommas($('#budget-slider').attr('data-slider')));
-      var numberCommas = numberWithCommas($('#budget-slider').attr('data-slider'));
-      $('#sliderOutput').text(numberCommas);
-    });
-    Dropzone.autoDiscover = false;
+  $('#budget').val(5000);
+  $('#sliderOutput').text('4,000');
+  $('[data-slider]').on('change.fndtn.slider', function(){
+    $('#budget').val('$' + numberWithCommas($('#budget-slider').attr('data-slider')));
+    var numberCommas = numberWithCommas($('#budget-slider').attr('data-slider'));
+    $('#sliderOutput').text(numberCommas);
+  });
+  Dropzone.autoDiscover = false;
 
   $('#start-project-form')
     .on('valid.fndtn.abide', function () {
