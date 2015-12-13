@@ -1,20 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 260 260" style="enable-background:new 0 0 260 260;" xml:space="preserve">
+	 viewBox="0 0 220 170" style="enable-background:new 0 0 220 170;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:#DE5113;}
+	.st0{fill:#DD5113;}
 </style>
-<g id="XMLID_7_">
-	<g id="XMLID_10_">
-		<polygon id="XMLID_33_" class="st0" points="67.7,150 46.8,150 46.8,160.2 63.8,160.2 		"/>
-		<polygon id="XMLID_16_" class="st0" points="134.6,132.4 144.1,113.2 158.6,154.8 208.1,73.4 194,61.4 160.8,129.8 145.8,86.7 
-			129.7,119 		"/>
-		<polygon id="XMLID_14_" class="st0" points="124.3,129.9 98.7,181.8 90.5,150 77.2,150 73.3,160.2 82.6,160.2 95.6,211.2 
-			129.2,143.3 		"/>
+<g id="XMLID_37_">
+	<polygon id="XMLID_141_" class="st0" points="92.2,63.4 73,95.6 59.4,70.9 35.9,132.1 31.2,132.1 58.5,59.3 73.1,85.9 93.3,52.2 
+		126.2,143.9 155.2,95.9 166.8,115.4 163.9,120.2 155.1,105.2 125.1,154.8 	"/>
+	<g id="XMLID_142_">
+		<polygon id="XMLID_154_" class="st0" points="61.6,164 100.6,100 94.9,84.2 		"/>
+		<polygon id="XMLID_145_" class="st0" points="182.4,6 149.7,15.6 161.5,20.6 161.5,20.8 161.1,20.6 133.4,79.5 118.4,36.4 
+			103.3,67 109.1,83 116.5,68.1 130.9,109.4 179,31.9 188.8,40.8 		"/>
 	</g>
-	<polygon id="XMLID_9_" class="st0" points="152.7,201.3 119.8,109.9 100.5,142.3 86.7,117.4 63,179.2 59.4,179.2 86.1,108.2 
-		100.6,134.6 120.6,101.1 153.6,192.7 182.7,144.6 193.7,163.1 191.4,166.9 182.6,151.9 	"/>
-	<polygon id="XMLID_8_" class="st0" points="183.7,62.6 213.2,48.8 211.8,81.7 	"/>
 </g>
 </svg>
