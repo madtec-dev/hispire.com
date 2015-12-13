@@ -1060,7 +1060,7 @@ form .section__subtitle {
 
 @media #{$medium-up} {
   .section__title {
-    font-size: 10vw;
+    font-size: 8vw;
   }
   section p {
     font-size: rem-calc(21);
@@ -1109,6 +1109,12 @@ form .section__subtitle {
 }
 
 @media #{$large-up} {
+  .section__title {
+    font-size: 5vw;
+  }
+  .section__header {
+    padding-top: 8rem;
+  }
   .logo {
     //left: 6rem;
     max-width: 8rem;

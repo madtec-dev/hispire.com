@@ -7823,7 +7823,7 @@ form .section__subtitle {
     padding: .6rem .6rem !important; } }
 @media only screen and (min-width: 40.0625em) {
   .section__title {
-    font-size: 10vw; }
+    font-size: 8vw; }
 
   section p {
     font-size: 1.3125rem; }
@@ -7863,6 +7863,12 @@ form .section__subtitle {
   .contact-card {
     padding-top: 50%; } }
 @media only screen and (min-width: 64.0625em) {
+  .section__title {
+    font-size: 5vw; }
+
+  .section__header {
+    padding-top: 8rem; }
+
   .logo {
     max-width: 8rem;
     margin-top: 1.4rem; }
