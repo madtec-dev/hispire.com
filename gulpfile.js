@@ -80,8 +80,8 @@ gulp.task('minify-css', function() {
 gulp.task('js', function() {
   return gulp.src([
     './public/components/modernizr/dist/modernizr-build.js',
-    './public/components/fastclick/lib/fastclick.js',
     './public/components/jquery/dist/jquery.min.js',
+    './public/components/fastclick/lib/fastclick.js',
     './public/components/jquery-pjax/jquery.pjax.js',
     './public/components/wow/dist/wow.min.js',
     './public/components/foundation/js/foundation/foundation.js',
