@@ -53,7 +53,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(cookieParser());
 app.use(compress());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public'),{ maxAge: 86400000 }));
 app.use(multer({dest: './public/uploads/'}));
 app.use(i18n.init);
 app.use('/', routes);
