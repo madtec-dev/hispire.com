@@ -78,14 +78,20 @@ gulp.task('minify-css', function() {
 });
 
 gulp.task('js', function() {
-  return gulp.src(['./public/components/fastclick/lib/fastclick.js',
+  return gulp.src([
+    './public/components/modernizr/dist/modernizr-build.js',
+    './public/components/fastclick/lib/fastclick.js',
+    './public/components/jquery/dist/jquery.min.js',
+    './public/components/jquery-pjax/jquery.pjax.js',
+    './public/components/wow/dist/wow.min.js',
     './public/components/foundation/js/foundation/foundation.js',
     './public/components/foundation/js/foundation/foundation.interchange.js',
     './public/components/foundation/js/foundation/foundation.abide.js',
     './public/components/foundation/js/foundation/foundation.slider.js',
     './public/components/foundation/js/foundation/foundation.alert.js',
     './public/js/lib/dropzone.js',
-    './public/js/init.js'])
+    './public/js/init.js'
+  ])
     //.pipe(jshint())
     //.pipe(jshint.reporter('default'))
     .pipe(uglify())
