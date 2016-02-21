@@ -1,4 +1,8 @@
-<title>HISPIRE | {{{__ 'start project title'}}}</title>
+<head>
+  <title>HISPIRE | {{{__ 'start project title'}}}</title>
+  <link rel="alternate" href="http://hispire.com/en/free-consultation" hreflang="en">
+  <link rel="alternate" href="http://hispire.com/es/free-consultation" hreflang="es">
+</head>
 <div id="bg__services" class="bg--full-fixed"></div>
     {{> menu}}
     <main id="start-project" class="animated fadeIn">
@@ -8,7 +12,7 @@
         </h1>
       </div>
       <section>
-        <form data-abide="ajax" method="POST" class="dropzone wow fadeIn" data-wow-duration="1s" data-wow-delay=".2s" id="start-project-form" action="/start-project" enctype="multipart/form-data">
+        <form data-abide="ajax" method="POST" class="dropzone wow fadeIn" data-wow-duration="1s" data-wow-delay=".2s" id="start-project-form" action="/free-consultation" enctype="multipart/form-data">
           <div class="row">
             <h3 class="text-center small-12 large-8 large-centered columns">
               {{{__ 'start project info'}}}
@@ -24,7 +28,7 @@
               </div>
             </div>
           </div>
-            <div class="row">
+          <div class="row">
             <div class="small-12 large-3 large-offset-3 columns">
               <div class="group">
                 <input class="material" type="email" name="email" required>
@@ -66,12 +70,23 @@
           </div>
           <div class="row">
             <div class="small-12 large-6 small-centered columns">
-              <div class="group">
-                <input class="material" type="text" name="timeframe" required>
-                <span class="highlight"></span>
-                <span class="bar"></span>
-                <label class="material">{{{__ 'form timeframe'}}}</label>
-              </div>
+              <fieldset class="fieldse">
+                <legend></legend>
+                <input id="timeframeQuestion" type="checkbox">
+                <label for="timeframeQuestion">
+                  {{{__ 'form timeframe question'}}}
+                </label>
+                <div class="row" id="timeframe">
+                  <div class="small-12 large-10 small-centered columns">
+                    <div class="group">
+                      <input class="material" type="text" name="timeframe">
+                      <span class="highlight"></span>
+                      <span class="bar"></span>
+                      <label class="material">{{{__ 'form timeframe'}}}</label>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
             </div>
           </div>
 
@@ -103,38 +118,59 @@
                 </select>
               </label>
             </div>-->
-            <div class="small-12 group large-6 small-centered columns">
-              <label>{{{__ 'form budget'}}}</label>
-              <p>{{{__ 'form budget info'}}}</p>
-              <div class="range-slider" id="budget-slider" name="budget" data-slider data-options="step: 200; start: 800; end: 10000">
-                <span class="range-slider-handle" role="slider" tabindex="0"></span>
-                <span class="range-slider-active-segment"></span>
+            <div class="row">
+              <div class="small-12 large-6 small-centered group columns">
+                <fieldset class="fieldse">
+                  <legend></legend>
+                  <input id="budgetQuestion" type="checkbox">
+                  <label for="budgetQuestion">
+                    {{{__ 'form budget question'}}}
+                  </label>
+                  <div class="row" id="budgetForm">
+                    <div class="small-12 large-10 small-centered columns">
+                      <label>{{{__ 'form budget'}}}</label>
+                      <p>{{{__ 'form budget info'}}}</p>
+                      <div class="range-slider" id="budget-slider" name="budget" data-slider data-options="step: 200; start: 800; end: 15000;initial: 0">
+                        <span class="range-slider-handle" role="slider" tabindex="0"></span>
+                        <span class="range-slider-active-segment"></span>
+                      </div>
+                      <div class="small-12 large-10 small-centered columns text-center">
+                        <span class="sliderOutput">$</span>
+                        <span id="sliderOutput" class="sliderOutput"></span>
+                      </div>
+                    </div>
+                    <input type="hidden" id="budget" name="budget" value="">
+                  </div>
+                </fieldset>
               </div>
-              <div class="small-12 small-centered large-6 columns text-center">
-                <span class="sliderOutput">$</span>
-                <span id="sliderOutput" class="sliderOutput"></span>
+            </div>
+            <div class="row">
+              <div class="small-12 group large-6 small-centered columns">
+                <h3 class="text-center">{{{__ 'form attach files'}}}</h3>
+                <div id="uploader" class="uploader">
+                  <div class="dz-default dz-message">
+                    <span><strong>{{{__ 'form upload'}}}</strong></span>
+                  </div>
+                </div>
               </div>
             </div>
-
-            <input type="hidden" id="budget" name="budget" value="">
-            <h3 class="text-center">{{{__ 'form attach files'}}}</h3>
-            <div id="uploader" class="small-12 group large-6 small-centered columns uploader">
-              <div class="dz-default dz-message">
-                <span><strong>{{{__ 'form upload'}}}</strong></span>
+            <div class="row">
+              <div class="small-12 group large-6 small-centered columns">
+                <div id="uploader--preview"></div>
+                <div class="fallback">
+                  <input type="file" name="files" multiple>
+                </div>
               </div>
             </div>
-            <div id="uploader--preview" class="small-12 group large-6 small-centered columns"></div>
-            <div class="fallback">
-              <input type="file" name="files" multiple>
+            <div class="row">
+              <div class="small-12 large-6 small-centered columns text-center">
+                <button type="submit" class="button small-12" id="send-project-form" name="button">
+                  {{{__ 'about action'}}}&nbsp;&nbsp;
+                  <i class="fa fa-arrow-circle-right fa-lg"></i>
+                </button>
+                <div id="form-msg"></div>
+              </div>
             </div>
-            <div class="small-12 large-6 small-centered columns text-center">
-              <button type="submit" class="button small-12" id="send-project-form" name="button">
-                {{{__ 'about action'}}}&nbsp;&nbsp;
-                <i class="fa fa-arrow-circle-right fa-lg"></i>
-              </button>
-              <div id="form-msg"></div>
-            </div>
-          </div>
         </form>
       </section>
     </main>
@@ -179,7 +215,24 @@ $('#start-project-form').on('invalid.fndtn.abide', function () {
 
 //add class to menu button
 $(function() {
-
+  $('#timeframeQuestion').click(function() {
+      $("#timeframe").toggle(this.checked);
+  });
+  $('#budgetQuestion').click(function() {
+      $("#budgetForm").toggle(this.checked);
+      $(document).foundation('reflow');
+      if (this.checked == true) {
+        $('#budget').val(4000);
+        $('#budget-slider').attr('data-slider', 4000)
+        $('#budget-slider').attr('data-options', 'step: 200; start: 800; end: 15000;initial: 4000')
+        $('#sliderOutput').text('4,000');
+        $(document).foundation('reflow');
+      }
+      else {
+        $('#budget').val(0);
+        $('#sliderOutput').text('0');
+      }
+  });
   $(document).foundation('reflow');
   var projectDropzone = new Dropzone("form#start-project-form",
     {
@@ -200,13 +253,13 @@ $(function() {
   function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
-    $('#sliderOutput').text('5,400');
-    $('[data-slider]').on('change.fndtn.slider', function(){
-      $('#budget').val('$' + numberWithCommas($('#budget-slider').attr('data-slider')));
-      var numberCommas = numberWithCommas($('#budget-slider').attr('data-slider'));
-      $('#sliderOutput').text(numberCommas);
-    });
-    Dropzone.autoDiscover = false;
+  $('#sliderOutput').text('0');
+  $('[data-slider]').on('change.fndtn.slider', function(){
+    $('#budget').val('$' + numberWithCommas($('#budget-slider').attr('data-slider')));
+    var numberCommas = numberWithCommas($('#budget-slider').attr('data-slider'));
+    $('#sliderOutput').text(numberCommas);
+  });
+  Dropzone.autoDiscover = false;
 
   $('#start-project-form')
     .on('valid.fndtn.abide', function () {
@@ -236,7 +289,7 @@ $(function() {
         $('#send-project-form').prop("disabled",true);
         $('#send-project-form').html('<img src="/img/ajax-loader.gif" />');
         $.ajax({
-          url: '/start-project',
+          url: '/free-consultation',
           type: 'post',
           dataType: 'json',
           data: $('#start-project-form').serialize(),

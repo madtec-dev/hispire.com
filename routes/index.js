@@ -17,7 +17,9 @@ function render(template, data, req, res) {
 }
 
 router.use(function (req, res, next) {
+  console.log(req.originalUrl.split('/').slice(-1)[0]);
     res.locals.lg = '/';
+    res.locals.urlPath = req.originalUrl.split('/').slice(-1)[0];
     res.locals.locale =  req.getLocale();
     next();
 });
@@ -79,11 +81,11 @@ router.get('/:locale?/portfolio/apicatando', function(req, res) {
 });
 
 
-router.get('/:locale?/start-project', function(req, res) {
-  render('start-project', { title: 'HISPIRE | ' + req.__('start project title') }, req, res);
+router.get('/:locale?/free-consultation', function(req, res) {
+  render('free-consultation', { title: 'HISPIRE | ' + req.__('start project title') }, req, res);
 });
 
-router.post('/start-project', function(req, res, next) {
+router.post('/free-consultation', function(req, res, next) {
   if (req.files) {
     var projectFiles = Object.keys(req.files)
       .map(function(i) {

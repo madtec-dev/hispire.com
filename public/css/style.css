@@ -7550,6 +7550,10 @@ ul.inline-list {
 
 /* START PROJECT FORM */
 /* material form */
+#timeframe, #budgetForm {
+  display: none;
+  padding-top: 2rem; }
+
 .group {
   position: relative;
   margin-bottom: 64px; }

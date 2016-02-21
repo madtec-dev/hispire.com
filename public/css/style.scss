@@ -734,6 +734,10 @@ background: linear-gradient(45deg, rgba(148,60,55,1) 0%, rgba(148,60,55,1) 30%, 
 /* START PROJECT FORM */
 
 /* material form */
+#timeframe, #budgetForm {
+  display: none;
+  padding-top: 2rem;
+}
 .group {
   position:relative;
   margin-bottom: 64px;
