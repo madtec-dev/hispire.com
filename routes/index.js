@@ -17,7 +17,6 @@ function render(template, data, req, res) {
 }
 
 router.use(function (req, res, next) {
-  console.log(req.originalUrl.split('/').slice(-1)[0]);
     res.locals.lg = '/';
     res.locals.urlPath = req.originalUrl.split('/').slice(-1)[0];
     res.locals.locale =  req.getLocale();
