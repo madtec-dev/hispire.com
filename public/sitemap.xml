@@ -1,66 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<url>
+<loc>http://www.hispire.com/</loc>
+<xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="http://www.hispire.com/es/"
+                />
 
-<url>
-  <loc>http://www.hispire.com/</loc>
+<xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://www.hispire.com/en/"
+                />
 </url>
 <url>
-  <loc>http://www.hispire.com/services</loc>
+<loc>http://www.hispire.com/services</loc>
+<xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="http://www.hispire.com/es/services"
+                />
+
+<xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://www.hispire.com/en/services"
+                />
 </url>
 <url>
-  <loc>http://www.hispire.com/portfolio</loc>
+<loc>http://www.hispire.com/portfolio</loc>
+<xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="http://www.hispire.com/es/portfolio"
+                />
+
+<xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://www.hispire.com/en/portfolio"
+                />
 </url>
 <url>
-  <loc>http://www.hispire.com/about</loc>
+<loc>http://www.hispire.com/portfolio/finca</loc>
+<xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="http://www.hispire.com/es/portfolio/finca"
+                />
+
+<xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://www.hispire.com/en/portfolio/finca"
+                />
 </url>
 <url>
-  <loc>http://www.hispire.com/start-project</loc>
+<loc>http://www.hispire.com/portfolio/apicatando</loc>
+<xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="http://www.hispire.com/es/portfolio/apicatando"
+                />
+
+<xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://www.hispire.com/en/portfolio/apicatando"
+                />
 </url>
 <url>
-  <loc>http://www.hispire.com/en/</loc>
+<loc>http://www.hispire.com/about</loc>
+<xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="http://www.hispire.com/es/about"
+                />
+
+<xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://www.hispire.com/en/about"
+                />
 </url>
 <url>
-  <loc>http://www.hispire.com/en/services</loc>
-</url>
-<url>
-  <loc>http://www.hispire.com/en/portfolio</loc>
-</url>
-<url>
-  <loc>http://www.hispire.com/en/about</loc>
-</url>
-<url>
-  <loc>http://www.hispire.com/en/start-project</loc>
-</url>
-<url>
-  <loc>http://www.hispire.com/es/</loc>
-</url>
-<url>
-  <loc>http://www.hispire.com/es/services</loc>
-</url>
-<url>
-  <loc>http://www.hispire.com/es/portfolio</loc>
-</url>
-<url>
-  <loc>http://www.hispire.com/es/about</loc>
-</url>
-<url>
-  <loc>http://www.hispire.com/es/start-project</loc>
-</url>
-<url>
-  <loc>http://www.hispire.com/es/portfolio/finca</loc>
-</url>
-<url>
-  <loc>http://www.hispire.com/es/portfolio/apicatando</loc>
-</url>
-<url>
-  <loc>http://www.hispire.com/en/portfolio/finca</loc>
-</url>
-<url>
-  <loc>http://www.hispire.com/en/portfolio/apicatando</loc>
+<loc>http://www.hispire.com/free-consultation</loc>
+<xhtml:link
+                rel="alternate"
+                hreflang="es"
+                href="http://www.hispire.com/es/free-consultation"
+                />
+
+<xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://www.hispire.com/en/free-consultation"
+                />
 </url>
 </urlset>
